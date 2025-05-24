@@ -6,6 +6,38 @@
     <title>Niloofar Mireshghallah</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
+/* ----------  CMU brand variables  ---------- */
+:root{
+  --cmu-red:#C41230;
+  --cmu-gold:#FDB515;
+  --cmu-green:#009647;        /* NEW  — CMU “Green Thread” */
+  --cmu-gray-dark:#393939;
+  --cmu-gray-light:#E0E0E0;
+}
+
+/* ----------  Minimal CMU header/footer  ---------- */
+.header-cmu{
+  background-color:var(--cmu-red);
+  color:#fff;
+  border-bottom:4px solid var(--cmu-green);
+
+  /* pin-stripes in CMU Green, 12 px repeat */
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgba(0,99,65,.15) 0 3px,     /* green stripe, 25 % opacity */
+      transparent       3px 12px); /* clear run */
+  background-size:12px 12px;
+}
+
+
+/* name stands out in Gold Thread */
+#niloofar-mireshghallah{color:var(--cmu-gold);}
+
+/* optional global polish */
+body{color:var(--cmu-gray-dark);}
+
+
+.content-box{border:1px solid var(--cmu-gray-light);}  /* subtle framing */
         body {
             font-size: 14px;
             line-height: 1.6;
@@ -61,39 +93,80 @@
         .link-hover:hover {
             text-decoration: underline;
         }
+    /* ----------  Global gold overrides  ---------- */
+/* ----------  Switch former gold accents to Green Thread  ---------- */
+
+/* coloured inline links + span elements */
+.custom-text-color{color:var(--cmu-green);}
+
+/* section titles underline */
+.content-box h2{
+  border-bottom:2px solid var(--cmu-green);
+}
+
+/* the gray call-out in “About me” */
+.border-custom-color{border-color:var(--cmu-green);}
+
+/* Tailwind arbitrary-value classes that baked in #1D3A8A  */
+[class*="text-[#1D3A8A]"]{
+  --tw-text-opacity:1;
+  color:var(--cmu-green) !important;
+}
+[class*="border-[#1D3A8A]"]{
+  --tw-border-opacity:1;
+  border-color:var(--cmu-green) !important;
+}
+
+/* optional: turn all left “pipes” on lists from blue → green */
+.border-l-4{border-color:var(--cmu-green);}
+
+/* --- overwrite header text colour to Gold Thread --- */
+.header-cmu{
+  color:var(--cmu-gold);              /* ◆ all text in header */
+}
+
+/* make the little “|” separators faint gold instead of white */
+.nav-separator{
+  color:rgba(253,181,21,.55);         /* 55 % opacity of #FDB515 */
+}
     </style>
 </head>
 <body class="bg-gray-100">
-    <header class="custom-bg-color text-white py-4">
-        <div class="content-width mx-auto px-4">
-            <h1 class="text-4xl font-bold mb-2" id="niloofar-mireshghallah">Niloofar Mireshghallah</h1>
-            <nav class="text-sm flex flex-wrap justify-end">
-                <a href="https://scholar.google.com/citations?user=WUCu45YAAAAJ&hl=en&authuser=2" class="nav-link hover:underline">Google Scholar</a>
-                <span class="nav-separator">|</span>
-                <a href="https://homes.cs.washington.edu/~niloofar/cv/niloofar_cv.pdf" class="nav-link hover:underline">CV</a>
-                <span class="nav-separator">|</span>
-                <a href="https://homes.cs.washington.edu/~niloofar/bio.html" class="nav-link hover:underline">Bio</a>
-                <span class="nav-separator">|</span>
-                <a href="https://github.com/mireshghallah" class="nav-link hover:underline">GitHub</a>
-                <span class="nav-separator">|</span>
-                <a href="https://twitter.com/niloofar_mire?lang=en" class="nav-link hover:underline">Twitter</a>
-                <span class="nav-separator">|</span>
-                <a href="mailto:niloofar@cs.washington.edu" class="nav-link hover:underline">Email</a>
-                <span class="nav-separator">|</span>
-                <a href="#publications" class="nav-link hover:underline">Publications</a>
-                <span class="nav-separator">|</span>
-                <a href="#invited-talks" class="nav-link hover:underline">Invited Talks</a>
-                <span class="nav-separator">|</span>
-                <a href="#awards" class="nav-link hover:underline">Awards</a>
-            </nav>
-        </div>
-    </header>
+  <!-- dropped text-white so .header-cmu sets the colour -->
+  <header class="header-cmu py-4">
+    <div class="content-width mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-2" id="niloofar-mireshghallah">
+        Niloofar Mireshghallah
+      </h1>
+
+      <nav class="text-xl font-bold flex flex-wrap justify-end">
+        <a href="https://scholar.google.com/citations?user=WUCu45YAAAAJ&hl=en&authuser=2" class="nav-link hover:underline">Google Scholar</a>
+        <span class="nav-separator">|</span>
+        <a href="https://homes.cs.washington.edu/~niloofar/cv/niloofar_cv.pdf" class="nav-link hover:underline">CV</a>
+        <span class="nav-separator">|</span>
+        <a href="https://homes.cs.washington.edu/~niloofar/bio.html" class="nav-link hover:underline">Bio</a>
+        <span class="nav-separator">|</span>
+        <a href="https://github.com/mireshghallah" class="nav-link hover:underline">GitHub</a>
+        <span class="nav-separator">|</span>
+        <a href="https://twitter.com/niloofar_mire?lang=en" class="nav-link hover:underline">Twitter</a>
+        <span class="nav-separator">|</span>
+        <a href="mailto:niloofar@cs.washington.edu" class="nav-link hover:underline">Email</a>
+        <span class="nav-separator">|</span>
+        <a href="#publications" class="nav-link hover:underline">Publications</a>
+        <span class="nav-separator">|</span>
+        <a href="#invited-talks" class="nav-link hover:underline">Invited Talks</a>
+        <span class="nav-separator">|</span>
+        <a href="#awards" class="nav-link hover:underline">Awards</a>
+      </nav>
+    </div>
+  </header>
+
 
     <main class="content-width mx-auto px-4 py-10">
         <div class="content-box">
             <div class="mb-6">
                 <div class="flex flex-col md:flex-row mb-6">
-               <img src="/pics/pic.jpg" alt="Niloofar Mireshghallah" class="w-64 h-auto object-cover rounded-lg mb-8 md:mb-0 md:mr-6">
+               <img src="https://homes.cs.washington.edu/~niloofar/pics/pic.jpg" alt="Niloofar Mireshghallah" class="w-64 h-auto object-cover rounded-lg mb-8 md:mb-0 md:mr-6">
                <div class="about-me flex-grow">
                <p class="mb-6 text-lg">
                 I am a postdoctoral scholar at the Paul G. Allen Center for Computer Science and Engineering at University of Washington, advised by
@@ -1045,8 +1118,8 @@
                   </section>
         </main>
     
-        <footer class="custom-bg-color text-white py-4 mt-12">
-            <div class="content-width mx-auto px-4 text-center">
+        <footer class="header-cmu text-white py-4 mt-12">
+          <div class="content-width mx-auto px-4 text-center">
                 <a href="https://www.linkedin.com/in/mireshghallah/" class="nav-link hover:underline">LinkedIn</a>
             </div>
         </footer>
