@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niloofar Mireshghallah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .custom-bg-color {
+            background-color: #1D3A8A;
+        }
+        .custom-text-color {
+            color: #1D3A8A;
+        }
+        .content-width {
+            width: 92%;
+            max-width: 1120px;
+        }
+        .nav-link {
+            padding-right: 0.18rem;
+            transition: opacity 0.3s ease;
+            font-size: 0.85rem;
+        }
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+        .nav-separator {
+            padding-right: 0.18rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 1.8rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+            margin-top: 1.4rem;
+        }
+        h4 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        .content-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.8rem;
+        }
+        .content-box h2 {
+            border-bottom: 2px solid #1D3A8A;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .link-hover:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="custom-bg-color text-white py-4">
+        <div class="content-width mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-2" id="niloofar-mireshghallah">Niloofar Mireshghallah</h1>
+            <nav class="text-sm flex flex-wrap justify-end">
+                <a href="https://scholar.google.com/citations?user=WUCu45YAAAAJ&hl=en&authuser=2" class="nav-link hover:underline">Google Scholar</a>
+                <span class="nav-separator">|</span>
+                <a href="https://homes.cs.washington.edu/~niloofar/cv/niloofar_cv.pdf" class="nav-link hover:underline">CV</a>
+                <span class="nav-separator">|</span>
+                <a href="https://homes.cs.washington.edu/~niloofar/bio.html" class="nav-link hover:underline">Bio</a>
+                <span class="nav-separator">|</span>
+                <a href="https://github.com/mireshghallah" class="nav-link hover:underline">GitHub</a>
+                <span class="nav-separator">|</span>
+                <a href="https://twitter.com/niloofar_mire?lang=en" class="nav-link hover:underline">Twitter</a>
+                <span class="nav-separator">|</span>
+                <a href="mailto:niloofar@cs.washington.edu" class="nav-link hover:underline">Email</a>
+                <span class="nav-separator">|</span>
+                <a href="#publications" class="nav-link hover:underline">Publications</a>
+                <span class="nav-separator">|</span>
+                <a href="#invited-talks" class="nav-link hover:underline">Invited Talks</a>
+                <span class="nav-separator">|</span>
+                <a href="#awards" class="nav-link hover:underline">Awards</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-width mx-auto px-4 py-10">
+        <div class="content-box">
+            <div class="mb-6">
+                <div class="flex flex-col md:flex-row mb-6">
+               <img src="https://homes.cs.washington.edu/~niloofar/pics/pic.jpg" alt="Niloofar Mireshghallah" class="w-64 h-auto object-cover rounded-lg mb-8 md:mb-0 md:mr-6">
+               <div class="about-me flex-grow">
+               <p class="mb-6 text-lg">
+                I am a postdoctoral scholar at the Paul G. Allen Center for Computer Science and Engineering at University of Washington, advised by
+               <a href="https://homes.cs.washington.edu/~yejin/" class="custom-text-color link-hover">Yejin Choi</a>
+                and
+               <a href="https://homes.cs.washington.edu/~yuliats/" class="custom-text-color link-hover">Yulia Tsvetkov</a>. I received my PhD from UC San Diego where I was advised by
+               <a href="https://cseweb.ucsd.edu//~tberg/" class="custom-text-color link-hover">Taylor Berg-Kirkpatrick</a>.
+               </p>
+               
+               <p class="mb-6 text-lg">
+                My research interests are
+               <strong>privacy</strong>,
+               <strong>natural language processing</strong>
+                and
+               <strong>societal implications</strong> of ML.
+                I explore the interplay between data, its influence on models, and the expectations of the people who regulate and use these models.
+               My work has been recognized by the <a href="https://www.aspirations.org/news/2020-ncwit-collegiate-award-recipients-announced" class="custom-text-color link-hover">NCWIT Collegiate Award</a> and the <a href="https://sites.google.com/view/advml/advml-rising-star-award?authuser=0" class="custom-text-color link-hover">Rising Star in Adversarial Machine Learning Award</a>.
+               </p>
+               
+               <p class="mb-6 text-lg">During my PhD I was a part-time researcher/intern at Microsoft Research (<a href="https://www.microsoft.com/en-us/research/group/privacy-in-ai/"  class="custom-text-color link-hover">Privacy in AI</a>, <a href="https://www.microsoft.com/en-us/research/group/algorithms-redmond/"  class="custom-text-color link-hover">Algorithms</a>, and <a href="https://www.microsoft.com/en-us/research/group/semantic-machines/"  class="custom-text-color link-hover">Semantic Machines</a> teams) working on differential privacy, model compression and data synthesis.</p>
+
+               <div class="border-l-4 border-custom-color px-3 py-3 bg-gray-100">
+                <p class="text-m mt-1">I am currently on the <b>academic job market</b> for faculty positions! Please contact me if you would like to discuss potential openings or collaborations.</p>
+               </div>
+               </div>
+               </div>
+               </div>
+
+              <p class="text-sm">
+                <strong>✦ Explanation about my name</strong>: I used to publish under Fatemeh which is my legal name in paperwork. But I now go by Niloofar, which is the
+                <a href="https://cdn11.bigcommerce.com/s-79f6e/product_images/uploaded_images/white-water-lily.jpg" class="custom-text-color link-hover">Lily</a>
+                flower in Farsi!
+              </p>
+
+              
+              <section class="mb-8">
+                <h2 class="text-2xl font-bold mb-4 custom-text-color">News Highlights</h2>
+                
+                <div class="space-y-2">
+
+                  <!-- <div class="flex items-baseline">
+                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                    <div>
+                      <p class="text-base mb-1 leading-snug">I will be traveling in February/March and giving in person talks at UVA, UNC Chapel Hill, UT Austin, CMU LTI, UW-Madison and EPFL about my research this upcoming month, reach out if you want to meetup or would like to attend the talks!</p>
+               
+                    </div>
+                    </div> -->
+                  
+                  <div class="flex items-baseline">
+                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                    <p class="text-base m-0 leading-snug">Checkout our new write-up <a href="https://homes.cs.washington.edu/~niloofar/papers/mia-machine-text-2025.pdf" class="custom-text-color hover:underline">Synthetic Data Can Mislead Evaluations: Membership Inference as Machine Text Detection</a>, where we draw parallels between membership inference attacks and zero-shot machine generated text detection.</p>
+                    </div>
+                  <div class="flex items-baseline">
+                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                    <p class="text-base m-0 leading-snug">I will be giving an in-person talk at the <a href="https://nlp.stanford.edu/seminar/" class="custom-text-color hover:underline">Stanford NLP Seminar</a> on January 16th!  View talk <a href="https://homes.cs.washington.edu/~niloofar/talks/privacy-data-genai-niloofar-jan-2025.pdf" class="custom-text-color hover:underline">slides</a>, <a href="https://docs.google.com/document/d/1BGfOxMe8j6U_PgbjbeWEt1zUMxmBxO9Fl1BMHuzwpsE/edit?usp=sharing" class="custom-text-color hover:underline">the privacy and memorization in LLMs reading list</a> and some of <a href="https://x.com/niloofar_mire/status/1875318871374381405" class="custom-text-color hover:underline">my thoughts on the future directions for privacy in LLMs</a>.</p>
+                    </div>
+
+
+
+                  <div class="flex items-baseline">
+                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                    <p class="text-base m-0 leading-snug">I will be giving an invited talk at the <a href="https://trustnlpworkshop.github.io/" class="custom-text-color hover:underline">TrustNLP Workshop</a>   @NAACL 2025! </p>
+                    </div>
+
+
+                <!-- <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                <div>
+                <p class="text-base mb-1 leading-snug">I will be attending NeurIPS conference! You can find me at:</p>
+                <ul class="list-none ml-5 space-y-0.5">
+                <li class="text-sm">The <a href="https://redteaming-gen-ai.github.io" class="custom-text-color hover:underline">Red Teaming GenAI workshop</a> where I'm giving an invited talk <a href="https://openreview.net/pdf?id=04c5uWq9SA" class="custom-text-color hover:underline">A False Sense of Privacy: Semantic Leakage</a> and <a href="https://arxiv.org/abs/2407.07087" class="custom-text-color hover:underline">Non-literal Copying</a> in LLMs. View talk <a href="https://homes.cs.washington.edu/~niloofar/talks/false-sense-niloofar-neurips-2024.pdf" class="custom-text-color hover:underline"> slides</a> and <a href="https://neurips.cc/virtual/2024/workshop/84754" class="custom-text-color hover:underline">recording</a> (jump to 04:50:00). </li>
+                <li class="text-sm">The <a href="https://sites.google.com/wimlworkshop.org/wiml-2024/home?authuser=0" class="custom-text-color hover:underline">WiML workshop where I'm serving as a mentor</a></li>
+                <li class="text-sm">The <a href="https://neurips.cc/virtual/2024/tutorial/99533" class="custom-text-color hover:underline">PrivacyML: Meaningful Privacy-Preserving Machine Learning</a> tutorial where I'm a panelist. View <a href="https://neurips.cc/virtual/2024/tutorial/99533" class="custom-text-color hover:underline">recording</a> (jump to 01:52:00).</li>
+                <li class="text-sm">Our poster <a href="https://arxiv.org/abs/2406.18510" class="custom-text-color hover:underline">From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models</a></li>
+
+                </ul>
+                </div>
+                </div> -->
+
+                <div class="flex items-baseline">
+                  <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                  <p class="text-base m-0 leading-snug">I am attending NeurIPS 2024 and giving an invited keynote at the <a href="https://redteaming-gen-ai.github.io" class="custom-text-color hover:underline">Red Teaming GenAI workshop</a> on <a href="https://openreview.net/pdf?id=04c5uWq9SA" class="custom-text-color hover:underline">A False Sense of Privacy: Semantic Leakage</a> and <a href="https://arxiv.org/abs/2407.07087" class="custom-text-color hover:underline">Non-literal Copying</a> in LLMs. View talk <a href="https://homes.cs.washington.edu/~niloofar/talks/false-sense-niloofar-neurips-2024.pdf" class="custom-text-color hover:underline"> slides</a> and <a href="https://neurips.cc/virtual/2024/workshop/84754" class="custom-text-color hover:underline">recording</a> (jump to 04:50:00).</p>
+                  </div>
+              
+                
+                <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                <p class="text-base m-0 leading-snug">I will be visiting Johns Hopkins university to give a talk on December 9th! </p>
+                </div>
+                
+                <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎙️</span>
+                <p class="text-base m-0 leading-snug">I appeared on a panel at the <a href="https://fpf.org" class="custom-text-color hover:underline">Future of Privacy Forum</a> - Technologist Roundtable for Policymakers: Key Issues in Privacy and AI (write-up coming soon!)</p>
+                </div>
+                
+                <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎙️</span>
+                <p class="text-base m-0 leading-snug">I appeared on the <a href="https://wellecks.com/thesisreview/episode47.html" class="custom-text-color hover:underline">Thesis Review podcast</a> with Sean Welleck where I talked about my work on Auditing and Mitigating Safety Risks in Large Language Models.</p>
+                </div>
+                
+                <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎙️</span>
+                <p class="text-base m-0 leading-snug">I wrote a blogpost on "Should I do a postdoc?" based on my experience - check out the <a href="https://homes.cs.washington.edu/~niloofar/blog/postdoc-advice.html" class="custom-text-color hover:underline">blog post</a> and <a href="https://www.youtube.com/watch?v=O7psT1ftwqs" class="custom-text-color hover:underline">video</a> with Sasha Rush!</p>
+                </div>
+                
+                <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎙️</span>
+                <p class="text-base m-0 leading-snug">I gave an invited keynote talk at the <a href="https://sos-vo.org/group/c3e/2024-agenda" class="custom-text-color hover:underline">SRI International C3E workshop</a> hosted by SRI and NSA. <a href="https://homes.cs.washington.edu/~niloofar/talks/c3e-2024.pdf" class="custom-text-color hover:underline">View talk slides</a>.</p>
+                </div>
+                
+                <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📰</span>
+                <p class="text-base m-0 leading-snug">I was interviewed by UW News about OpenAI's O1 update and advances in math and reasoning. <a href="https://www.washington.edu/news/2024/09/17/ai-chatgpt-openai-math-reasoning-o1/" class="custom-text-color hover:underline">Read the interview</a>.</p>
+                </div>
+                
+                <div class="flex items-baseline">
+                <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📰</span>
+                <p class="text-base m-0 leading-snug">I was interviewed by the Washington Post on <a href="https://www.washingtonpost.com/politics/2024/05/29/google-ai-overview-wrong-answers-unfixable/" class="custom-text-color hover:underline">Google's AI image generator controversy</a> and <a href="https://www.washingtonpost.com/technology/2024/05/31/opt-out-ai-training-meta-chatgpt/" class="custom-text-color hover:underline">disclosure of personal information in conversations with ChatGPT</a>.</p>
+                </div>
+                </div>
+                </section>
+
+                <section class="mb-4" id="publications">
+                    <h2 class="text-2xl font-bold mb-4 custom-text-color">Selected Publications</h2>
+                    <h4>For the full list, please refer to my <a href="https://scholar.google.com/citations?user=WUCu45YAAAAJ&hl=en&authuser=2" class="custom-text-color hover:underline">Google Scholar</a> page.</h4>
+                    <ul class="space-y-2">
+                      <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2410.04265" class="custom-text-color hover:underline">AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text</a></p>
+                        <p class="text-xs text-gray-600">ICLR 2025</p>
+                        <p class="text-sm italic">X. Lu, M. Sclar, S. Hallinan, <strong>N. Mireshghallah</strong>, J. Liu, S. Han, A. Ettinger, L. Jiang, K. Chandu, N. Dziri, Y. Choi</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                          <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2403.04801" class="custom-text-color hover:underline">Alpaca against Vicuna: Using LLMs to Uncover Memorization of LLMs</a></p>
+                          <p class="text-xs text-gray-600">NAACL 2025</p>
+                          <p class="text-sm italic">A. Kassem<sup>*</sup>, O. Mahmoud<sup>*</sup>, <strong>N. Mireshghallah<sup>*</sup></strong>, H. Kim, Y. Tsvetkov, Y. Choi, S. Saad, S. Rana</p>
+                          </li>
+                          <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2410.17566" class="custom-text-color hover:underline">Differentially Private Learning Needs Better Model Initialization and Self-Distillation</a></p>
+                            <p class="text-xs text-gray-600">NAACL 2025</p>
+                            <p class="text-sm italic"> I. Ngong,  J. Near, <strong>N. Mireshghallah</strong></p>
+                            </li>
+                      <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2312.12733" class="custom-text-color hover:underline">A False Sense of Privacy: Evaluating Textual Data Sanitization Beyond Surface-level Privacy Leakage</a></p>
+                        <p class="text-xs text-gray-600">Neurips Safe Generative AI Workshop 2024</p>
+                        <p class="text-sm italic">R. Xin<sup>*</sup>, <strong>N. Mireshghallah<sup>*</sup></strong>, S. S. Li, M. Duan, H. Kim, Y. Choi, Y. Tsvetkov, S. Oh, P. W. Koh</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2406.18510" class="custom-text-color hover:underline">WildTeaming at Scale: From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models</a></p>
+                            <p class="text-xs text-gray-600">NeurIPS 2024</p>
+                            <p class="text-sm italic">L. Jiang, K. Rao, S. Han, A. Ettinger, F. Brahman, S. Kumar, <strong>N. Mireshghallah</strong>, X. Lu, M. Sap, Y. Choi, N. Dziri</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2407.07087" class="custom-text-color hover:underline">CopyBench: Measuring literal and non-literal reproduction of copyright-protected text in language model generation</a></p>
+                            <p class="text-xs text-gray-600">EMNLP 2024</p>
+                            <p class="text-sm italic">T. Chen, <strong>N. Mireshghallah</strong><sup>*</sup>, A. Asai<sup>*</sup>, S. Min, J. Grimmelmann, Y. Choi, H. Hajishirzi, L. Zettlemoyer, P. W. Koh</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2407.11438" class="custom-text-color hover:underline">Trust No Bot: Discovering Personal Disclosures in Human-LLM Conversations in the Wild</a></p>
+                            <p class="text-xs text-gray-600">COLM 2024</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong><sup>*</sup>, M. Antoniak<sup>*</sup>, Y. More<sup>*</sup>, Y. Choi, G. Farnadi</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2402.07841" class="custom-text-color hover:underline">Do membership inference attacks work on large language models?</a></p>
+                            <p class="text-xs text-gray-600">COLM 2024</p>
+                            <p class="text-sm italic">M. Duan, A. Suri, <strong>N. Mireshghallah</strong>, S. Min, W. Shi, L. Zettlemoyer, Y. Tsvetkov, Y. Choi, D. Evans, H. Hajishirzi</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://www.researchgate.net/publication/382794407_Extended_Abstract_Machine_Unlearning_Doesn't_Do_What_You_Think" class="custom-text-color hover:underline">Machine Unlearning Doesn't Do What You Think</a></p>
+                            <p class="text-xs text-gray-600">Extended Abstract at GenLaw 2024</p>
+                            <p class="text-sm italic">K. Lee, A. F. Cooper, C. A. Choquette-Choo, K. Liu, M. Jagielski, <strong>N. Mireshghallah</strong>, L. Ahmed, J. Grimmelmann, D. Bau, C. De Sa, et al.</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2402.05070" class="custom-text-color hover:underline">A Roadmap to Pluralistic Alignment</a></p>
+                            <p class="text-xs text-gray-600">ICML 2024</p>
+                            <p class="text-sm italic">T. Sorensen, J. Moore, J. Fisher, M. Gordon, <strong>N. Mireshghallah</strong>, C. M. Rytting, A. Ye, L. Jiang, X. Lu, N. Dziri, T. Althoff, Y. Choi</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2310.17884" class="custom-text-color hover:underline">Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory</a></p>
+                            <p class="text-xs text-gray-600">ICLR 2024</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong><sup>*</sup>, H. Kim<sup>*</sup>, X. Zhou, Y. Tsvetkov, M. Sap, R. Shokri, Y. Choi</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2212.10520" class="custom-text-color hover:underline">Privacy-preserving in-context learning with differentially private few-shot generation</a></p>
+                            <p class="text-xs text-gray-600">ICLR 2024</p>
+                            <p class="text-sm italic">X. Tang, R. Shin, H. A. Inan, A. Manoel, <strong>N. Mireshghallah</strong>,Z. Lin, S. Gopi, J. Kulkarni, R. Sim </p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://homes.cs.washington.edu/~niloofar/papers/eacl2024_arxiv_smaller.pdf" class="custom-text-color hover:underline">Smaller Language Models are Better Black-box Machine-Generated Text Detectors</a></p>
+                            <p class="text-xs text-gray-600">EACL 2024</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, J. Mattern, S. Gao, R. Shokri, T. Berg-Kirkpatrick</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2212.10520" class="custom-text-color hover:underline">Privacy-Preserving Domain Adaptation of Semantic Parsers</a></p>
+                            <p class="text-xs text-gray-600">ACL 2023</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, R. Shin, Y. Su, T. Hashimoto, J. Eisner</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2209.05706" class="custom-text-color hover:underline">Non-Parametric Temporal Adaptation for Social Media Topic Classification</a></p>
+                            <p class="text-xs text-gray-600">EMNLP 2023</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong><sup>*</sup>, N. Vogler<sup>*</sup>, J. He, O. Florez, A. El-Kishky, T. Berg-Kirkpatrick</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2312.04510" class="custom-text-color hover:underline">A Block Metropolis-Hastings Sampler for Controllable Energy-based Text Generation</a></p>
+                            <p class="text-xs text-gray-600">CoNLL 2023</p>
+                            <p class="text-sm italic">J. Forristal, <strong>N. Mireshghallah</strong>, G. Durrett, T. Berg-Kirkpatrick</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="#" class="custom-text-color hover:underline">Membership Inference Attacks against Language Models via Neighbourhood Comparison</a></p>
+                            <p class="text-xs text-gray-600">ACL 2023</p>
+                            <p class="text-sm italic">J. Mattern, <strong>N. Mireshghallah</strong>, Z. Jin, B. Scholkop, M. Sachan, T. Berg-Kirkpatrick</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2206.01838" class="custom-text-color hover:underline">Differentially Private Model Compression</a></p>
+                            <p class="text-xs text-gray-600">NeurIPS 2022</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, A. Backurs, H. A. Inan, L. Wutschitz, J. Kulkarni</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2205.12506" class="custom-text-color hover:underline">Memorization in NLP Fine-tuning Methods</a></p>
+                            <p class="text-xs text-gray-600">EMNLP 2022</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, A. Uniyal, T. Wang, D. Evans, T. Berg-Kirkpatrick</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2203.03929" class="custom-text-color hover:underline">Quantifying Privacy Risks of Masked Language Models Using Membership Inference Attacks</a></p>
+                            <p class="text-xs text-gray-600">EMNLP 2022</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, K. Goyal, A. Uniyal, T. Berg-Kirkpatrick, R. Shokri</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2110.00135" class="custom-text-color hover:underline">UserIdentifier: Implicit User Representations for Simple and Effective Personalized Sentiment Analysis</a></p>
+                            <p class="text-xs text-gray-600">NAACL 2022</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, V. Shrivastava, M. Shokouhi, T. Berg-Kirkpatrick, R. Sim, D. Dimitriadis</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2202.05520" class="custom-text-color hover:underline">What Does it Mean for a Language Model to Preserve Privacy?</a></p>
+                            <p class="text-xs text-gray-600">FAccT 2022</p>
+                            <p class="text-sm italic">H. Brown, K. Lee, <strong>N. Mireshghallah</strong>, R. Shokri, F. Tram'er</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://cseweb.ucsd.edu/~fmireshg/acl2022_mix_match.pdf" class="custom-text-color hover:underline">Mix and Match: Learning-free Controllable Text Generation</a></p>
+                            <p class="text-xs text-gray-600">ACL 2022</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, K. Goyal, T. Berg-Kirkpatrick</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://cseweb.ucsd.edu/~fmireshg/emnlp2021-style-pool.pdf" class="custom-text-color hover:underline">Style Pooling: Automatic Text Style Obfuscation for Improved Classification Fairness</a></p>
+                            <p class="text-xs text-gray-600">EMNLP 2021</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, T. Berg-Kirkpatrick</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2103.07567" class="custom-text-color hover:underline">Privacy Regularization: Joint Privacy-Utility Optimization in Language Models</a></p>
+                            <p class="text-xs text-gray-600">NAACL 2021</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, H. Inan, M. Hasegawa, V. Rühle, T. Berg-Kirkpatrick, R. Sim</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="http://proceedings.mlr.press/v119/elthakeb20a/elthakeb20a.pdf" class="custom-text-color hover:underline">Divide and Conquer: Leveraging Intermediate Feature Representations for Quantized Training of Neural Networks</a></p>
+                            <p class="text-xs text-gray-600">ICML 2020</p>
+                            <p class="text-sm italic">A. Elthakeb, P. Pilligundla, <strong>N. Mireshghallah</strong>, A. Cloninger, H. Esmaeilzadeh</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://cseweb.ucsd.edu/~fmireshg/cloak_www2021_camera.pdf" class="custom-text-color hover:underline">Not All Features Are Equal: Discovering Essential Features for Preserving Prediction Privacy</a></p>
+                            <p class="text-xs text-gray-600">WWW 2021</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, M. Taram, A. Jalali, A. T. Elthakeb, D. Tullsen, H. Esmaeilzadeh</p>
+                        </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://cseweb.ucsd.edu/~fmireshg/2020-asplos-shredder.pdf" class="custom-text-color hover:underline">Shredder: Learning Noise Distributions to Protect Inference Privacy</a></p>
+                            <p class="text-xs text-gray-600">ASPLOS 2020</p>
+                            <p class="text-sm italic"><strong>N. Mireshghallah</strong>, M. Taram, A. Jalali, D. Tullsen, H. Esmaeilzadeh</p>
+                        </li>
+                    </ul>
+                </section>
+
+               <section class="mb-4">
+ 
+                <section class="mb-4" id="invited-talks">
+                    <h2 class="text-2xl font-bold mb-4 custom-text-color">Invited Talks</h2>
+                
+                    <ul class="space-y-2">
+                      <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">Stanford University <a href="https://nlp.stanford.edu/seminar/" class="custom-text-color hover:underline">(NLP Seminar)</a></p>
+                        <p class="text-xs text-gray-600">NLP Seminar, Jan. 2025</p>
+                        <p class="text-sm italic">Privacy, Copyright and Data Integrity: The Cascading Implications of Generative AI</p>
+                        <p class="text-xs text-gray-600"><a href="https://homes.cs.washington.edu/~niloofar/talks/privacy-data-genai-niloofar-jan-2025.pdf" class="custom-text-color hover:underline">Slides</a> | <a href="https://docs.google.com/document/d/1BGfOxMe8j6U_PgbjbeWEt1zUMxmBxO9Fl1BMHuzwpsE/edit?usp=sharing" class="custom-text-color hover:underline">Reading List</a></p>
+                        </li>
+
+
+                      <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">Fifth Workshop on Trustworthy Natural Language Processing @NAACL 2025<a href="https://trustnlpworkshop.github.io/" class="custom-text-color hover:underline">(TrustNLP)</a></p>
+                        <p class="text-xs text-gray-600">Workshop, May. 2025</p>
+                        
+                        </li>
+                        
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">University of California, Los Angeles</p>
+                        <p class="text-xs text-gray-600">Guest lecture for CS 269 - Computational Ethics, LLMs and the Future of NLP, Jan. 2025</p>
+                        <p class="text-sm italic">Privacy, Copyright and Data Integrity: The Cascading Implications of Generative AI</p>
+                        <p class="text-xs text-gray-600"><a href="https://homes.cs.washington.edu/~niloofar/talks/privacy-data-genai-niloofar-jan-2025.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                        
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">NeurIPS Conference <a href="https://redteaming-gen-ai.github.io" class="custom-text-color hover:underline">(Red Teaming GenAI workshop)</a></p>
+                        <p class="text-xs text-gray-600">Red Teaming GenAI workshop, Dec. 2024</p>
+                        <p class="text-sm italic">A False Sense of Privacy: Semantic Leakage and Non-literal Copying in LLMs</p>
+                        <p class="text-xs text-gray-600"><a href="https://homes.cs.washington.edu/~niloofar/talks/false-sense-niloofar-neurips-2024.pdf" class="custom-text-color hover:underline">Slides</a> | <a href="https://neurips.cc/virtual/2024/workshop/84754" class="custom-text-color hover:underline">Recording</a> (jump to 04:50:00)</p>
+                        </li>
+                        
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">NeurIPS Conference <a href="https://neurips.cc/virtual/2024/tutorial/99533" class="custom-text-color hover:underline">(PrivacyML Tutorial)</a></p>
+                        <p class="text-xs text-gray-600">Panelist, Dec. 2024</p>
+                        <p class="text-sm italic">PrivacyML: Meaningful Privacy-Preserving Machine Learning tutorial</p>
+                        <p class="text-xs text-gray-600"><a href="https://neurips.cc/virtual/2024/tutorial/99533" class="custom-text-color hover:underline">Recording</a> (jump to 01:52:00)</p>
+                        </li>
+                        
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">Johns Hopkins University</p>
+                        <p class="text-xs text-gray-600">CS Department Seminar, Dec. 2024</p>
+                        <p class="text-sm italic">Privacy, Copyright and Data Integrity: The Cascading Implications of Generative AI</p>
+                        <p class="text-xs text-gray-600"><a href="https://homes.cs.washington.edu/~niloofar/talks/jhu-dec-2024.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                  
+                    
+                    <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">Future of Privacy Forum</p>
+                        <p class="text-xs text-gray-600">Panelist, Nov. 2024</p>
+                        <p class="text-sm italic">Technologist Roundtable for Policymakers: Key Issues in Privacy and AI</p>
+                    </li>
+                    
+                    <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">University of Utah</p>
+                        <p class="text-xs text-gray-600">Guest lecture for the School of Computing CS 6340/5340 NLP course, Nov. 2024</p>
+                        <p class="text-sm italic">Can LLMs Keep a Secret?</p>
+                        <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks/sep-nov-mia-talk.pdf" class="custom-text-color hover:underline">Slides</a> | <a href="https://youtu.be/h91jPRxti_Q?feature=shared" class="custom-text-color hover:underline">Recording</a></p>
+                    </li>
+                    
+                    <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">UMass Amherst</p>
+                        <p class="text-xs text-gray-600">NLP Seminar, Oct. 2024</p>
+                        <p class="text-sm italic">Membership Inference Attacks and Contextual Integrity for Language</p>
+                        <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks/sep-nov-mia-talk.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                    </li>
+                    
+                    <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">Northeastern University</p>
+                        <p class="text-xs text-gray-600">Khoury College of Computer Sciences Security Seminar, Oct. 2024</p>
+                        <p class="text-sm italic">Membership Inference Attacks and Contextual Integrity for Language</p>
+                        <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks/sep-nov-mia-talk.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                    </li>
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Stanford Research Institute (SRI) International</p>
+                            <p class="text-xs text-gray-600">Computational Cybersecurity in Compromised Environments (C3E) workshop, Sep. 2024</p>
+                            <p class="text-sm italic">Can LLMs keep a secret? Testing privacy implications of Language Models via Contextual Integrity</p>
+                            <p class=class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks/c3e-2024.pdf"class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">LinkedIn Research</p>
+                            <p class="text-xs text-gray-600">Privacy Tech Talk, Sep. 2024</p>
+                            <p class="text-sm italic">Can LLMs keep a secret? Testing privacy implications of Language Models via Contextual Integrity</p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">National Academies (NASEM)</p>
+                            <p class="text-xs text-gray-600">Forum on Cyber Resilience, Aug. 2024</p>
+                            <p class="text-sm italic">Oversharing with LLMs is underrated: the curious case of personal disclosures in human-LLM conversations</p>
+                            <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks//wildchat_studies_2024.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">ML Collective</p>
+                            <p class="text-xs text-gray-600">DLCT reading group, Aug. 2024</p>
+                            <p class="text-sm italic">Privacy in LLMs: Understanding what data is imprinted in LMs and how it might surface!</p>
+                            <p class="text-xs">
+                                <a href="https://homes.cs.washington.edu/~niloofar/talks//mlc-2024-niloofar-privacy-llms.pdf" class="custom-text-color hover:underline">Slides</a> | 
+                                <a href="https://www.youtube.com/watch?v=lkFY-XyoR-8" class="custom-text-color hover:underline">Recording</a>
+                            </p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Carnegie Mellon University</p>
+                            <p class="text-xs text-gray-600">Invited Talk, Jun. 2024</p>
+                            <p class="text-sm italic">Alpaca against Vicuna: Using LLMs to Uncover Memorization of LLMs</p>
+                            <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks//memorization_cmu_2024.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Generative AI and Law workshop, Washington DC</p>
+                            <p class="text-xs text-gray-600">Invited Talk, Apr. 2024</p>
+                            <p class="text-sm italic">What is differential privacy? And what is it not?</p>
+                            <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks//genlaw-dp-2024.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Meta AI Research</p>
+                            <p class="text-xs text-gray-600">Invited Talk, Apr. 2024</p>
+                            <p class="text-sm italic">Membership Inference Attacks and Contextual Integrity for Language</p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Georgia Institute of Technology</p>
+                            <p class="text-xs text-gray-600">Guest lecture for the School of Interactive Computing, Apr. 2024</p>
+                            <p class="text-sm italic">Safety in LLMs: Privacy and Memorization</p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">University of Washington</p>
+                            <p class="text-xs text-gray-600">Guest lecture for CSE 484 and 582 courses on Computer Security and Ethics in AI, Apr. 2024</p>
+                            <p class="text-sm italic">Safety in LLMs: Privacy and Memorization</p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Carnegie Mellon University</p>
+                            <p class="text-xs text-gray-600">Guest lecture for LTI 11-830 course on Computational Ethics in NLP, Mar. 2024</p>
+                            <p class="text-sm italic">Safety in LLMs: Privacy and Memorization</p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Simons Collaboration</p>
+                            <p class="text-xs text-gray-600">TOC4Fairness Seminar, Mar. 2024</p>
+                            <p class="text-sm italic">Membership Inference Attacks and Contextual Integrity for Language</p>
+                            <p class="text-xs">
+                                <a href="https://homes.cs.washington.edu/~niloofar/talks//confaide_mia_talk_socal_v2.pdf" class="custom-text-color hover:underline">Slides</a> | 
+                                <a href="https://youtu.be/gxaSGtgvp0E?feature=shared" class="custom-text-color hover:underline">Recording</a>
+                            </p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">University of California, Santa Barbara</p>
+                            <p class="text-xs text-gray-600">NLP Seminar Invited Talk, Mar. 2024</p>
+                            <p class="text-sm italic">Can LLMs Keep a Secret? Testing Privacy Implications of LLMs</p>
+                            <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks//confaide_mia_talk_socal_2024.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">University of California, Los Angeles</p>
+                            <p class="text-xs text-gray-600">NLP Seminar Invited Talk, Mar. 2024</p>
+                            <p class="text-sm italic">Can LLMs Keep a Secret? Testing Privacy Implications of LLMs</p>
+                            <p class="text-xs"><a href="https://homes.cs.washington.edu/~niloofar/talks//confaide_mia_talk_socal_2024.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">University of Texas at Austin</p>
+                            <p class="text-xs text-gray-600">Guest lecture for LIN 393 course on Social Applications and Impact of NLP, Feb. 2024</p>
+                            <p class="text-sm italic">Can LLMs Keep a Secret? Testing Privacy Implications of LLMs</p>
+                            <p class="text-xs"><a href="https://drive.google.com/file/d/1jVCBjenwBt9qzy5avb961BSF1gSFA6-R/view" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Google Brain</p>
+                            <p class="text-xs text-gray-600">Google Tech Talk, Feb. 2024</p>
+                            <p class="text-sm italic">Can LLMs Keep a Secret? Testing Privacy Implications of LLMs</p>
+                            <p class="text-xs">
+                                <a href="https://homes.cs.washington.edu/~niloofar/talks//confaide_google_feb_2024.pdf" class="custom-text-color hover:underline">Slides</a> | 
+                                <a href="https://www.youtube.com/watch?v=xh2NyCmQrnc" class="custom-text-color hover:underline">Recording</a>
+                            </p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">University of Washington</p>
+                            <p class="text-xs text-gray-600">Allen School Colloquium, Jan. 2024</p>
+                            <p class="text-sm italic">Can LLMs Keep a Secret? Testing Privacy Implications of LLMs</p>
+                            <p class="text-xs">
+                                <a href="https://homes.cs.washington.edu/~niloofar/talks//confaide_colloq_2024.pdf" class="custom-text-color hover:underline">Slides</a> | 
+                                <a href="https://www.youtube.com/live/HlWOSry5ZVE?feature=shared&t=2895" class="custom-text-color hover:underline">Recording</a>
+                            </p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">University of Washington</p>
+                            <p class="text-xs text-gray-600">eScience Institute Seminars, Nov. 2023</p>
+                            <p class="text-sm italic">Privacy Auditing and Protection in Large Language Model</p>
+                            <p class="text-xs"><a href="https://cseweb.ucsd.edu/~fmireshg/uw-seminar-2023-nov.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">CISPA Helmholtz Center for Security</p>
+                            <p class="text-xs text-gray-600">Invited Talk, Sep. 2023</p>
+                            <p class="text-sm italic">What does privacy-preserving NLP entail?</p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Max Planck Institute for Software Systems</p>
+                            <p class="text-xs text-gray-600">Next 10 in AI Series, Sep. 2023</p>
+                            <p class="text-sm italic">Auditing and Mitigating Safety Risks in LLMs</p>
+                            <p class="text-xs"><a href="https://cseweb.ucsd.edu/~fmireshg/saarland-2023.pdf" class="custom-text-color hover:underline">Slides</a></p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">Mila / McGill University</p>
+                            <p class="text-xs text-gray-600">Invited Talk, May 2023</p>
+                            <p class="text-sm italic">Privacy Auditing and Protection in Large Language Models</p>
+                        </li>
+                
+                        <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                            <p class="text-base font-semibold text-[#1D3A8A]">EACL 2023</p>
+                            <p class="text-xs text-gray-600">Tutorial co-instruction, May 2023</p>
+                            <p class="text-sm italic">Private NLP: Federated Learning and Privacy Regularization</p>
+                            <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/eacl-23.pdf" class="custom-text-color hover:underline">Slides</a> |
+                                <a href="https://youtu.be/y3-PskEbyOE" class="custom-text-color hover:underline">Recording</a>
+                            </p>
+                        </li>
+                
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">LLM Interfaces Workshop and Hackathon</p>
+                              <p class="text-xs text-gray-600">Invited Talk, Apr. 2023</p>
+                              <p class="text-sm italic">Learning-free Controllable Text Generation</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/llms_april.pdf" class="custom-text-color hover:underline">Slides</a> |
+                                <a href="https://www.youtube.com/watch?v=r8pAP9zMM_4" class="custom-text-color hover:underline">Recording</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">University of Washington</p>
+                              <p class="text-xs text-gray-600">Invited Talk, Apr. 2023</p>
+                              <p class="text-sm italic">Auditing and Mitigating Safety Risks in Large Language Models</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/uw-spring-23.pdf" class="custom-text-color hover:underline">Slides</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">NDSS Conference</p>
+                              <p class="text-xs text-gray-600">Keynote talk for EthiCS workshop, Feb. 2023</p>
+                              <p class="text-sm italic">How much can we trust large language models?</p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Google</p>
+                              <p class="text-xs text-gray-600">Federated Learning Seminar, Feb. 2023</p>
+                              <p class="text-sm italic">Privacy Auditing and Protection in Large Language Models</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/google-fl-2023-pdf.pdf" class="custom-text-color hover:underline">Slides</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">University of Texas Austin</p>
+                              <p class="text-xs text-gray-600">Invited Talk, Oct. 2022</p>
+                              <p class="text-sm italic">How much can we trust large language models?</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/oct2022-UT.pdf" class="custom-text-color hover:underline">Slides</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Johns Hopkins University</p>
+                              <p class="text-xs text-gray-600">Guest lecture for CS 601.670 course on Artificial Agents, Sep. 2022</p>
+                              <p class="text-sm italic">Mix and Match: Learning-free Controllable Text Generation</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/jhu2022.pdf" class="custom-text-color hover:underline">Slides</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">KDD Conference</p>
+                              <p class="text-xs text-gray-600">Adversarial ML workshop, Aug. 2022</p>
+                              <p class="text-sm italic">How much can we trust large language models?</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/advml-talk-2022-slides.pdf" class="custom-text-color hover:underline">Slides</a> |
+                                <a href="https://youtu.be/fKNKtR0aFo8" class="custom-text-color hover:underline">Recording</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Microsoft Research Cambridge</p>
+                              <p class="text-xs text-gray-600">Invited Talk, Mar. 2022</p>
+                              <p class="text-sm italic">What Does it Mean for a Language Model to Preserve Privacy?</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/pv_lm_march.pdf" class="custom-text-color hover:underline">Slides</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">University of Maine</p>
+                              <p class="text-xs text-gray-600">Guest lecture for COS435/535 course on Information Privacy Engineering, Dec. 2021</p>
+                              <p class="text-sm italic">Improving Attribute Privacy and Fairness for Natural Language Processing</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/maine-talk-dec-2021.pdf" class="custom-text-color hover:underline">Slides</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">National University of Singapore</p>
+                              <p class="text-xs text-gray-600">Invited Talk, Nov. 2021</p>
+                              <p class="text-sm italic">Style Pooling: Automatic Text Style Obfuscation for Fairness</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/nus-2021.pdf" class="custom-text-color hover:underline">Slides</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Big Science for Large Language Models</p>
+                              <p class="text-xs text-gray-600">Invited Panelist, Oct. 2021</p>
+                              <p class="text-sm italic">Privacy-Preserving Natural Language Processing</p>
+                              <p class="text-xs">
+                                <a href="https://youtu.be/RJJPGneQw7o" class="custom-text-color hover:underline">Recording</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Research Society MIT Manipal</p>
+                              <p class="text-xs text-gray-600">Cognizance Event Invited Talk, Jul. 2021</p>
+                              <p class="text-sm italic">Privacy and Interpretability of DNN Inference</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/munipal-research-society-jul-2021.pdf" class="custom-text-color hover:underline">Slides</a> |
+                                <a href="https://youtu.be/EMeBn6C-Glo" class="custom-text-color hover:underline">Recording</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Alan Turing Institute</p>
+                              <p class="text-xs text-gray-600">Privacy and Security in ML Seminars, Jun. 2021</p>
+                              <p class="text-sm italic">Low-overhead Techniques for Privacy and Fairness of DNNs</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/turing-pv-2021.pdf" class="custom-text-color hover:underline">Slides</a> |
+                                <a href="https://www.youtube.com/watch?v=JwoJpJoNGrg" class="custom-text-color hover:underline">Recording</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Split Learning Workshop</p>
+                              <p class="text-xs text-gray-600">Invited Talk, Mar. 2021</p>
+                              <p class="text-sm italic">Shredder: Learning Noise Distributions to Protect Inference Privacy</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/2020-asplos-shredder.pdf" class="custom-text-color hover:underline">Slides</a> |
+                                <a href="https://www.youtube.com/watch?v=bxn3-BtPNjw" class="custom-text-color hover:underline">Recording</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">University of Massachusetts Amherst</p>
+                              <p class="text-xs text-gray-600">Machine Learning and Friends Lunch, Oct. 2020</p>
+                              <p class="text-sm italic">Privacy and Fairness in DNN Inference</p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">OpenMined Privacy Conference</p>
+                              <p class="text-xs text-gray-600">Invited Talk, Sep. 2020</p>
+                              <p class="text-sm italic">Privacy-Preserving Natural Language Processing</p>
+                              <p class="text-xs">
+                                <a href="https://cseweb.ucsd.edu/~fmireshg/2020-pricon.pdf" class="custom-text-color hover:underline">Slides</a> |
+                                <a href="https://www.youtube.com/watch?v=cix8InsGGgA" class="custom-text-color hover:underline">Recording</a>
+                              </p>
+                            </li>
+                            <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                              <p class="text-base font-semibold text-[#1D3A8A]">Microsoft Research AI</p>
+                              <p class="text-xs text-gray-600">Breakthroughs Workshop, Sep. 2020</p>
+                              <p class="text-sm italic">Private Text Generation through Regularization</p>
+                            </li>
+                           
+                            
+                    </ul>
+                </section>
+
+                <section class="mb-8" id="awards">
+                    <h2 class="text-2xl font-bold mb-4 custom-text-color">Awards and Honors</h2>
+                    <div class="space-y-2">
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🏆</span>
+                        <p class="text-base m-0 leading-snug">Momental Foundation Mistletoe Research Fellowship (MRF) Finalist, 2023</p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🌟</span>
+                        <p class="text-base m-0 leading-snug">Rising Star in Adversarial Machine Learning (AdvML) Award Winner, 2022. <a href="https://sites.google.com/view/advml/advml-rising-star-award" class="custom-text-color hover:underline">AdvML Workshop</a></p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🌟</span>
+                        <p class="text-base m-0 leading-snug">Rising Stars in EECS, 2022. <a href="https://risingstars.utexas.edu/participants" class="custom-text-color hover:underline">Event Page</a></p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎓</span>
+                        <p class="text-base m-0 leading-snug">UCSD CSE Excellence in Leadership and Service Award Winner, 2022</p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🌟</span>
+                        <p class="text-base m-0 leading-snug">FAccT Doctoral Consortium, 2022. <a href="https://facctconference.org/2022/dcpart" class="custom-text-color hover:underline">FAccT 2022</a></p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">👩‍💻</span>
+                        <p class="text-base m-0 leading-snug">Qualcomm Innovation Fellowship Finalist, 2021. <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/finalists" class="custom-text-color hover:underline">Fellowship Page</a></p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">👩‍💻</span>
+                        <p class="text-base m-0 leading-snug">NCWIT (National Center for Women & IT) Collegiate Award Winner, 2020. <a href="https://ncwit.org/article/20-members-honored-for-technological-accomplishments-and-change-leading-efforts-for-increasing-diversity-in-computing-press-release/" class="custom-text-color hover:underline">NCWIT Awards</a></p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎓</span>
+                        <p class="text-base m-0 leading-snug">National University Entrance Exam in Math, 2014. Ranked 249<sup>th</sup> of 223,000</p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎓</span>
+                        <p class="text-base m-0 leading-snug">National University Entrance Exam in Foreign Languages, 2014. Ranked 57<sup>th</sup> of 119,000</p>
+                      </div>
+                      <div class="flex items-baseline">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎓</span>
+                        <p class="text-base m-0 leading-snug">National Organization for Exceptional Talents (NODET), 2008. Admitted, ~2% Acceptance Rate</p>
+                      </div>
+                    </div>
+                    </section>
+                
+                    <section class="mb-8">
+                      <h2 class="text-2xl font-bold mb-4 custom-text-color">Featured Press & Media</h2>
+                      <div class="space-y-2">
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎙️</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://wellecks.com/thesisreview/episode47.html" class="custom-text-color hover:underline">Thesis Review podcast</a> episode about my work on Auditing and Mitigating Safety Risks in Large Language Models</p>
+                        </div>
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🎙️</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://www.youtube.com/watch?v=O7psT1ftwqs" class="custom-text-color hover:underline">Should I do a postdoc</a> guest video on Sasha's channel - along with the <a href="https://homes.cs.washington.edu/~niloofar/blog/postdoc-advice.html" class="custom-text-color hover:underline">blog post</a></p>
+                        </div>
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📄</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://www.science.org/content/article/ai-writing-improving-it-still-can-t-match-human-creativity" class="custom-text-color hover:underline">Science - AI writing is improving, but it still can't match human creativity</a></p>
+                          </div>
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📄</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://www.washington.edu/news/2024/09/17/ai-chatgpt-openai-math-reasoning-o1/" class="custom-text-color hover:underline">UW News - AI researcher discusses the new version of ChatGPT's advances in math and reasoning</a></p>
+                        </div>
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📄</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://www.washingtonpost.com/technology/2024/05/31/opt-out-ai-training-meta-chatgpt/" class="custom-text-color hover:underline">Washington Post - How to opt out of having your data 'train' ChatGPT and other AI chatbots</a></p>
+                        </div>
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📄</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://www.washingtonpost.com/politics/2024/05/29/google-ai-overview-wrong-answers-unfixable/" class="custom-text-color hover:underline">Washington Post - Google's weird AI answers hint at a fundamental problem</a></p>
+                        </div>
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📄</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://www.washingtonpost.com/technology/2024/08/04/chatgpt-use-real-ai-chatbot-conversations/" class="custom-text-color hover:underline">Washington Post - What do people really ask chatbots?</a></p>
+                        </div>
+                        <div class="flex items-baseline">
+                          <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">📄</span>
+                          <p class="text-base m-0 leading-snug"><a href="https://www.wired.com/story/how-to-stop-your-data-from-being-used-to-train-ai/" class="custom-text-color hover:underline">WIRED - How to Stop Your Data From Being Used to Train AI</a></p>
+                        </div>
+                      </div>
+                    </section>
+                      
+                      <section class="mb-8">
+                        <h2 class="text-2xl font-bold mb-4 custom-text-color">Recent Co-organized Workshops</h2>
+                        [for full list check my CV]
+                        <div class="space-y-2">
+                          <div class="flex items-baseline">
+                            <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">◆</span>
+                            <p class="text-base m-0 leading-snug"><a href="https://pml-workshop.github.io/iclr24/" class="custom-text-color hover:underline">Privacy Regulation and Protection in Machine Learning (PML @ICLR2024)</a></p>
+                          </div>
+                          <div class="flex items-baseline">
+                            <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">◆</span>
+                            <p class="text-base m-0 leading-snug"><a href="https://ppai-workshop.github.io" class="custom-text-color hover:underline">Privacy-Preserving Artificial Intelligence (PPAI @AAAI2024)</a></p>
+                          </div>
+                          <div class="flex items-baseline">
+                            <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">◆</span>
+                            <p class="text-base m-0 leading-snug"><a href="https://genlaw.org/2023-workshop.html" class="custom-text-color hover:underline">Generative AI + Law (GenLaw @ICML2023)</a></p>
+                          </div>
+                        </div>
+                      </section>
+
+
+            <section class="mb-4">
+                <h2 class="text-2xl font-bold mb-4 custom-text-color">Industry Research Experience</h2>
+                <ul class="space-y-2">
+                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                      <p class="text-base font-semibold text-[#1D3A8A]">Microsoft Semantic Machines</p>
+                      <p class="text-xs text-gray-600">Fall 2022-Fall 2023 (Part-time), Summer 2022 (Intern)</p>
+                      <p class="text-sm italic">Mentors: Richard Shin, Yu Su, Tatsunori Hashimoto, Jason Eisner</p>
+                    </li>
+                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                      <p class="text-base font-semibold text-[#1D3A8A]">Microsoft Research, Algorithms Group, Redmond Lab</p>
+                      <p class="text-xs text-gray-600">Winter 2022 (Intern)</p>
+                      <p class="text-sm italic">Mentors: Sergey Yekhanin, Arturs Backurs</p>
+                    </li>
+                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                      <p class="text-base font-semibold text-[#1D3A8A]">Microsoft Research, Language, Learning and Privacy Group, Redmond Lab</p>
+                      <p class="text-xs text-gray-600">Summer 2021 (Intern), Summer 2020 (Intern)</p>
+                      <p class="text-sm italic">Mentors: Dimitrios Dimitriadis, Robert Sim</p>
+                    </li>
+                    <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                      <p class="text-base font-semibold text-[#1D3A8A]">Western Digital Co. Research and Development</p>
+                      <p class="text-xs text-gray-600">Summer 2019 (Intern)</p>
+                      <p class="text-sm italic">Mentor: Anand Kulkarni</p>
+                    </li>
+                  </ul>
+                </section>
+   
+
+
+    
+
+                <section class="mb-8">
+                  <h2 class="text-2xl font-bold mb-4 custom-text-color">Diversity, Inclusion & Mentorship</h2>
+                 <div class="space-y-2">
+                  <div class="flex items-start">
+                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                    <p class="text-base m-0 leading-snug">Mentor on the 'How to broadcast your research to a wider audience?' panel  at <a href="https://mentorship.aclweb.org" class="custom-text-color hover:underline">ACL Mentorship Program -- 2025</a></p>
+                    </div>
+                  <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Mentor for the mentorship program at <a href="https://sites.google.com/wimlworkshop.org/wiml-2024/home" class="custom-text-color hover:underline">WiML event in NeurIPS 2024</a></p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">D&I chair at <a href="https://2025.naacl.org/" class="custom-text-color hover:underline">NAACL 2025</a></p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug"><a href="http://www.winlp.org/organization/" class="custom-text-color hover:underline">Widening NLP</a> (WiNLP) co-chair</p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Socio-cultural D&I chair at <a href="https://2022.naacl.org/organization/#diversity-and-inclusion-chairs" class="custom-text-color hover:underline">NAACL 2022</a></p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Mentor for the Graduate Women in Computing (GradWIC) at UCSD</p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Mentor for the UC San Diego Women Organization for Research Mentoring (WORM) in STEM</p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Co-leader for the <a href="https://github.com/msmart14/feminist-perspectives-for-ml-and-cv" class="custom-text-color hover:underline">"Feminist Perspectives for Machine Learning & Computer Vision"</a> Break-out session at the Women in Machine Learning (WiML) 2020 Un-workshop Held at ICML 2020</p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Mentor for the USENIX Security 2020 Undergraduate Mentorship Program</p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Volunteer at the Women in Machine Learning 2019 Workshop Held at NeurIPS 2019</p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Invited Speaker at the Women in Machine Learning and Data Science (WiMLDS) NeurIPS 2019 Meetup</p>
+                 </div>
+                 <div class="flex items-start">
+                 <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">🔹</span>
+                 <p class="text-base m-0 leading-snug">Mentor for the UCSD CSE Early Research Scholars Program (CSE-ERSP) in 2018</p>
+                 </div>
+                 </div>
+                 </section>
+                  
+                  <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4 custom-text-color">Professional Services</h2>
+                    [Outdated, for an updated version check my CV]
+
+                    <div class="space-y-2">
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for ICLR 2022</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for NeurIPS 2021</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for ICML 2021</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Shadow PC member for IEEE Security and Privacy Conference Winter 2021</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Artifact Evaluation Program Committee Member for USENIX Security 2021</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for ICLR 2021 Conference</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Program Committee member for the LatinX in AI Research Workshop at ICML 2020 <a href="http://www.latinxinai.org/icml-2020" class="custom-text-color hover:underline">(LXAI)</a></p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for the 2020 Workshop on Human Interpretability in Machine Learning <a href="https://sites.google.com/view/whi2020/" class="custom-text-color hover:underline">(WHI)</a> at ICML 2020</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Program Committee member for the <a href="https://sites.google.com/view/mlarchsys/" class="custom-text-color hover:underline">MLArchSys</a> workshop at ISCA 2020</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Security & Privacy Committee Member and Session Chair for Grace Hopper Celebration (GHC) 2020</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">GHC (Grace Hopper Celebration) 2020 Privacy and Security Committee Member</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for ICML 2020 Conference</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Artifact Evaluation Program Committee Member for ASPLOS 2020</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for IEEE TC Journal</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">◆</span>
+                        <p class="text-base m-0 leading-snug">Reviewer for ACM TACO Journal</p>
+                      </div>
+                    </div>
+                  </section>
+                  
+                  <section class="mb-8">
+                    <h2 class="text-2xl font-bold mb-4 custom-text-color">Books I Like!</h2>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">Range: Why Generalists Triumph in a Specialized World by D. Epstein</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">Messy: The Power of Disorder to Transform Our Lives by T. Harford</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">Small Is Beautiful: Economics As If People Mattered by E. F. Schumacher</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">Quarter-life by Satya Doyle Byock</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">The Body Keeps the Score by Bessel van der Kolk</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">36 Views of Mount Fuji by Cathy Davidson</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">Indistractable by Nir Eyal</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">Sapiens: A Brief History of Humankind by Yuval Noah Harari</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">The Martian by Andy Weir</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">The Solitaire Mystery by Jostein Gaarder</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">The Orange Girl by Jostein Gaarder</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">Life is Short: A Letter to St Augustine by Jostein Gaarder</p>
+                      </div>
+                      <div class="flex items-start">
+                        <span class="text-xs mr-2 w-5 inline-flex items-center justify-center pt-1">📚</span>
+                        <p class="text-base m-0 leading-snug">The Alchemist by Paulo Coelho</p>
+                      </div>
+                    </div>
+                  </section>
+        </main>
+    
+        <footer class="custom-bg-color text-white py-4 mt-12">
+            <div class="content-width mx-auto px-4 text-center">
+                <a href="https://www.linkedin.com/in/mireshghallah/" class="nav-link hover:underline">LinkedIn</a>
+            </div>
+        </footer>
+    </body>
+    </html>
+    
+    <!-- I am also a part-time researcher at <a href="https://www.microsoft.com/en-us/research/project/semantic-machines/" class="custom-text-color hover:underline">Microsoft Semantic Machines</a> and a volunteer research scientist at <a href="https://www.openmined.org" class="custom-text-color hover:underline">OpenMined</a>. --->
