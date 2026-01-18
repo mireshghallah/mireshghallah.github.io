@@ -6,11 +6,12 @@
     <title>Niloofar Mireshghallah</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <style>
-/* ----------  CMU brand variables  ---------- */
+/* ----------  Color scheme: Navy & Warm Amber  ---------- */
 :root{
-  --cmu-red:#1F4C4C;
-  --cmu-gold:#FDB515;
-  --cmu-green:#009647;        /* CMU "Green Thread" */
+  --cmu-red:#1E3A5F;          /* Deep navy (header bg) */
+  --cmu-gold:#D4A84B;         /* Warm amber (name highlight) */
+  --cmu-green:#1E3A5F;        /* Deep navy for borders/accents */
+  --link-color:#D4A84B;       /* Warm amber/gold for links */
   --cmu-gray-dark:#393939;
   --cmu-gray-light:#E0E0E0;
 }
@@ -19,14 +20,7 @@
 .header-cmu{
   background-color:var(--cmu-red);
   color:#fff;
-  border-bottom:4px solid var(--cmu-red);
-
-  /* pin-stripes in CMU Green, 12 px repeat */
-  background-image: repeating-linear-gradient(
-      135deg,
-      rgba(0,99,65,.15) 0 3px,     /* green stripe, 25 % opacity */
-      transparent       3px 12px); /* clear run */
-  background-size:12px 12px;
+  border-bottom:4px solid var(--cmu-gold);
 }
 
 
@@ -96,8 +90,19 @@ body{color:var(--cmu-gray-dark);}
     /* ----------  Global gold overrides  ---------- */
 /* ----------  Switch former gold accents to Green Thread  ---------- */
 
-/* coloured inline links + span elements */
-.custom-text-color{color:var(--cmu-green);}
+/* coloured inline links only */
+.custom-text-color{color:var(--link-color);}
+
+/* section headers use deep navy, not link blue */
+h2.custom-text-color, h3.custom-text-color, h4.custom-text-color{
+  color:var(--cmu-green) !important;
+}
+
+/* publication/talk title links use deep navy */
+.font-semibold .custom-text-color,
+.font-semibold.custom-text-color{
+  color:var(--cmu-green) !important;
+}
 
 /* section titles underline */
 .content-box h2{
@@ -107,11 +112,14 @@ body{color:var(--cmu-gray-dark);}
 /* the gray call-out in “About me” */
 .border-custom-color{border-color:var(--cmu-green);}
 
-/* Tailwind arbitrary-value classes that baked in #1D3A8A  */
+/* Tailwind arbitrary-value classes that baked in #1D3A8A - use deep navy for titles */
 [class*="text-[#1D3A8A]"]{
   --tw-text-opacity:1;
   color:var(--cmu-green) !important;
 }
+
+/* regular link color uses gold */
+a.custom-text-color{color:var(--link-color);}
 [class*="border-[#1D3A8A]"]{
   --tw-border-opacity:1;
   border-color:var(--cmu-green) !important;
@@ -125,9 +133,9 @@ body{color:var(--cmu-gray-dark);}
   color:var(--cmu-gold);              /* ◆ all text in header */
 }
 
-/* make the little "|" separators faint gold instead of white */
+/* make the little "|" separators faint amber instead of white */
 .nav-separator{
-  color:rgba(253,181,21,.55);         /* 55 % opacity of #FDB515 */
+  color:rgba(212,168,75,.55);         /* 55 % opacity of #D4A84B */
 }
     </style>
 </head>
