@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surviving (and Thriving on) the Academic Job Market</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .author {
+            font-style: italic;
+            margin-bottom: 1em;
+        }
+        .subtitle {
+            color: #555;
+            font-size: 1.1em;
+            margin-bottom: 2em;
+            font-style: italic;
+        }
+        .meta-info {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 2em;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 2em;
+            border-radius: 0 5px 5px 0;
+        }
+        .highlight-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #17a2b8;
+            padding: 15px 20px;
+            margin: 1.5em 0;
+            border-radius: 0 5px 5px 0;
+        }
+        h1, h2, h3 {
+            color: #1a1a1a;
+        }
+        h2 {
+            margin-top: 2em;
+            padding-top: 1em;
+            border-top: 1px solid #eee;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        .toc {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 2em;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .toc ul ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        .toc li {
+            margin: 8px 0;
+        }
+        .quick-tips {
+            background-color: #f0fff4;
+            border: 1px solid #9ae6b4;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 1.5em 0;
+        }
+        .quick-tips h3 {
+            margin-top: 0;
+            color: #276749;
+        }
+        .resources {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 1.5em 0;
+        }
+        .question-box {
+            background-color: #f8f4ff;
+            border: 1px solid #d6bcfa;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 1.5em 0;
+        }
+        .question-box h4 {
+            margin-top: 0;
+            color: #553c9a;
+        }
+        .joys-list {
+            background-color: #fff5f5;
+            border: 1px solid #feb2b2;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 1.5em 0;
+        }
+        .joys-list h4 {
+            margin-top: 0;
+            color: #c53030;
+        }
+        .routine-box {
+            background-color: #fffaf0;
+            border: 1px solid #fbd38d;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 1.5em 0;
+        }
+        .routine-box h4 {
+            margin-top: 0;
+            color: #c05621;
+        }
+        .disclaimer-box {
+            background-color: #e6fffa;
+            border-left: 4px solid #38b2ac;
+            padding: 15px 20px;
+            margin: 1.5em 0;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Surviving (and Thriving on) the Academic Job Market</h1>
+    
+    <p class="subtitle">Or: How the year I was on the job market became the year I built the healthiest habits I still keep today</p>
+
+    <div class="author">
+        By <a href="https://mireshghallah.github.io/">Niloofar Mireshghallah</a>
+    </div>
+
+    <div class="warning-box">
+        <strong>⚠️ A quick heads up:</strong> This post gets personal. I talk about my health, my body, menstrual cycles, and the female experience on the job market. Also, this is part human-written, part Claude-generated—mainly because it's compiled from notes and bits and pieces I've written over the past year.
+    </div>
+
+    <div class="meta-info">
+        <p><strong>What you won't learn here:</strong> How to write the perfect research statement, or a comprehensive guide to the application process. I have some notes on that at the end, but this post is more about the human side of things.</p>
+        
+        <p><strong>What you will learn:</strong> Unconventional (and some conventional) advice for the academic job market—specifically for Zoom and on-site interviews. We'll cover academic prep, communication and the human element, and most importantly: how to not destroy your body and mind in the process.</p>
+        
+        <p><strong>Target audience:</strong> Anyone preparing for or going through the academic job market in CS/AI/ML/NLP. But honestly, a lot of this applies to anyone doing high-stakes interviewing while trying to remain a functional human being.</p>
+
+        <p><strong>A note about a future post:</strong> I want to write something more extensive on food, exercise, health, and just being happier and healthier as an academic—and as a woman in this field, because it does make a difference! But that's for another day. Consider this a preview.</p>
+    </div>
+
+    <h2>Why I Wrote This (Some Context)</h2>
+
+    <p>In December 2022, I was hospitalized with <a href="https://www.ninds.nih.gov/health-information/disorders/guillain-barre-syndrome">Guillain-Barré syndrome</a>. I was paralyzed for almost a month and, frankly, nearly died. That experience fundamentally changed how I think about health. It's one thing to intellectually know that health matters; it's another thing entirely to have your body completely fail you and then slowly, painfully rebuild.</p>
+
+    <p>When I started thinking about the 2024/2025 job market cycle back in April 2024, I knew I had to approach it differently. I have severe insulin insensitivity due to PCOS, which means sugar crashes and digestive problems if I'm not careful. I couldn't afford to get sick on the road—mentally or physically—with all the travel and stress ahead. So I started building routines and habits early on.</p>
+
+    <p>There's this book I love called <a href="https://www.amazon.com/Tiny-Experiments-Freely-Goal-Obsessed-World/dp/0593715136"><em>Tiny Experiments</em></a> by Anne-Laure Le Cunff that talks about treating life as a series of experiments—trying things, seeing what works, and adjusting course when something doesn't. That's exactly how I approached this. Think of habit building as a continuous search process for what works <em>for you</em>. If something doesn't work, it doesn't mean you failed—it means you need to change course.</p>
+
+    <p>I started my search almost two years ago, and I'm still refining things, but I'm so much more in tune with my body and mind now. Before this, I had never had a good or consistent relationship with food or exercise in my entire life. If I can get better, so can you!</p>
+
+    <nav class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#overall-advice">🌟 Overall Advice and Habits</a></li>
+            <li><a href="#academic-advice">📚 Part 1: Academic Advice</a>
+                <ul>
+                    <li><a href="#prep-timeline">Prep Timeline</a></li>
+                    <li><a href="#school-prep">School-Specific Preparation Pipeline</a></li>
+                    <li><a href="#zoom-interviews">Zoom Interviews</a></li>
+                    <li><a href="#onsite-interviews">On-Site Interviews</a></li>
+                    <li><a href="#student-meetings">Student Meetings (What to Sus Out)</a></li>
+                    <li><a href="#questions-to-ask">Questions to Ask Them</a></li>
+                </ul>
+            </li>
+            <li><a href="#communication">💬 Part 2: Communication & The Human Element</a>
+                <ul>
+                    <li><a href="#body-language">Body Language</a></li>
+                    <li><a href="#being-genuine">Being Genuine</a></li>
+                    <li><a href="#one-on-ones">1:1 Meetings</a></li>
+                    <li><a href="#connection-questions">Questions for Building Connection</a></li>
+                </ul>
+            </li>
+            <li><a href="#health">🥗 Part 3: Health—Food, Exercise, and Sleep</a>
+                <ul>
+                    <li><a href="#food">Food & Blood Sugar</a></li>
+                    <li><a href="#exercise">Exercise</a></li>
+                    <li><a href="#fasting">A Note on Intermittent Fasting (Especially for Women)</a></li>
+                    <li><a href="#unwinding">Unwinding Between Interviews</a></li>
+                </ul>
+            </li>
+            <li><a href="#external-resources">📎 External Resources</a></li>
+        </ul>
+    </nav>
+
+    <section id="overall-advice">
+        <h2>🌟 Overall Advice and Habits</h2>
+        
+        <p>Here are my top actionable tips—the things that made the biggest difference for me.</p>
+
+        <p><strong>→ Have routines!</strong> Try to develop routines such that you just hit play and go. Remove friction and decision fatigue to make your life easier. Have a flight routine, a "when you get there" routine, a morning-before routine, and a night-after routine so you don't have to constantly think about what's next. Here are some things I did:</p>
+
+        <div class="routine-box">
+            <h4>Night Before / During Flight / Getting There</h4>
+            <ol>
+                <li><strong>Watch people's talks instead of (just) reading their papers.</strong> Why? (1) They share the work they care about most in talks, not one-off things; (2) You get a sense of their personality, sense of humor, and what future work they care about.</li>
+                <li><strong>Stack and bundle good routines.</strong> For example, to get steps in after you land, go to the hotel treadmill and watch the above talks while walking. Keeping my body active really kept me sane, and it was nice to watch the talks—good prep!</li>
+                <li><strong>Have different theme music</strong>—maybe albums or songs without lyrics. One you play the night before to get sharp, and one the night after to unwind. This really helped me condition my brain! My favorite album to relax was <a href="https://open.spotify.com/album/07iv0tkKefJPUp9RFDOuNQ">New Light by Gidge</a>. You should also check out the <a href="https://www.headspace.com/">Headspace app</a>—it's very affordable for students and academics!</li>
+                <li><strong>Look up local cafes, foods, and niche info about the city.</strong> People like it when you care and know about their city. See if anything interests you that you could check out.</li>
+                <li><strong>Have your answers to common questions written out</strong> and practice your talk at least once. Use ChatGPT or Claude to ask you insightful, critical questions—you can even give it some of the audience members' research interests to tailor the questions.</li>
+            </ol>
+        </div>
+
+        <div class="quick-tips">
+            <h3>Morning Routine</h3>
+            <ol>
+                <li><strong>Two glasses of room temperature water</strong> when you wake up. Before coffee, before anything. Your body has been dehydrated all night.</li>
+                <li><strong>Savory breakfast beats sugary breakfast</strong>—especially on job talk days! Avoid a crash and start the day right. More on this in the <a href="https://www.youtube.com/watch?v=3esF-pNAM9c">Glucose Goddess video</a>.</li>
+                <li><strong>Listen to non-verbal music to get you in the zone</strong> and mentally go over your day once. Double-check the schedule.</li>
+                <li><strong>Morning check:</strong> Make sure you have your clicker, dongles, and know the emails of admins and contacts so you don't have to rush. Remove friction—have everything picked out and packed. Have a rigid routine for flights and for when you get back on how you unwind.</li>
+            </ol>
+        </div>
+
+        <div class="quick-tips">
+            <h3>During Interviews</h3>
+            <ol>
+                <li><strong>Listen more than you talk.</strong> Don't prejudge what's going to come out of someone's mouth. Get them to talk about their research and what excites them. Leave room for questions. Remember, you are interviewing as faculty, so have a faculty mindset and <strong>be confident</strong>.</li>
+                <li><strong>Handle the room well during your talk.</strong> If a question is taking too long, politely ask to resolve it later. You are responsible for managing your time.</li>
+                <li><strong>Get your steps in!</strong> Make your interviewers walk you places. (Sorry if you interviewed me and I dragged you across campus six times, lol.) I managed to hit 10k steps by getting people to walk me around + doing treadmill walks the night before while watching YouTube talks by my interviewers.</li>
+                <li><strong>Walk after high-glucose meals.</strong> Even 10–15 minutes helps stabilize blood sugar.</li>
+                <li><strong>Do calf raises!</strong> If you can't walk, exercise your calves after eating—they're huge muscles that grab glucose and help avoid sugar crashes.</li>
+                <li><strong>Fiber is your friend.</strong> I always had a baggie of carrots and broccoli with me, plus a 0% Chobani pack for protein. Sometimes I'd duck into the bathroom to snack on those. Way better than protein bars!</li>
+            </ol>
+        </div>
+
+        <div class="routine-box">
+            <h4>After the Interview (To Unwind)</h4>
+            <ol>
+                <li><strong>Listen to your relaxation music.</strong> I had a favorite album I would listen to to chill—it really helped. Watch comfort shows. <strong>DO NOT doomscroll—that's the worst thing!</strong> Your brain is fried; doomscrolling won't recharge you at all, believe me.</li>
+                <li><strong>Go on a walk and check out neighborhoods</strong> if it's not too late.</li>
+                <li><strong>If you have energy, quickly clean up your notes</strong> and takeaways from the day. Mark what you would change, what went poorly, and what piqued your interest if you liked the place and want to investigate more for second visits.</li>
+            </ol>
+        </div>
+
+        <div class="quick-tips">
+            <h3>Application Package Prep Tips</h3>
+            <ol>
+                <li><strong>Start your statements and job talk EARLY</strong> and get feedback from many people. But don't let each piece of advice completely sway you—regularize it! You're going to hear a lot of "you MUST do X" and "you should NEVER do Y." Most of the time, it's so subjective that it won't really matter.</li>
+                <li><strong>Submit to workshops!</strong> Now through NeurIPS, submit your papers to as many workshops as you can. Maximize your chances of getting workshop best paper awards. For some reason, even workshop best paper awards are things people care about.</li>
+                <li><strong>Mention niche stuff in your cover letter.</strong> Show you've done your homework and have specific reasons for wanting to be there.</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="academic-advice">
+        <h2>📚 Part 1: Academic Advice</h2>
+
+        <h3 id="prep-timeline">Prep Timeline</h3>
+        
+        <p>My earliest deadline was September 16th, so I had all my statements ready by then. My first job talk was the first week of December, so I had a version of that ready too. I didn't change my statements much after the September version—maybe tweaked the research statement a bit by November 1st when we had some papers accepted, and did some restructuring for future work.</p>
+
+        <p>The job talk, though? That one I changed A TON. I basically made it from scratch for my next job talk in the first week of February. Don't be afraid to do things from scratch if something doesn't work.</p>
+
+        <h3 id="school-prep">School-Specific Preparation Pipeline</h3>
+
+        <p>Before each interview, I went through a systematic prep process:</p>
+
+        <div class="highlight-box">
+            <strong>Pre-Interview Homework Checklist:</strong>
+            <ol>
+                <li>Look up the faculty (especially those you'll meet with)</li>
+                <li>Look up the department and its trajectory</li>
+                <li>Look up the location</li>
+                <li>Look up courses they offer</li>
+                <li>Look up campus and history</li>
+                <li>Research prompts I used:
+                    <ul>
+                        <li>What to know about faculty I'm meeting?</li>
+                        <li>Relevant courses, institutions, centers, initiatives, and events?</li>
+                        <li>People from other departments I could collaborate with?</li>
+                        <li>Local deep cuts (things unique to this place)?</li>
+                    </ul>
+                </li>
+                <li><strong>Watch YouTube videos of their talks</strong>—learn their recent work and what excites them!</li>
+            </ol>
+        </div>
+
+        <h3 id="zoom-interviews">Zoom Interviews</h3>
+
+        <p>99% of the time, they'll ask for an elevator pitch—usually 5, 7, or 10 minutes. Some ask for slides, some you can just talk through. It varies. I had three versions based on length and what the committee was looking for. Some schools want one project explained in depth, some want a summary, some care more about future work.</p>
+
+        <p><strong>Elevator Pitch Structure:</strong></p>
+        <ol>
+            <li><strong>Open with a couple of overview sentences</strong>—your high-level research vision</li>
+            <li><strong>Three bullet points/projects</strong> that reflect the three directions of your research statement</li>
+            <li>Explain each direction depending on time</li>
+            <li><strong>End with future work</strong>—this is crucial! Showing you have vision matters a lot. A lot of your intellectual maturity is reflected here, so don't half-ass it.</li>
+        </ol>
+
+        <p>After the elevator pitch, they may ask about your research and projects. Then they usually move to more standard questions about teaching, mentoring, and collaboration.</p>
+
+        <h3 id="onsite-interviews">On-Site Interviews</h3>
+
+        <p>Here's something important: <strong>what gets you an in-person interview is disjoint from what gets you a job.</strong> I had Zoom interviews at places where I didn't get called for an on-site, and I know people who got on-sites at top schools but didn't get offers. Meanwhile, I got offers from almost everywhere I interviewed on-site. I really believe it's because I OVER-prepared—not just for the academic content, but mentally and physically.</p>
+
+        <p>Preparing means working on your slides, narrative, questions you care about, and your demeanor. I don't mean over-preparing by prepping separately for all your 1:1s—that would be impossible when you have like 10 each day! But there are ways to efficiently prepare for those.</p>
+
+        <h3 id="student-meetings">Student Meetings (What to Sus Out)</h3>
+
+        <p>Student meetings are gold mines of information. Students are often more candid than faculty about what life is really like. Here's what to pay attention to:</p>
+
+        <div class="highlight-box">
+            <strong>Things to Observe/Ask About:</strong>
+            <ol>
+                <li><strong>Are the students happy?</strong> This is huge. You can usually tell by their energy and how they talk about their work and advisors.</li>
+                <li><strong>Lab culture:</strong> How collaborative is the environment? Is it competitive or supportive?</li>
+                <li><strong>Advisor availability:</strong> How often do students meet with their advisors? Are advisors accessible?</li>
+                <li><strong>Funding situation:</strong> Are students worried about funding? Do they have to TA a lot?</li>
+                <li><strong>Work-life balance:</strong> Do students have lives outside the lab?</li>
+                <li><strong>Retention:</strong> Look at how many people have been there for years and are still happy—that's a good sign.</li>
+                <li><strong>Summer internships:</strong> Do students typically reach out for and get internships?</li>
+            </ol>
+        </div>
+
+        <p><strong>Good questions to ask students:</strong></p>
+        <ul>
+            <li>"What would you change about your PhD experience here?"</li>
+            <li>"What do you like best about this university?"</li>
+            <li>"How do you and your advisor work together?"</li>
+            <li>"What's the collaboration culture like between labs?"</li>
+        </ul>
+
+        <h3 id="questions-to-ask">Questions to Ask Them</h3>
+
+        <p>They will ask if you have questions for them. Here's my comprehensive list organized by category:</p>
+
+        <div class="question-box">
+            <h4>Research Questions</h4>
+            <ol>
+                <li>How do faculty members collaborate? Do you often apply for funding together?</li>
+                <li>Is co-advising students a common practice here?</li>
+                <li>Are there any plans or proposals for new research centers in the department/university?</li>
+                <li>What does the department care most about in the next few years? Does the department have a development plan for specific research directions?</li>
+                <li>What are you interested in these days? (People like to hear themselves talk!)</li>
+            </ol>
+        </div>
+
+        <div class="question-box">
+            <h4>Compute & Resources</h4>
+            <ul>
+                <li>What does compute access look like?</li>
+                <li>What compute sources do faculty typically use? (Note: there's always Google/OpenAI/AWS cloud compute proposals—10k here and there)</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h4>Mentoring & Teaching</h4>
+            <ul>
+                <li>Do you have any suggestions for identifying good students?</li>
+                <li>Do students typically reach out for summer internships?</li>
+                <li>What is the current TA-to-student ratio?</li>
+                <li>Are there any new courses the department is considering offering?</li>
+                <li>Do you have a faculty mentoring program?</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h4>Funding & Administrative</h4>
+            <ul>
+                <li>TA/RA funding for students—how does it work?</li>
+                <li>How far in advance must proposals be submitted to the pre-award office?</li>
+                <li>Can technical parts of proposals be revised after submission to the pre-award office?</li>
+                <li>What should I prepare for the administrative side of proposals?</li>
+                <li>Are there any writing groups for career proposals?</li>
+                <li>What funding sources do you or most faculty often apply to?</li>
+                <li>Funding for retreats? Organizing events? Other funding sources?</li>
+                <li>Ask about student indirect overhead</li>
+                <li>Ask about tenure process</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h4>Department & Growth</h4>
+            <ul>
+                <li>What are the plans for expanding the department? I care about upward trajectory.</li>
+                <li>How does the department support junior faculty in building their research groups and establishing collaborations? Grant writing support?</li>
+            </ul>
+        </div>
+
+        <div class="question-box">
+            <h4>Generic Questions That Work for Everyone</h4>
+            <ul>
+                <li>What do you like best about this university?</li>
+                <li>What are you excited about these days?</li>
+                <li>How do you integrate AI in your workflow?</li>
+                <li>How do you detach/waste time? What's your favorite non-work activity?</li>
+                <li>If you could go back to where I am, what would you change?</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="communication">
+        <h2>💬 Part 2: Communication & The Human Element</h2>
+
+        <h3 id="body-language">Body Language</h3>
+
+        <p>I highly recommend watching this video: <a href="https://www.youtube.com/watch?v=VHUrdELKjDw">"Body Language Expert: Stop Using This, It's Making People Dislike You, So Are These Subtle Mistakes!"</a></p>
+
+        <p>Body language matters so much more than we realize, especially in high-stakes situations where people are forming impressions of you quickly. The video covers common mistakes and how to come across as confident and likeable.</p>
+
+        <h3 id="being-genuine">Being Genuine</h3>
+
+        <p>Don't force connections or questions. Be genuine. Be yourself. Don't go out of your way to change who you are to impress people.</p>
+
+        <p>Here's a candid thing: I have piercings and tattoos. Before going on the market, people told me to try to be conservative. I took off some of my facial piercings but kept the eyebrow one. For clothes, people usually wear the quintessential blazer and pant suits. I wore ski pants and a base layer, all black, and I think it was fine! Sure, some people confused me with students or undergrads, and one grad student asked me why I wasn't wearing "the blazer"—but honestly, people are nicer than you think. Just be true to yourself!</p>
+
+        <h3 id="one-on-ones">1:1 Meetings</h3>
+
+        <p>This is where watching talks instead of just reading papers really pays off. You'll have so many 1:1s—sometimes 10+ in a day—and you can't deeply prep for each one. But if you've watched someone's talk, you already have a sense of what they care about, their communication style, and potential overlap with your work.</p>
+
+        <p>Break auto-pilot! Ask better questions than "how are you?" Try:</p>
+        <ul>
+            <li>"Did you do anything exciting this weekend?"</li>
+            <li>"Have anything exciting coming up? What excites you?"</li>
+            <li>"Tell me more!" (and actually listen—find commonalities, focus on shared interests)</li>
+        </ul>
+
+        <h3 id="connection-questions">Questions for Building Connection</h3>
+
+        <p>These work for 1:1s, dinners, and anywhere you want to get past small talk:</p>
+
+        <div class="question-box">
+            <h4>Everyday Icebreakers</h4>
+            <ol>
+                <li>"Did you do anything exciting this weekend?"</li>
+                <li>"Have anything exciting coming up?"</li>
+                <li>"How do you integrate AI into your workflow?"</li>
+                <li>"How do you detach from work? What's your favorite way to waste time?"</li>
+                <li>"What book, movie, or TV character do you relate to?"</li>
+            </ol>
+        </div>
+
+        <div class="question-box">
+            <h4>If You See People You Know from Before</h4>
+            <ol>
+                <li>"I was just thinking of you! How are you, how did that project go?" (Follow up on things they mentioned before)</li>
+                <li>Give positive labels: "You're always so [funny/insightful/great at X]"</li>
+                <li>"Last time we talked, you mentioned [something that lit them up]..."</li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="health">
+        <h2>🥗 Part 3: Health—Food, Exercise, and Sleep</h2>
+
+        <div class="disclaimer-box">
+            <strong>HEADS UP:</strong> What you see below is what worked <strong>for me</strong>. I found it through experimentation. I'm not saying do this and it will work for you—I'm saying start experimenting to know yourself and your body and find what works for you.
+        </div>
+
+        <p>Here's something no one says—in fact, people say the opposite. They tell you: "It's okay if you don't work out or have to have crappy airport fast food or protein bars, it's just a few months." And honestly, if that works for you, it really is fine. But given some of my health concerns mentioned at the opening, I felt like this could really damage my performance on the market.</p>
+
+        <p><strong>For me,</strong> the only thing that kept me sane was working out, and if I didn't have a good diet, I would have definitely gotten sick and weak. My brain would have been fried with all the travel. Maintaining good exercise and food routines isn't about being hard on yourself—it's about taking care of the instrument that's doing all the work.</p>
+
+        <h3 id="food">Food & Blood Sugar</h3>
+
+        <p>Blood sugar management changed everything for me. Here are my main strategies:</p>
+
+        <ol>
+            <li><strong>Savory breakfast over sugary breakfast.</strong> Especially on interview days. You do NOT want to crash during your job talk. Watch the <a href="https://www.youtube.com/watch?v=3esF-pNAM9c">Glucose Goddess: The 10 Glucose Hacks</a> video for the science behind this.</li>
+            <li><strong>Fiber first.</strong> If you eat fiber before carbs, it blunts the glucose spike. I always carried a baggie of raw carrots and broccoli.</li>
+            <li><strong>Protein snacks.</strong> 0% Chobani packs were my go-to. So much better than protein bars, which often have a lot of sugar.</li>
+            <li><strong>Walk after meals.</strong> Even 10–15 minutes helps your muscles absorb glucose.</li>
+            <li><strong>Calf raises when you can't walk.</strong> Stuck in a room? Bounce on your toes. Your calves are huge muscles that help regulate blood sugar.</li>
+            <li><strong>16 oz water before meals</strong> and in the morning.</li>
+        </ol>
+
+        <p><strong>Good protein sources:</strong> Eggs, tofu and tempeh, lentils and chickpeas, cottage cheese, Greek yogurt. My go-tos were Chobani and hard-boiled eggs. I always had hard-boiled eggs with me, haha.</p>
+
+        <h3 id="exercise">Exercise</h3>
+
+        <p>Get your steps in! I made my interviewers walk me everywhere. This had multiple benefits: steps, fresh air, seeing the campus, and casual conversation. I aimed for 10k steps daily by combining:</p>
+        <ul>
+            <li>Getting walked between meetings</li>
+            <li>Treadmill walks the night before while watching talks</li>
+            <li>Morning walks if time permitted</li>
+            <li>I used the <a href="https://www.downdogapp.com/">Down Dog app</a>, which is also very affordable for academics, and would do yoga, HIIT, and mat Pilates with it. Most hotels have gyms with yoga mats, so you can keep it up on the go based on your mood.</li>
+        </ul>
+
+        <h3 id="fasting">A Note on Intermittent Fasting (Especially for Women)</h3>
+
+        <p>I did intermittent fasting, and it really helped me stay sharp and avoid the mental fog that comes with constant eating and digestion. However, I need to be honest about something: <strong>for women, intermittent fasting increases cortisol</strong>, and if it's near your cycle, it can seriously mess with your hormones.</p>
+
+        <p>In all honesty, I lost my period for 12 full months—from my first job talk until recently. The combination of stress, travel, fasting, and general intensity took a toll. Your mileage may vary, but please be aware of this if you're a woman considering fasting during a high-stress period. Listen to your body.</p>
+
+        <h3 id="unwinding">Unwinding Between Interviews</h3>
+
+        <p>Between job talks, I honestly just wanted to be in a sensory deprivation chamber. Here's what actually helped:</p>
+
+        <ol>
+            <li><strong>Nature.</strong> Get outside, even briefly. It resets your nervous system.</li>
+            <li><strong>Minimize travel fatigue.</strong> I temporarily moved to DC because most of my job talks were on the East Coast. It was the best decision. Highly recommend relocating temporarily if it makes sense for your schedule.</li>
+            <li><strong>Connect with friends</strong>—especially non-academic, non-AI friends if you can. Disconnecting from the constant shop-talk can be incredibly restorative.</li>
+            <li><strong>Watch comfort shows.</strong> No shame. Sometimes you just need The Office or whatever your equivalent is.</li>
+            <li><strong>Physical activity.</strong> Even when exhausted, moving helps complete the stress cycle.</li>
+            <li><strong>Creative expression.</strong> Whatever form that takes for you—painting, drawing, dancing, reading, or writing.</li>
+            <li><strong>Meditation.</strong> <a href="https://www.headspace.com/">Headspace</a> really helped me. And here's <a href="https://open.spotify.com/album/07iv0tkKefJPUp9RFDOuNQ">my favorite album</a> that I would listen to on flights back. Now my brain is conditioned to chill when I hear it!</li>
+        </ol>
+    </section>
+
+    <section id="external-resources">
+        <h2>📎 External Resources</h2>
+
+        <div class="resources">
+            <h3>Application & Interview Guides</h3>
+            <ul>
+                <li><a href="https://yisongyue.medium.com/checklist-of-tips-for-computer-science-faculty-applications-9fd2480649cc">Yisong Yue: Tips for Computer Science Faculty Applications</a> — I found this one especially helpful!</li>
+                <li><a href="https://xb00dx.github.io/files/guo-faculty-job-search.pdf">Philip Guo: Faculty Job Search Guide (PDF)</a></li>
+                <li><a href="https://kamathematics.wordpress.com/2025/01/02/guest-post-advice-for-faculty-and-industry-interviews/">Gautam Kamath: Advice for Faculty and Industry Interviews</a></li>
+            </ul>
+
+            <h3>Health & Habits</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=3esF-pNAM9c">Glucose Goddess: The 10 Glucose Hacks</a> — Essential for understanding blood sugar management</li>
+                <li><a href="https://www.amazon.com/Tiny-Experiments-Freely-Goal-Obsessed-World/dp/0593715136">Tiny Experiments by Anne-Laure Le Cunff</a> — Great book on building habits through experimentation</li>
+                <li><a href="https://www.headspace.com/">Headspace</a> — Meditation app, very affordable for students/academics</li>
+                <li><a href="https://www.downdogapp.com/">Down Dog</a> — Yoga, HIIT, and Pilates app, also affordable for academics</li>
+            </ul>
+
+            <h3>Communication</h3>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=VHUrdELKjDw">Body Language Expert: Stop Using This, It's Making People Dislike You</a></li>
+            </ul>
+
+            <h3>Burnout & Stress</h3>
+            <ul>
+                <li><a href="https://open.spotify.com/episode/6L48OhNvYeIlv7Tir3yij0">How to Complete the Stress Cycle (Podcast)</a> — Feelings and emotions are like tunnels; you have to go through them</li>
+                <li><a href="https://open.spotify.com/episode/5z2KalK80m6dwqxumKUNli">Detect Burnout - Rangan Chatterjee</a></li>
+            </ul>
+
+            <h3>Music to Unwind</h3>
+            <ul>
+                <li><a href="https://open.spotify.com/album/07iv0tkKefJPUp9RFDOuNQ">New Light by Gidge</a> — My go-to album for relaxing after interviews</li>
+            </ul>
+        </div>
+
+        <p>There are also shared drives with materials from folks from other years floating around—if you're on the market, try to find these through your network. It's good to look at other people's materials, but don't read too many or you'll get too conditioned on a certain style. Find your own voice!</p>
+    </section>
+
+    <h2>Final Thoughts</h2>
+
+    <p>The job market is a marathon, not a sprint. Being confident goes a long way, and confidence comes from preparation.</p>
+
+    <p>Take care of yourself. The habits I built during the job market year are the healthiest habits I still keep today. Good luck out there. You've got this! 💪</p>
+
+</body>
+</html>

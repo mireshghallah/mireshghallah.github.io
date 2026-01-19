@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Niloofar Mireshghallah</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+:root{
+  --cmu-red:#1E3A5F;
+  --cmu-gold:#D4A84B;
+  --cmu-green:#1E3A5F;
+  --link-color:#D4A84B;
+  --cmu-gray-dark:#393939;
+  --cmu-gray-light:#E0E0E0;
+}
+
+.header-cmu{
+  background-color:var(--cmu-red);
+  color:var(--cmu-gold);
+  border-bottom:4px solid var(--cmu-gold);
+}
+
+#niloofar-mireshghallah{color:var(--cmu-gold);}
+body{color:var(--cmu-gray-dark); font-size:14px; line-height:1.6;}
+
+.content-width {
+    width: 92%;
+    max-width: 1120px;
+}
+.nav-link {
+    padding-right: 0.18rem;
+    transition: opacity 0.3s ease;
+    font-size: 0.85rem;
+}
+.nav-link:hover {
+    opacity: 0.8;
+}
+.nav-separator {
+    padding-right: 0.18rem;
+    color: rgba(212,168,75,.55);
+}
+
+.content-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.8rem;
+    border:1px solid var(--cmu-gray-light);
+}
+.content-box h2 {
+    border-bottom: 2px solid var(--cmu-green);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--cmu-green);
+    font-size: 1.8rem;
+}
+
+.blog-item {
+    border-left: 4px solid var(--cmu-green);
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+}
+.blog-item:last-child {
+    margin-bottom: 0;
+}
+.blog-date {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+.blog-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--cmu-green);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.blog-title:hover {
+    color: var(--link-color);
+}
+.blog-subtitle {
+    color: #4b5563;
+    font-size: 0.95rem;
+    margin-top: 0.35rem;
+    font-style: italic;
+}
+.back-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.back-link:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body class="bg-gray-100">
+  <header class="header-cmu py-4">
+    <div class="content-width mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-2" id="niloofar-mireshghallah">
+        <a href="../index.html" style="text-decoration:none; color:inherit;">Niloofar Mireshghallah</a>
+      </h1>
+
+      <nav class="text-xl font-bold flex flex-wrap justify-end">
+        <a href="https://scholar.google.com/citations?user=WUCu45YAAAAJ&hl=en&authuser=2" class="nav-link hover:underline">Google Scholar</a>
+        <span class="nav-separator">|</span>
+        <a href="../cv/niloofar_cv.pdf" class="nav-link hover:underline">CV</a>
+        <span class="nav-separator">|</span>
+        <a href="../bio.html" class="nav-link hover:underline">Bio</a>
+        <span class="nav-separator">|</span>
+        <a href="https://github.com/mireshghallah" class="nav-link hover:underline">GitHub</a>
+        <span class="nav-separator">|</span>
+        <a href="https://twitter.com/niloofar_mire?lang=en" class="nav-link hover:underline">Twitter</a>
+        <span class="nav-separator">|</span>
+        <a href="mailto:niloofar@cmu.edu" class="nav-link hover:underline">Email</a>
+        <span class="nav-separator">|</span>
+        <a href="../index.html#publications" class="nav-link hover:underline">Publications</a>
+        <span class="nav-separator">|</span>
+        <a href="../index.html#invited-talks" class="nav-link hover:underline">Invited Talks</a>
+        <span class="nav-separator">|</span>
+        <a href="../index.html#awards" class="nav-link hover:underline">Awards</a>
+        <span class="nav-separator">|</span>
+        <a href="./" class="nav-link hover:underline" style="text-decoration: underline;">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+    <main class="content-width mx-auto px-4 py-10">
+        <div class="content-box">
+            <h2>Writing</h2>
+            
+            <div class="blog-item">
+                <div class="blog-date">January 2025</div>
+                <a href="job_market_advice.html" class="blog-title">Surviving (and Thriving on) the Academic Job Market</a>
+                <p class="blog-subtitle">How the year I was on the job market became the year I built the healthiest habits I still keep today.</p>
+            </div>
+
+            <div class="blog-item">
+                <div class="blog-date">November 2024</div>
+                <a href="postdoc-advice.html" class="blog-title">Should I do a postdoc?</a>
+                <p class="blog-subtitle">What types of postdocs are out there, and advice on how to decide if a postdoc is right for you.</p>
+            </div>
+
+        </div>
+        
+        <div class="mt-6">
+            <a href="../index.html" class="back-link">← Back to main page</a>
+        </div>
+    </main>
+</body>
+</html>
