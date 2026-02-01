@@ -137,6 +137,129 @@ a.custom-text-color{color:var(--link-color);}
 .nav-separator{
   color:rgba(212,168,75,.55);         /* 55 % opacity of #D4A84B */
 }
+
+/* ----------  Research Themes Section  ---------- */
+.research-themes {
+  margin-top: 2rem;
+}
+
+.theme-block {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--cmu-gray-light);
+}
+
+.theme-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.theme-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.theme-label {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--cmu-red) 0%, #2a4a6f 100%);
+  color: #fff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.theme-description {
+  color: var(--cmu-gray-dark);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.theme-description p {
+  margin-bottom: 0.75rem;
+}
+
+.theme-papers {
+  margin: 1.25rem 0;
+}
+
+.theme-papers-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 0.6rem;
+}
+
+.theme-papers ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.theme-papers li {
+  margin: 0.5rem 0;
+  padding-left: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.theme-papers li a {
+  color: var(--cmu-green);
+  text-decoration: none;
+}
+
+.theme-papers li a:hover {
+  text-decoration: underline;
+  color: var(--link-color);
+}
+
+.theme-papers .venue {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.open-problems {
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: #fafafa;
+  border-left: 3px solid var(--cmu-gold);
+  border-radius: 0 4px 4px 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.open-problems strong {
+  color: var(--cmu-green);
+}
+
+/* Publication theme tags */
+.pub-theme-tags {
+  margin-top: 0.35rem;
+}
+
+.pub-theme-tag {
+  display: inline-block;
+  background: #f0f4f8;
+  color: var(--cmu-green);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-right: 0.4rem;
+}
+
+.pub-theme-tag.ci { background: #e8f4f8; color: #1a5f7a; }
+.pub-theme-tag.dp { background: #f0e8f4; color: #5a1a7a; }
+.pub-theme-tag.mem { background: #f4f0e8; color: #7a5a1a; }
+.pub-theme-tag.rl { background: #e8f4e8; color: #1a7a3a; }
+.pub-theme-tag.div { background: #f4e8f0; color: #7a1a5a; }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -159,6 +282,8 @@ a.custom-text-color{color:var(--link-color);}
         <a href="https://twitter.com/niloofar_mire?lang=en" class="nav-link hover:underline">Twitter</a>
         <span class="nav-separator">|</span>
         <a href="mailto:niloofar@cmu.edu" class="nav-link hover:underline">Email</a>
+        <span class="nav-separator">|</span>
+        <a href="#research-themes" class="nav-link hover:underline">Research</a>
         <span class="nav-separator">|</span>
         <a href="#publications" class="nav-link hover:underline">Publications</a>
         <span class="nav-separator">|</span>
@@ -190,7 +315,7 @@ a.custom-text-color{color:var(--link-color);}
                 <!-- research interests -->
                 <p class="mb-4 text-lg">
                   My research interests are
-                  <strong>privacy</strong>,
+                  <strong>privacy</strong> (particularly <strong>contextual integrity</strong> and information flow norms),
                   <strong>natural language processing</strong>,
                   <strong>AI for science</strong>,
                   <strong>LLM reasoning</strong>, and the
@@ -338,44 +463,168 @@ a.custom-text-color{color:var(--link-color);}
                 </div>
                 </section>
 
+                <!-- ========== RESEARCH THEMES ========== -->
+                <section class="mb-8 research-themes" id="research-themes">
+                  <h2 class="text-2xl font-bold mb-4 custom-text-color">Research Themes</h2>
+
+                  <!-- Contextual Integrity -->
+                  <div class="theme-block">
+                    <div class="theme-header">
+                      <span class="theme-label">Contextual Integrity and Privacy for LLMs</span>
+                    </div>
+                    <div class="theme-description">
+                      <p>Privacy cannot be reduced to a checklist of redaction rules. After working on differential privacy for text—where formal guarantees often fail to capture what people actually care about—I turned to contextual integrity as a framework for reasoning about information flow norms. Privacy violations aren't about data exposure per se, but about information crossing contextual boundaries in ways that breach social expectations.</p>
+                      <p>This framing is inherently outcome-driven and extends beyond any single person or moment: would sharing this medical record increase someone's insurance premium? Would exposure tracking during COVID save lives or enable surveillance? Would aggregating individually benign data points across time reveal something the user never intended to disclose? These are questions about downstream consequences for different people across different time horizons—you cannot determine appropriateness without reasoning about them.</p>
+                      <p>I think privacy for LLMs is fundamentally about figuring out data composition, decomposition, and abstraction. What pieces of information combine to reveal something sensitive? What level of granularity is appropriate for a given recipient and purpose? This requires theory of mind—understanding what different parties know, expect, and would be harmed by.</p>
+                      <p>In 2023, we released <strong>ConfAIde</strong>, the first benchmark testing whether LLMs respect contextual integrity norms (ICLR 2024 Spotlight). More recently, <strong>CIMemories</strong> (ICLR 2026) extends this to persistent memory systems, showing that violations compound over long-horizon interactions—jumping from 0.1% on single tasks to 25.1% with repeated sampling and aggregation.</p>
+                    </div>
+                    <div class="theme-papers">
+                      <p class="theme-papers-title">Selected Papers</p>
+                      <ul>
+                        <li><a href="https://arxiv.org/abs/2310.17884" class="hover:underline">Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory</a> <span class="venue">— ICLR 2024 (Spotlight)</span></li>
+                        <li><a href="https://arxiv.org/abs/2511.14937" class="hover:underline">CIMemories: A Compositional Benchmark for Contextual Integrity of Persistent Memory in LLMs</a> <span class="venue">— ICLR 2026</span></li>
+                        <li>PRIVASIS: Synthesizing the Largest "Public" Private Dataset from Scratch <span class="venue">— 2025</span></li>
+                        <li>Operationalizing Data Minimization for Privacy-Preserving LLM Prompting <span class="venue">— 2025</span></li>
+                      </ul>
+                    </div>
+                    <div class="open-problems">
+                      <strong>Open Problems:</strong> Multi-agent and multi-person scenarios where information flows between parties with conflicting norms. Multi-turn interactions where context accumulates. Long-horizon settings where individually benign disclosures aggregate into violations. Optimizing for the good of all parties, not just the user. <a href="privacy_is_not_just_memorization_mireshghallah_li_2025.pdf" class="custom-text-color hover:underline">[More in this write-up]</a>
+                    </div>
+                  </div>
+
+                  <!-- Differential Privacy for Language -->
+                  <div class="theme-block">
+                    <div class="theme-header">
+                      <span class="theme-label">Differential Privacy for Language</span>
+                    </div>
+                    <div class="theme-description">
+                      <p>Standard DP applied to text smooths distributional tails—destroying minority patterns, rare phrasings, and individual style. My work addresses this through structured latent modeling: operating in parse tree or semantic representation space rather than token space allows noise injection that preserves distributional structure while providing formal guarantees.</p>
+                    </div>
+                    <div class="theme-papers">
+                      <p class="theme-papers-title">Selected Papers</p>
+                      <ul>
+                        <li><a href="https://arxiv.org/abs/2212.10520" class="hover:underline">Privacy-Preserving Domain Adaptation of Semantic Parsers</a> <span class="venue">— ACL 2023</span></li>
+                        <li><a href="https://arxiv.org/abs/2212.10520" class="hover:underline">Privacy-preserving in-context learning with differentially private few-shot generation</a> <span class="venue">— ICLR 2024</span></li>
+                      </ul>
+                    </div>
+                    <div class="open-problems">
+                      <strong>Open Problems:</strong> Enabling privacy-preserving research on sensitive interaction data (e.g., mental health chatbot logs) through DP pattern extraction and synthetic generation—allowing safety researchers to study temporal usage patterns, escalation trajectories, and intervention opportunities without accessing raw conversations. Achieving user-level DP for conversational data without destroying personalization.
+                    </div>
+                  </div>
+
+                  <!-- Memorization & Membership Inference -->
+                  <div class="theme-block">
+                    <div class="theme-header">
+                      <span class="theme-label">Memorization &amp; Membership Inference</span>
+                    </div>
+                    <div class="theme-description">
+                      <p>I view memorization beyond privacy and copyright—as a window into learning dynamics. What gets encoded, when during training, how it interacts with pretraining data distribution, and what it tells us about generalization and contamination.</p>
+                      <p>The most important observation I have come to: model regurgitations are mainly a function of n-gram frequency, and there is no such thing as one-shot memorization. What appears to be single-shot recall typically involves templated texts, textual variants, or compositions of frequent patterns the model reconstructs without true memorization. Non-trivial repetition is required for extractable verbatim recall. Further, over 50% of memorized content can be attributed to general language modeling capabilities rather than sequence-specific weights—explaining why unlearning often fails without degrading overall model quality.</p>
+                    </div>
+                    <div class="theme-papers">
+                      <p class="theme-papers-title">Selected Papers</p>
+                      <ul>
+                        <li><a href="https://arxiv.org/abs/2305.18462" class="hover:underline">Membership Inference Attacks against Language Models via Neighbourhood Comparison</a> <span class="venue">— ACL 2023</span></li>
+                        <li><a href="https://arxiv.org/abs/2203.03929" class="hover:underline">Quantifying Privacy Risks of Masked Language Models Using Membership Inference Attacks</a> <span class="venue">— EMNLP 2022</span></li>
+                        <li><a href="https://arxiv.org/abs/2601.15394" class="hover:underline">Memorization Dynamics in Knowledge Distillation for Language Models</a> <span class="venue">— Preprint 2026</span></li>
+                      </ul>
+                    </div>
+                    <div class="open-problems">
+                      <strong>Open Problems:</strong> Predicting which specific sequences will be memorized before training completes. Understanding the memorization-capacity-competence triad: models are most "absorbent" around 10-20% into training despite having more unused capacity earlier, suggesting interplay between remaining capacity, linguistic competence, and data distribution dynamics. Connecting memorization patterns to contamination detection and unlearning.
+                    </div>
+                  </div>
+
+                  <!-- LLM Reasoning & RL Workflows -->
+                  <div class="theme-block">
+                    <div class="theme-header">
+                      <span class="theme-label">LLM Reasoning &amp; RL Workflows</span>
+                    </div>
+                    <div class="theme-description">
+                      <p>My work examines what RL actually changes in model behavior versus SFT and distillation—whether improvements are shallow (format, style) or deep (genuine reasoning, knowledge access), and how they transfer across tasks.</p>
+                      <p>We observe that RL'd models access hierarchical parametric knowledge more effectively than SFT models, and distilled models perform worst despite surface-level improvements. Distillation seems to capture format but loses the ability to correctly traverse knowledge structures. Training on synthetic graph traversal tasks improves unrelated retrieval benchmarks—the base model has the knowledge (structured prompting can surface it), but RL pushes the model toward that navigation strategy by default.</p>
+                      <p>A key question is whether RL is teaching depth of composition or breadth of search. One hypothesis: RL incentivizes testing more hypotheses (visible as backtracking in math/code, or as enumeration and recitation in fuzzier tasks). The "chaining" behavior—trying different paths—seems to help most when there's an asymmetry between generation and verification capabilities.</p>
+                    </div>
+                    <div class="theme-papers">
+                      <p class="theme-papers-title">Selected Papers</p>
+                      <ul>
+                        <li><a href="https://arxiv.org/abs/2511.05933" class="hover:underline">Reinforcement Learning Improves Traversal of Hierarchical Knowledge in LLMs</a> <span class="venue">— 2025</span></li>
+                        <li><a href="https://arxiv.org/abs/2510.09021" class="hover:underline">RefGrader: Automated Grading of Mathematical Competition Proofs using Agentic Workflows</a> <span class="venue">— NeurIPS 2025 Workshop</span></li>
+                      </ul>
+                    </div>
+                    <div class="open-problems">
+                      <strong>Open Problems:</strong> Does transfer depend on pretraining data overlap, or on structural similarity of the RL task? What is the relationship between base model diversity/coverage and downstream RL success—can diversity metrics predict which models will benefit from RL? How do distillation recipes (logit vs hard labels, on-policy vs off-policy) affect preservation of navigation capabilities? Can curriculum learning based on loss or uncertainty signals improve sample efficiency?
+                    </div>
+                  </div>
+
+                  <!-- Value Diversity & Pluralistic Alignment -->
+                  <div class="theme-block">
+                    <div class="theme-header">
+                      <span class="theme-label">Value Diversity &amp; Pluralistic Alignment</span>
+                    </div>
+                    <div class="theme-description">
+                      <p>Most alignment optimizes toward a single "correct" response—the mean of annotator preferences. But collapsing to the mean erases minority viewpoints, stylistic diversity, and legitimate disagreement. My work focuses on the distributional side: how model outputs relate to the full spectrum of human variation, not its center.</p>
+                      <p>A simple illustration: if you ask a model the probability of a coin landing heads, it knows it's fifty-fifty. But ask most models to simulate ten coin tosses, and you'll get heads eight times. Models learn facts about distributions without learning to materialize them. This connects directly to pretraining data frequency—models collapse toward high-frequency patterns, which is also why they lack creativity and reproduce training data. The distributional question cuts across alignment, copyright, and personalization.</p>
+                    </div>
+                    <div class="theme-papers">
+                      <p class="theme-papers-title">Selected Papers</p>
+                      <ul>
+                        <li><a href="https://arxiv.org/abs/2402.05070" class="hover:underline">A Roadmap to Pluralistic Alignment</a> <span class="venue">— ICML 2024</span></li>
+                        <li><a href="https://arxiv.org/abs/2510.06084" class="hover:underline">Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability</a> <span class="venue">— ICLR 2026</span></li>
+                        <li><a href="https://arxiv.org/abs/2410.04265" class="hover:underline">AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models</a> <span class="venue">— ICLR 2025 (Oral)</span></li>
+                      </ul>
+                    </div>
+                    <div class="open-problems">
+                      <strong>Open Problems:</strong> Training models to materialize distributional diversity rather than just memorizing distribution statistics. Probabilistic preference modeling that represents the spectrum rather than point estimates. Measuring diversity that matters for downstream capabilities (RL exploration, creativity) versus noise. Data scarcity for minority viewpoints and rare preferences.
+                    </div>
+                  </div>
+
+                </section>
+
                 <section class="mb-4" id="publications">
                     <h2 class="text-2xl font-bold mb-4 custom-text-color">Selected Publications</h2>
                     <h4>For the full list, please refer to my <a href="https://scholar.google.com/citations?user=WUCu45YAAAAJ&hl=en&authuser=2" class="custom-text-color hover:underline">Google Scholar</a> page.</h4>
                     <ul class="space-y-2">
-                      <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
-                        <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2505.00000" class="custom-text-color hover:underline">Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy, Research, and Practice</a></p>
+<li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
+                      <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2505.00000" class="custom-text-color hover:underline">Machine Unlearning Doesn't Do What You Think: Lessons for Generative AI Policy, Research, and Practice</a></p>
                         <p class="text-xs text-gray-600">NeurIPS 2025 <strong>(Oral Presentation)</strong></p>
                         <p class="text-sm italic">A. F. Cooper, ..., <strong>N. Mireshghallah</strong>, ..., K. Lee</p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2511.14937" class="custom-text-color hover:underline">CIMemories: A Compositional Benchmark for Contextual Integrity of Persistent Memory in LLMs</a></p>
-                        <p class="text-xs text-gray-600">2025 — <a href="https://huggingface.co/datasets/facebook/CIMemories" class="custom-text-color hover:underline">Dataset on HuggingFace</a></p>
+                        <p class="text-xs text-gray-600">ICLR 2026 — <a href="https://huggingface.co/datasets/facebook/CIMemories" class="custom-text-color hover:underline">Dataset on HuggingFace</a></p>
                         <p class="text-sm italic"><strong>N. Mireshghallah</strong>, et al.</p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag ci">Contextual Integrity</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2511.05933" class="custom-text-color hover:underline">Reinforcement Learning Improves Traversal of Hierarchical Knowledge in LLMs</a></p>
                         <p class="text-xs text-gray-600">2025</p>
                         <p class="text-sm italic">R. Zhang, M. Kaniselvan, <strong>N. Mireshghallah</strong></p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag rl">Reasoning & RL</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
-                        <p class="text-base font-semibold text-[#1D3A8A]">RefGrader: Automated Grading of Mathematical Competition Proofs using Agentic Workflows</p>
+                        <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2510.09021" class="custom-text-color hover:underline">RefGrader: Automated Grading of Mathematical Competition Proofs using Agentic Workflows</a></p>
                         <p class="text-xs text-gray-600">NeurIPS 2025 Workshop MATH-AI</p>
                         <p class="text-sm italic">H. Mahdavi, <strong>N. Mireshghallah</strong>, ..., V. Honavar</p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag rl">Reasoning & RL</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2312.12733" class="custom-text-color hover:underline">A False Sense of Privacy: Evaluating Textual Data Sanitization Beyond Surface-level Privacy Leakage</a></p>
                         <p class="text-xs text-gray-600">SaTML 2026</p>
                         <p class="text-sm italic">R. Xin<sup>*</sup>, <strong>N. Mireshghallah<sup>*</sup></strong>, S. S. Li, M. Duan, H. Kim, Y. Choi, Y. Tsvetkov, S. Oh, P. W. Koh</p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2410.04265" class="custom-text-color hover:underline">AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models via Systematic Attribution of Machine Text against Web Text</a></p>
                         <p class="text-xs text-gray-600">ICLR 2025 <strong>(Oral Presentation)</strong></p>
                         <p class="text-sm italic">X. Lu, M. Sclar, S. Hallinan, <strong>N. Mireshghallah</strong>, J. Liu, S. Han, A. Ettinger, L. Jiang, K. Chandu, N. Dziri, Y. Choi</p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag div">Value Diversity</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2505.00000" class="custom-text-color hover:underline">Strong Membership Inference Attacks on Massive Datasets and (Moderately) Large Language Models</a></p>
                         <p class="text-xs text-gray-600">NeurIPS 2025</p>
                         <p class="text-sm italic">J. Hayes, ..., <strong>N. Mireshghallah</strong>, ..., A. F. Cooper</p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2405.00000" class="custom-text-color hover:underline">HAICOSYSTEM: An Ecosystem for Sandboxing Safety Risks in Human–AI Interactions</a></p>
@@ -386,11 +635,13 @@ a.custom-text-color{color:var(--link-color);}
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2403.04801" class="custom-text-color hover:underline">Alpaca against Vicuna: Using LLMs to Uncover Memorization of LLMs</a></p>
                         <p class="text-xs text-gray-600">NAACL 2025</p>
                         <p class="text-sm italic">A. Kassem<sup>*</sup>, O. Mahmoud<sup>*</sup>, <strong>N. Mireshghallah<sup>*</sup></strong>, H. Kim, Y. Tsvetkov, Y. Choi, S. Saad, S. Rana</p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2410.17566" class="custom-text-color hover:underline">Differentially Private Learning Needs Better Model Initialization and Self-Distillation</a></p>
                         <p class="text-xs text-gray-600">NAACL 2025 <strong>(Oral Presentation)</strong></p>
                         <p class="text-sm italic">I. Ngong, J. Near, <strong>N. Mireshghallah</strong></p>
+                        <p class="pub-theme-tags"><span class="pub-theme-tag dp">Differential Privacy</span></p>
                         </li>
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2405.00000" class="custom-text-color hover:underline">Information-Guided Identification of Training Data Imprint in (Proprietary) Large Language Models</a></p>
@@ -406,36 +657,43 @@ a.custom-text-color{color:var(--link-color);}
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2407.07087" class="custom-text-color hover:underline">CopyBench: Measuring literal and non-literal reproduction of copyright-protected text in language model generation</a></p>
                             <p class="text-xs text-gray-600">EMNLP 2024</p>
                             <p class="text-sm italic">T. Chen, <strong>N. Mireshghallah</strong><sup>*</sup>, A. Asai<sup>*</sup>, S. Min, J. Grimmelmann, Y. Choi, H. Hajishirzi, L. Zettlemoyer, P. W. Koh</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2407.11438" class="custom-text-color hover:underline">Trust No Bot: Discovering Personal Disclosures in Human-LLM Conversations in the Wild</a></p>
                             <p class="text-xs text-gray-600">COLM 2024</p>
                             <p class="text-sm italic"><strong>N. Mireshghallah</strong><sup>*</sup>, M. Antoniak<sup>*</sup>, Y. More<sup>*</sup>, Y. Choi, G. Farnadi</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag ci">Contextual Integrity</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2402.07841" class="custom-text-color hover:underline">Do membership inference attacks work on large language models?</a></p>
                             <p class="text-xs text-gray-600">COLM 2024</p>
                             <p class="text-sm italic">M. Duan, A. Suri, <strong>N. Mireshghallah</strong>, S. Min, W. Shi, L. Zettlemoyer, Y. Tsvetkov, Y. Choi, D. Evans, H. Hajishirzi</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://www.researchgate.net/publication/382794407_Extended_Abstract_Machine_Unlearning_Doesn't_Do_What_You_Think" class="custom-text-color hover:underline">Machine Unlearning Doesn't Do What You Think</a></p>
                             <p class="text-xs text-gray-600">Extended Abstract at GenLaw 2024</p>
                             <p class="text-sm italic">K. Lee, A. F. Cooper, C. A. Choquette-Choo, K. Liu, M. Jagielski, <strong>N. Mireshghallah</strong>, L. Ahmed, J. Grimmelmann, D. Bau, C. De Sa, et al.</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2402.05070" class="custom-text-color hover:underline">A Roadmap to Pluralistic Alignment</a></p>
                             <p class="text-xs text-gray-600">ICML 2024</p>
                             <p class="text-sm italic">T. Sorensen, J. Moore, J. Fisher, M. Gordon, <strong>N. Mireshghallah</strong>, C. M. Rytting, A. Ye, L. Jiang, X. Lu, N. Dziri, T. Althoff, Y. Choi</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag div">Value Diversity</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2310.17884" class="custom-text-color hover:underline">Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory</a></p>
-                            <p class="text-xs text-gray-600">ICLR 2024</p>
+                            <p class="text-xs text-gray-600">ICLR 2024 <strong>(Spotlight)</strong></p>
                             <p class="text-sm italic"><strong>N. Mireshghallah</strong><sup>*</sup>, H. Kim<sup>*</sup>, X. Zhou, Y. Tsvetkov, M. Sap, R. Shokri, Y. Choi</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag ci">Contextual Integrity</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2212.10520" class="custom-text-color hover:underline">Privacy-preserving in-context learning with differentially private few-shot generation</a></p>
                             <p class="text-xs text-gray-600">ICLR 2024</p>
                             <p class="text-sm italic">X. Tang, R. Shin, H. A. Inan, A. Manoel, <strong>N. Mireshghallah</strong>,Z. Lin, S. Gopi, J. Kulkarni, R. Sim </p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag dp">Differential Privacy</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2305.09859" class="custom-text-color hover:underline">Smaller Language Models are Better Black-box Machine-Generated Text Detectors</a></p>
@@ -446,6 +704,7 @@ a.custom-text-color{color:var(--link-color);}
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2212.10520" class="custom-text-color hover:underline">Privacy-Preserving Domain Adaptation of Semantic Parsers</a></p>
                             <p class="text-xs text-gray-600">ACL 2023</p>
                             <p class="text-sm italic"><strong>N. Mireshghallah</strong>, R. Shin, Y. Su, T. Hashimoto, J. Eisner</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag dp">Differential Privacy</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2209.05706" class="custom-text-color hover:underline">Non-Parametric Temporal Adaptation for Social Media Topic Classification</a></p>
@@ -458,24 +717,28 @@ a.custom-text-color{color:var(--link-color);}
                             <p class="text-sm italic">J. Forristal, <strong>N. Mireshghallah</strong>, G. Durrett, T. Berg-Kirkpatrick</p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
-                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="#" class="custom-text-color hover:underline">Membership Inference Attacks against Language Models via Neighbourhood Comparison</a></p>
+                            <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2305.18462" class="custom-text-color hover:underline">Membership Inference Attacks against Language Models via Neighbourhood Comparison</a></p>
                             <p class="text-xs text-gray-600">ACL 2023</p>
                             <p class="text-sm italic">J. Mattern, <strong>N. Mireshghallah</strong>, Z. Jin, B. Scholkop, M. Sachan, T. Berg-Kirkpatrick</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2206.01838" class="custom-text-color hover:underline">Differentially Private Model Compression</a></p>
                             <p class="text-xs text-gray-600">NeurIPS 2022</p>
                             <p class="text-sm italic"><strong>N. Mireshghallah</strong>, A. Backurs, H. A. Inan, L. Wutschitz, J. Kulkarni</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag dp">Differential Privacy</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2205.12506" class="custom-text-color hover:underline">Memorization in NLP Fine-tuning Methods</a></p>
                             <p class="text-xs text-gray-600">EMNLP 2022</p>
                             <p class="text-sm italic"><strong>N. Mireshghallah</strong>, A. Uniyal, T. Wang, D. Evans, T. Berg-Kirkpatrick</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/pdf/2203.03929" class="custom-text-color hover:underline">Quantifying Privacy Risks of Masked Language Models Using Membership Inference Attacks</a></p>
                             <p class="text-xs text-gray-600">EMNLP 2022</p>
                             <p class="text-sm italic"><strong>N. Mireshghallah</strong>, K. Goyal, A. Uniyal, T. Berg-Kirkpatrick, R. Shokri</p>
+                            <p class="pub-theme-tags"><span class="pub-theme-tag mem">Memorization</span></p>
                         </li>
                         <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                             <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://arxiv.org/abs/2110.00135" class="custom-text-color hover:underline">UserIdentifier: Implicit User Representations for Simple and Effective Personalized Sentiment Analysis</a></p>
