@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A Tiny Experiment on Treating the Root, Not the Symptoms of PCOS</title>
+<!-- Frontmatter tags: blog, ozempic, glp1, anxiety, obsessions, self-compassion, cortisol, sleep, food-noise, placebo, pcos, pmos, amenorrhea, autoimmune -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #fbf7f0;
+    --paper-edge: #f3ece0;
+    --accent: #b54a2c;
+    --accent-soft: #d97757;
+    --rule: #cdb89a;
+    --muted: #6b5e4f;
+    --highlight: #fff3c4;
+    --quote-bg: #efe6d4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 46px);
+    line-height: 1.15;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin: 0 0 36px;
+    font-weight: 400;
+  }
+
+  .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .byline strong { color: var(--ink); font-weight: 500; }
+
+  .disclaimer {
+    background: var(--paper-edge);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin: 28px 0;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .disclaimer.warning {
+    background: #fbeede;
+    border-left-color: #b54a2c;
+  }
+
+  .disclaimer .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .tldr {
+    background: var(--quote-bg);
+    padding: 28px 32px;
+    margin: 40px 0;
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .tldr h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    color: var(--accent);
+  }
+
+  .tldr p { margin: 0 0 12px; font-size: 17px; }
+  .tldr p:last-child { margin-bottom: 0; }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.25;
+    margin: 56px 0 16px;
+    letter-spacing: -0.01em;
+  }
+
+  h2 .num {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 21px;
+    margin: 36px 0 12px;
+  }
+
+  p { margin: 0 0 18px; }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(181, 74, 44, 0.4);
+    transition: text-decoration-color 0.2s;
+  }
+
+  a:hover { text-decoration-color: var(--accent); }
+
+  em { font-style: italic; }
+  strong { font-weight: 600; }
+
+  blockquote {
+    margin: 28px 0;
+    padding: 4px 0 4px 24px;
+    border-left: 3px solid var(--rule);
+    font-style: italic;
+    color: var(--muted);
+    font-size: 19px;
+    line-height: 1.55;
+  }
+
+  ul, ol {
+    margin: 0 0 20px;
+    padding-left: 24px;
+  }
+
+  li { margin-bottom: 8px; }
+
+  .divider {
+    text-align: center;
+    margin: 48px 0;
+    color: var(--rule);
+    letter-spacing: 1em;
+    font-size: 14px;
+  }
+
+  figure {
+    margin: 32px -20px;
+    padding: 0;
+  }
+
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+
+  .food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 32px -20px;
+  }
+
+  .food-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 2px;
+    display: block;
+  }
+
+  figcaption {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 12px;
+    padding: 0 24px;
+    font-style: italic;
+  }
+
+  mark {
+    background: linear-gradient(180deg, transparent 60%, var(--highlight) 60%);
+    padding: 0 2px;
+    color: var(--ink);
+  }
+
+  .toc {
+    background: transparent;
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin: 40px 0;
+    border-radius: 2px;
+  }
+
+  .toc h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .toc ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    counter-reset: toc;
+  }
+
+  .toc li {
+    counter-increment: toc;
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  .toc li::before {
+    content: "§" counter(toc) ".";
+    color: var(--accent);
+    font-style: italic;
+    margin-right: 8px;
+    font-family: 'Fraunces', serif;
+  }
+
+  .toc a {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .toc a:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .closing {
+    margin-top: 48px;
+    padding: 32px;
+    background: var(--paper-edge);
+    text-align: center;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .closing .heart {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 18px 64px; }
+    body { font-size: 17px; }
+    h2 { font-size: 24px; margin-top: 44px; }
+    h3 { font-size: 19px; }
+    figure { margin: 28px -8px; }
+    .food-grid { margin: 28px -8px; gap: 8px; }
+    .food-grid img { height: 180px; }
+    .tldr, .disclaimer { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">Health · n=1 · Personal</div>
+
+  <h1>A Tiny Experiment on Treating PCOS <em>Through Metabolism</em>, Not Hormones</h1>
+
+  <p class="subtitle">A year of notes on metabolism, hormones, food noise, and five months on a low-dose GLP-1 — written for the women who've been told the only fix is more hormones.</p>
+
+  <p class="byline">By <a href="https://mireshghallah.github.io/"><strong>Niloofar Mireshghallah</strong></a> (with some help from Claude on cleanup, as usual) · May 2026</p>
+
+  <div class="disclaimer warning">
+    <span class="label">⚠️ Heads up</span>
+    This post is <strong>not</strong> me saying GLP-1s are a miracle. I'm not paid for this, I have no affiliation with any drug company, and I genuinely don't write stuff like this. The only reason I'm posting it is that I've spent 5+ years dealing with PCOS, ~1.5 years without a real period, and the medical default has been "pump the woman full of hormones to mask the symptoms" without anyone trying to address the metabolic engine underneath. So this is a write-up of <strong>one n=1 experiment I ran on my own life</strong>, with my doctors monitoring me. Your body is not my body. Please talk to your providers.
+  </div>
+
+  <div class="disclaimer">
+    <span class="label">A note on what's here</span>
+    This gets personal — I talk about my body, my cycle, mental health, and a near-death illness. It's also part voice-dumped, part written, part Claude-assisted cleanup of notes I've kept for over a year. If that's not your thing, totally fair; close the tab. If it is — pull up a chair. ☕
+  </div>
+
+  <div class="tldr">
+    <h2>TL;DR</h2>
+    <p>The angle of this post is <em>not</em> weight loss. The weight piece is the loudest part of the GLP-1 conversation and also, for me, the least interesting one.</p>
+    <p>What I was actually testing: whether hitting the metabolic side of PCOS (insulin resistance, food noise) could move the hormonal side — instead of the usual default of pumping women full of exogenous hormones to mask symptoms. I started a low dose of semaglutide in February 2026, after years of trying everything else.</p>
+    <p>End of April 2026, I got a real period — non-medical, non-hormone-induced — for the first time in about 1.5 years. No side effects from the GLP-1. That's the headline.</p>
+  </div>
+
+  <nav class="toc">
+    <h2>Where this goes</h2>
+    <ol>
+      <li><a href="#context">The setup: Guillain-Barré, gut microbiome, and the year I lost my period</a></li>
+      <li><a href="#research">Why I started reading about metabolism instead of hormones</a></li>
+      <li><a href="#experiment">The actual experiment: low-dose, weekly</a></li>
+      <li><a href="#friends">My friends started noticing I was calmer</a></li>
+      <li><a href="#period">The period coming back</a></li>
+      <li><a href="#caveats">Don't just GO on peptides: the protein, the lifting, the doctors</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="context"><span class="num">§1</span>The setup: Guillain-Barré, gut microbiome, and the year I lost my period</h2>
+
+  <p>Some of you know this part already, but for new readers, the short version:</p>
+
+  <p>In December 2022, I was hospitalized with <a href="https://www.ninds.nih.gov/health-information/disorders/guillain-barre-syndrome" target="_blank" rel="noopener">Guillain-Barré syndrome</a>, an extremely rare autoimmune disorder where your immune system attacks your peripheral nerves. I was paralyzed for almost a month, on a ventilator, and frankly nearly died. I've written about it elsewhere, but the part that's relevant <em>here</em> is what happened to my body <strong>after</strong>.</p>
+
+  <p>Because I couldn't eat during hospitalization (internal paralysis + ventilation), and because re-learning to eat took weeks after discharge, my relationship with food got really strange. I lost a chunk of my gut microbiome. My hunger and fullness cues basically disappeared. For months I either forgot to eat or ate the wrong thing and felt awful.</p>
+
+  <p>I clawed back as much of my gut as I could the boring way: macrodosing on 20–50 different vegetables and legumes and slowly reintroducing variety. (Separate post.) But the metabolic and hormonal damage went deeper. I have severe insulin resistance from PCOS (which, FYI, was just officially renamed to PMOS — polyendocrine metabolic ovarian syndrome — to better reflect that it's a multisystem metabolic condition, not an ovary-cyst thing. I'm going to keep using PCOS in this post because that's still what most people search for).</p>
+
+  <p>Fast forward to <strong>2024</strong>. I was going on the academic job market. Stress was extreme. In December 2024, my period stopped. PCOS symptoms got worse. The only way I survived that year was through a very strict diet and exercise regime (which I wrote about in my academic job market post — the food/exercise sections are basically the prequel to this one).</p>
+
+  <p>Job market ended. May 2025 came. <strong>Still no period.</strong></p>
+
+  <p>And on top of that, my biggest day-to-day struggle wasn't weight — it was <strong>food noise</strong>. Because of insulin resistance, figuring out <em>when</em> to eat, <em>what</em> to eat, and <em>how much</em>, was a genuinely hard cognitive task. I'd either undereat (and crash) or overeat (and crash differently). Life was loud.</p>
+
+  <p>I had tried, in good faith and for long stretches:</p>
+  <ul>
+    <li>Multiple flavors of intermittent fasting</li>
+    <li>36-hour reset fasts</li>
+    <li>Keto</li>
+    <li>Low-carb</li>
+    <li>Very-high-protein</li>
+    <li>Wearing a CGM for months and analyzing my own glucose curves (I'd get a spike from <em>broccoli</em>, which is, frankly, rude)</li>
+    <li>Every trick from <a href="https://www.youtube.com/watch?v=zM5_6js19eM" target="_blank" rel="noopener">the Glucose Goddess</a> — vinegar water, savory breakfast, fiber-first, walking after meals, the whole catalogue. All of it good. None of it <em>enough</em>.</li>
+  </ul>
+
+  <p>By <strong>November 2025</strong>, still no period, my doctors were genuinely worried. Going that long without bleeding creates real ovarian and endometrial cancer risk. So they put me on a <em>very</em> high dose of exogenous hormones to medically induce a bleed. In December, I got a forced period. After a full year.</p>
+
+  <p>The hormones, though? Catastrophic side effects for me. Depression. Mood swings. Nausea. Extreme swelling. It was awful — and crucially, <em>it didn't fix anything underneath</em>. The hormones cover symptoms. The food noise was still there. The insulin resistance was still there.</p>
+
+  <p>In January 2026, with everything going on, I made the call: I can't keep doing this. I came off the hormones. Predictably, the period vanished again.</p>
+
+  <h2 id="research"><span class="num">§2</span>Why I started reading about metabolism instead of hormones</h2>
+
+  <p>One of the things I love most — and I think I've mentioned this before — is the framing in <a href="https://nesslabs.com/tiny-experiments-book" target="_blank" rel="noopener"><em>Tiny Experiments</em> by Anne-Laure Le Cunff</a>. Treat your life as a series of experiments. Try, observe, adjust, repeat. The Guillain-Barré experience cracked me wide open on this point: I no longer trust that "the standard treatment" is the right treatment for <em>me</em> just because it's standard.</p>
+
+  <p>Surviving Guillain-Barré also turned me into a low-key autoimmune-disease nerd. I started reading <a href="https://www.amazon.com/When-Body-Says-Understanding-Stress-Disease/dp/1630262560" target="_blank" rel="noopener">Gabor Maté's <em>When the Body Says No</em></a>, which makes the case — well-supported in the psychoneuroimmunology literature — that chronic stress is deeply tangled up in autoimmune onset. <a href="https://www.bessellvanderkolk.com/the-body-keeps-the-score" target="_blank" rel="noopener">Bessel van der Kolk's <em>The Body Keeps the Score</em></a> is the other obvious one.</p>
+
+  <p>So I went deep on the PCOS literature, and here's the thing nobody seemed to want to commit to:</p>
+
+  <blockquote>Is it the hormonal imbalance that drives the insulin resistance? Or is it the insulin resistance that drives the hormonal imbalance? Most papers and most doctors say "both, it's a loop," and then proceed to treat <em>only</em> the hormonal side.</blockquote>
+
+  <p>The default treatment pipeline is: birth control + spironolactone + metformin, maybe, and hope the metabolism sorts itself out. Almost nobody hits the metabolism first and bets on the hormones following.</p>
+
+  <p>So I formulated a hypothesis: <em>If I fix the metabolism, maybe the hormones get pulled back into shape. And if not — at minimum, the food noise goes down, which alone would be life-changing.</em></p>
+
+  <p>After a lot of reading, I decided to run the experiment. Smallest available dose of a GLP-1 receptor agonist (semaglutide). Under medical supervision. Starting February 2026.</p>
+
+  <p>There's now a meaningful literature on GLP-1s for PCOS specifically — not just for weight loss in PCOS patients, but for the syndrome itself. A <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10531549/" target="_blank" rel="noopener">2023 study in the <em>Journal of Clinical Medicine</em></a> followed obese PCOS patients on 0.5 mg weekly semaglutide and found that <strong>80% of responders normalized their menstrual cycles</strong>. A <a href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2024.1366940/full" target="_blank" rel="noopener">two-year follow-up in <em>Frontiers in Endocrinology</em></a> showed free testosterone dropped significantly during treatment <em>and didn't bounce back</em> after stopping.</p>
+
+  <p>One thing worth flagging: most studies frame semaglutide for PCOS through the lens of weight loss and androgen reduction. There's solid evidence on <a href="https://www.fellahealth.com/guide/does-semaglutide-lower-testosterone" target="_blank" rel="noopener">how it affects testosterone in women</a> and reduces androgen-driven symptoms. But specifically on <em>cycle restoration as a primary endpoint</em>, especially in non-obese or normal-weight PCOS women, there's less than you'd expect. So I was running my own experiment partly because the science hadn't quite caught up to my exact question.</p>
+
+  <h2 id="experiment"><span class="num">§3</span>The actual experiment: low-dose, weekly</h2>
+
+  <p>Two design choices I want to flag, because they were deliberate:</p>
+
+  <p><strong>1. Weekly injection, not daily pill.</strong> I picked the injection form (subcutaneous, once a week) specifically <em>to eliminate the placebo channel</em>. With a daily pill, you take it, you feel it kick in, you attribute the morning to the dose. With a weekly shot, I genuinely forget I'm on anything. There's no daily ritual, no daily cue. I'll go four or five days without thinking about it once.</p>
+
+  <p><strong>2. I didn't tell my close friends.</strong> Same reason. If they knew, every "you seem different" would be filtered through the prior. I wanted clean observation from the outside. (Sorry, friends.)</p>
+
+  <p>Side effects after five months on my dose: zero. Genuinely none. No nausea, no GI stuff, no fatigue, nothing. So it's extremely easy to forget I'm on it, which works in favor of the no-placebo design but works against me when I'm trying to remember to inject on time.</p>
+
+  <p>The first month, what I noticed — and I want to be careful here because I was actively trying <em>not</em> to look for changes — was a sort of clearing. Brain fog lifting. Mood more stable. Better sleep. Anxiety quieter. I logged it. I assumed placebo, because of course I did.</p>
+
+  <p>And then the end of February happened.</p>
+
+  <h2 id="friends"><span class="num">§4</span>My friends started noticing I was calmer</h2>
+
+  <p>End of February 2026, I went to stay with some of my closest friends. I'd stayed with these same friends back in June, during a really hard stretch for me, and again in November when I was on the high-dose hormones and felt like garbage.</p>
+
+  <p>This visit, on the last day, they were driving me to the airport. And — this is the part I keep telling people — they kind of hesitantly, sweetly turned to me and said something like:</p>
+
+  <blockquote>"Hey, we want to ask you something. Are you okay? Because you seem really composed, and we're happy if you're really happy, but — you seem different. You seem… clearer. Back in June and November, you used to doze off mid-sentence, or your eyes would glaze over and you weren't really there. This trip you've been so present. Are you taking something? Are you on medication?"</blockquote>
+
+  <p>And I genuinely was like, "What are you talking about?" — and then a second later remembered, <em>oh right, I'm on semaglutide.</em></p>
+
+  <p>That was the moment the placebo defense collapsed. <mark>The outside view caught the change before I did.</mark> They had no priors. They weren't looking for it. They told me unprompted that I was different, and they specifically named clarity, presence, and being able to finish a sentence — not weight, not appetite, not any of the things people associate with this drug.</p>
+
+  <p>That's when I started writing this post in my head.</p>
+
+  <h2 id="period"><span class="num">§5</span>The period coming back</h2>
+
+  <p>End of April 2026, after about five months on the low dose, I got a real period — non-medical, non-hormone-induced, on its own. No side effects. First one in roughly 1.5 years, and the reason I'm bothering to write this post.</p>
+
+  <p>Caveat as always: five months is short, one cycle is one cycle, and I want to see how it goes through the rest of the year. My doctors are monitoring with regular labs. But this is the first intervention I've tried (and I have tried a lot) where hitting the metabolic side actually moved the reproductive side, which is what I had hypothesized and what the GLP-1 / PCOS literature roughly predicts.</p>
+
+  <p>The bigger point: the medical default for PCOS women without a period is to medically induce a cycle with exogenous hormones, which a) feels terrible, b) doesn't fix the underlying issue, and c) tells your body nothing about how to do it on its own. The alternative — hitting the metabolic root and trusting the system to repair itself from there — exists, and is increasingly well-studied, and is barely talked about in standard care. If your doctor is offering you the third round of hormones to mask amenorrhea and nobody has even mentioned the metabolic angle, you are allowed to ask about it.</p>
+
+  <h2 id="caveats"><span class="num">§6</span>Don't just GO on peptides: the protein, the lifting, the doctors</h2>
+
+  <p>Okay, important caveats. If you take nothing else from this post, take these:</p>
+
+  <p><strong>1. Talk to your doctors. Get monitored.</strong> Don't order this off the internet. The dose matters. The supervision matters. I have regular labs (thyroid, glucose, insulin, full hormone panel, kidney/liver function, lipids). My provider knows what I'm doing. If something went sideways, we'd catch it.</p>
+
+  <p><strong>2. You MUST lift weights — and dial down the cardio.</strong> This is a shift from where I was on the job market, where I was doing a lot of HIIT and yoga and walking-everywhere cardio. On a GLP-1, that mix stopped working for me. GLP-1s can cause loss of lean mass alongside fat mass if you're not actively defending muscle, and excess cardio on top of a lower-calorie intake just accelerates the muscle loss <em>and</em> keeps cortisol elevated, which is the opposite of what I'm trying to do. So I traded most of the HIIT for <strong>heavy lifting, 3–4x a week, with progressive overload</strong>. I still walk a lot (steps remain non-negotiable) but I don't smash myself with cardio anymore. The horror stories you read about GLP-1s — sarcopenia, weakness, gaunt faces — are largely about people who lost weight without resistance training. Don't be that data point.</p>
+
+  <p><strong>3. You MUST eat enough protein.</strong> The rule of thumb I follow, which is roughly the consensus for people on GLP-1s: <strong>~0.7g of protein per pound of body weight per day</strong>, distributed across meals at around 30g per meal. For me that's somewhere around 100–110g a day, sometimes more on training days. Your appetite is going to be lower; the protein has to be intentional, not opportunistic.</p>
+
+  <p>My favorite high-protein staples (the ones I genuinely <em>like</em>, not just tolerate):</p>
+  <ul>
+    <li><strong>Greek yogurt</strong> (Chobani 0% is my ride-or-die — ~17g protein per pot)</li>
+    <li><strong>Cottage cheese</strong> (the protein-per-dollar GOAT, ~25g per cup)</li>
+    <li><strong>Egg whites</strong> (carton egg whites are a cheat code — I make Asian-style egg-white soups with scallion, ginger, sesame oil)</li>
+    <li><strong>White fish</strong> (cod, halibut, tilapia — high protein, low fat, easy to digest on GLP-1)</li>
+    <li><strong>Tofu and tempeh</strong> (especially as I'm trying to keep gut microbiome variety up)</li>
+    <li><strong>Hard-boiled eggs</strong> (I always have a stash; same as in the job market post)</li>
+  </ul>
+
+  <p>And — somewhat to my own surprise — I've become a <em>high-protein dessert / breakfast</em> person. Cottage cheese + protein powder + a little sweetener + bake = a genuinely-good <em>cheesecake</em> situation that hits ~30g of protein per slice. Same base, blended differently, makes incredible pancakes. I'll do a separate post on this with actual recipes, but in the meantime <a href="https://www.flippinghealthy.com/protein-cheesecake/" target="_blank" rel="noopener">this protein cheesecake template</a> is a great starting point. Some recent ones from my kitchen:</p>
+
+  <div class="food-grid">
+    <img src="images/protein-cake.png" alt="Air-fryer protein cake with chocolate chunks">
+    <img src="images/protein-pancakes.png" alt="Protein pancakes topped with Greek yogurt and berries">
+    <img src="images/protein-bowl-berries.png" alt="Cottage cheese bowl with mixed berries and pistachios">
+    <img src="images/protein-pistachio-bowl.png" alt="Pistachio-protein mousse with strawberries">
+  </div>
+
+  <p><strong>4. The dose matters and "more" is not better.</strong> I'm on the smallest available dose and have been the entire time. I have zero plans to titrate up. The clinical literature on PCOS uses 0.5 mg weekly with strong results; the marketing pressure to climb to 1.0, 1.7, 2.4 is mostly about weight-loss endpoints, which is <em>not</em> the endpoint I'm optimizing for. Find your minimum effective dose with your provider, then stay there.</p>
+
+  <p><strong>5. This may not work for you.</strong> The PCOS literature shows ~71–80% of responders normalize cycles, but that's <em>among responders</em>. About 20–30% don't respond. There are people for whom GLP-1s do nothing, or cause intolerable side effects, or don't move the cycle. n=1 is n=1.</p>
+
+  <div class="divider">· · ·</div>
+
+  <h2>Closing thoughts</h2>
+
+  <p>The reason I wrote this is not because I want anyone to do what I did. When I was researching this last fall, I could not find a single first-person account from a PCOS woman that talked about the experience beyond weight loss. The frame everywhere was "Ozempic for weight," "Ozempic for diabetes," "Ozempic for cravings." The frame for women like me — insulin-resistant, amenorrheic, exhausted, obsessive, tired of being told that more hormones would fix it — basically didn't exist. So this is mine, with all its caveats.</p>
+
+  <p>If you've been through something like this — please write me. I learn the most from other people's n=1s, and the whole reason I'm posting mine is so it can be part of someone else's data set.</p>
+
+  <div class="closing">
+    Take care of yourself. Be your own advocate.<br>
+    Ask the questions your doctors aren't asking. <span class="heart">💛</span>
+  </div>
+
+</div>
+</body>
+</html>
