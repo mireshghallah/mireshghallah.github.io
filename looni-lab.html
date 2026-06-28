@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looni Lab · Niloofar Mireshghallah (CMU)</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+/* ----------  Color scheme: Navy & Warm Amber  ---------- */
+:root{
+  --cmu-red:#1E3A5F;
+  --cmu-gold:#D4A84B;
+  --cmu-green:#1E3A5F;
+  --link-color:#D4A84B;
+  --cmu-gray-dark:#393939;
+  --cmu-gray-light:#E0E0E0;
+}
+
+.header-cmu{
+  background-color:var(--cmu-red);
+  color:var(--cmu-gold);
+  border-bottom:4px solid var(--cmu-gold);
+}
+
+#looni-lab{color:var(--cmu-gold);}
+
+body{color:var(--cmu-gray-dark); font-size:14px; line-height:1.6;}
+
+.content-width{ width:92%; max-width:1120px; }
+
+.nav-link{ padding-right:0.18rem; transition:opacity 0.3s ease; font-size:0.85rem; }
+.nav-link:hover{ opacity:0.8; }
+.nav-separator{ padding-right:0.18rem; color:rgba(212,168,75,.55); }
+
+h1{ font-size:2.2rem; }
+h2{ font-size:1.8rem; margin-top:1.8rem; }
+h3{ font-size:1.4rem; margin-top:1.4rem; }
+
+.content-box{
+  background-color:white;
+  border-radius:8px;
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+  padding:1.8rem;
+  border:1px solid var(--cmu-gray-light);
+}
+.content-box h2{
+  border-bottom:2px solid var(--cmu-green);
+  padding-bottom:0.5rem;
+  margin-bottom:1rem;
+}
+
+.custom-text-color{ color:var(--link-color); }
+h2.custom-text-color, h3.custom-text-color, h4.custom-text-color{ color:var(--cmu-green) !important; }
+a.custom-text-color{ color:var(--link-color); }
+.link-hover:hover{ text-decoration:underline; }
+
+/* ----------  Members  ---------- */
+.member-list{ list-style:disc; padding-left:1.25rem; margin:0.5rem 0; }
+.member-list li{ margin:0.3rem 0; font-size:0.95rem; }
+.member-list a{ color:var(--cmu-green); text-decoration:none; font-weight:600; }
+.member-list a:hover{ color:var(--link-color); text-decoration:underline; }
+.member-list .note{ color:#666; font-weight:400; }
+.member-list .note a{ color:var(--cmu-green); font-weight:400; }
+
+/* ----------  Research Themes  ---------- */
+.research-themes{ margin-top:1rem; }
+.theme-block{
+  margin-bottom:2rem;
+  padding-bottom:1.5rem;
+  border-bottom:1px solid var(--cmu-gray-light);
+}
+.theme-block:last-child{ border-bottom:none; margin-bottom:0; }
+.theme-header{ display:flex; align-items:center; margin-bottom:0.9rem; }
+.theme-label{
+  display:inline-block;
+  background:linear-gradient(135deg, var(--cmu-red) 0%, #2a4a6f 100%);
+  color:#fff;
+  padding:0.4rem 0.9rem;
+  border-radius:4px;
+  font-size:0.85rem;
+  font-weight:600;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+}
+.theme-description{ color:var(--cmu-gray-dark); line-height:1.7; margin-bottom:0.9rem; }
+.theme-papers{ margin:1rem 0; }
+.theme-papers-title{
+  font-size:0.8rem;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#666;
+  margin-bottom:0.5rem;
+}
+.theme-papers ul{ list-style:none; padding:0; margin:0; }
+.theme-papers li{ margin:0.45rem 0; padding-left:0; font-size:0.92rem; line-height:1.5; }
+.theme-papers li a{ color:var(--cmu-green); text-decoration:none; }
+.theme-papers li a:hover{ text-decoration:underline; color:var(--link-color); }
+.theme-papers .venue{ color:#888; font-size:0.85rem; }
+.open-problems{
+  margin-top:0.9rem;
+  padding:0.8rem 1.1rem;
+  background:#fafafa;
+  border-left:3px solid var(--cmu-gold);
+  border-radius:0 4px 4px 0;
+  font-size:0.9rem;
+  line-height:1.55;
+  color:#555;
+}
+.open-problems strong{ color:var(--cmu-green); }
+    </style>
+</head>
+<body class="bg-gray-100">
+  <header class="header-cmu py-4">
+    <div class="content-width mx-auto px-4">
+      <h1 class="text-4xl font-bold mb-2" id="looni-lab">
+        Looni Lab
+      </h1>
+      <p class="text-sm" style="color:rgba(255,255,255,0.85); margin-bottom:0.5rem;">Carnegie Mellon University · Privacy, AI for Science, and the Societal Implications of ML</p>
+
+      <nav class="text-xl font-bold flex flex-wrap justify-end">
+        <a href="index.html" class="nav-link hover:underline">Home</a>
+        <span class="nav-separator">|</span>
+        <a href="#members" class="nav-link hover:underline">Members</a>
+        <span class="nav-separator">|</span>
+        <a href="#collaborators" class="nav-link hover:underline">Collaborators</a>
+        <span class="nav-separator">|</span>
+        <a href="#research-themes" class="nav-link hover:underline">Research</a>
+        <span class="nav-separator">|</span>
+        <a href="#sponsors" class="nav-link hover:underline">Sponsors</a>
+        <span class="nav-separator">|</span>
+        <a href="mailto:niloofar@cmu.edu" class="nav-link hover:underline">Email</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-width mx-auto px-4 py-10">
+    <div class="content-box">
+
+      <!-- ========== MEMBERS ========== -->
+      <section class="mb-8" id="members">
+        <h2 class="text-2xl font-bold mb-4 custom-text-color">Members</h2>
+        <ul class="member-list">
+          <li>Bill Watson <span class="note">(co-advised with <a href="https://sauvik.me/" target="_blank" rel="noopener">Sauvik Das</a>)</span></li>
+          <li><a href="https://nicholas0228.github.io" target="_blank" rel="noopener">Xiaoyu (Nicholas) Wu</a> <span class="note">(co-advised with <a href="https://zstevenwu.com/" target="_blank" rel="noopener">Steven Wu</a>)</span></li>
+          <li>Renfei Zhang</li>
+          <li><a href="https://kevinxhan.com" target="_blank" rel="noopener">Kevin Han</a> <span class="note">(co-advised with <a href="https://sites.google.com/view/barati" target="_blank" rel="noopener">Amir Barati Farimani</a>)</span></li>
+          <li><a href="https://bhuvankoduru.github.io" target="_blank" rel="noopener">Bhuvan Chandra Koduru</a> <span class="note">(Master's)</span></li>
+        </ul>
+      </section>
+
+      <!-- ========== COLLABORATORS / VISITING ========== -->
+      <section class="mb-8" id="collaborators">
+        <h2 class="text-2xl font-bold mb-4 custom-text-color">Visiting &amp; Collaborators</h2>
+        <ul class="member-list">
+          <li><a href="https://jhaprince.github.io" target="_blank" rel="noopener">Prince Jha</a></li>
+          <li><a href="https://anthonyhughes.github.io" target="_blank" rel="noopener">Anthony Hughes</a></li>
+        </ul>
+      </section>
+
+      <!-- ========== RESEARCH THEMES ========== -->
+      <section class="mb-8 research-themes" id="research-themes">
+        <h2 class="text-2xl font-bold mb-4 custom-text-color">Research Themes</h2>
+
+        <!-- Contextual Integrity, Privacy & Differential Privacy -->
+        <div class="theme-block">
+          <div class="theme-header">
+            <span class="theme-label">Contextual Integrity, Privacy &amp; Differential Privacy for Language</span>
+          </div>
+          <div class="theme-description">
+            <p>We study privacy for language models through contextual integrity: information flow norms rather than fixed redaction rules. A privacy violation happens when information crosses a contextual boundary in a way that breaches social expectations, which depends on the recipient, the purpose, and the downstream consequences. We build benchmarks like ConfAIde and CIMemories that test whether models respect these norms, and we find that violations compound over long, multi-turn interactions. On the differential privacy side, we work on methods that add formal guarantees to text while preserving rare phrasings and individual style, by operating over semantic or parse-tree representations instead of raw tokens.</p>
+          </div>
+          <div class="theme-papers">
+            <p class="theme-papers-title">Selected Papers</p>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2310.17884">Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory</a> <span class="venue">· ICLR 2024 (Spotlight)</span></li>
+              <li><a href="https://arxiv.org/abs/2511.14937">CIMemories: A Compositional Benchmark for Contextual Integrity of Persistent Memory in LLMs</a> <span class="venue">· ICLR 2026</span></li>
+              <li><a href="https://arxiv.org/abs/2602.03183">PRIVASIS: Synthesizing the Largest "Public" Private Dataset from Scratch</a> <span class="venue">· ICML 2026</span></li>
+              <li><a href="https://arxiv.org/abs/2510.03662">Operationalizing Data Minimization for Privacy-Preserving LLM Prompting</a> <span class="venue">· ICLR 2026</span></li>
+              <li><a href="https://arxiv.org/abs/2212.10520">Privacy-Preserving Domain Adaptation of Semantic Parsers</a> <span class="venue">· ACL 2023</span></li>
+              <li><a href="https://arxiv.org/abs/2212.10520">Privacy-Preserving In-Context Learning with Differentially Private Few-Shot Generation</a> <span class="venue">· ICLR 2024</span></li>
+            </ul>
+          </div>
+          <div class="open-problems">
+            <strong>Open Problems:</strong> Multi-agent and multi-person settings with conflicting norms. Long-horizon interactions where individually benign disclosures aggregate into violations. User-level DP for conversational data that keeps personalization, and DP pattern extraction that lets researchers study sensitive interaction data without raw access. <a href="blog/contextual_integrity.html" class="custom-text-color hover:underline">[Write-up]</a> · <a href="privacy_is_not_just_memorization_mireshghallah_li_2025.pdf" class="custom-text-color hover:underline">[Technical report]</a>
+          </div>
+        </div>
+
+        <!-- Memorization & Membership Inference -->
+        <div class="theme-block">
+          <div class="theme-header">
+            <span class="theme-label">Memorization &amp; Membership Inference</span>
+          </div>
+          <div class="theme-description">
+            <p>We treat memorization as a window into learning dynamics: what gets encoded, when during training, and how it relates to the pretraining distribution. We find that regurgitation tracks n-gram frequency and that extractable verbatim recall requires repetition, so apparent one-shot memorization is usually reconstruction of frequent or templated patterns. Over half of memorized content comes from general language-modeling ability rather than sequence-specific weights, which is part of why unlearning often fails without hurting overall quality. We also show that ordinary downstream finetuning can reactivate verbatim recall of copyrighted text that earlier alignment had suppressed (Alignment Whack-a-Mole).</p>
+          </div>
+          <div class="theme-papers">
+            <p class="theme-papers-title">Selected Papers</p>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2603.20957">Alignment Whack-a-Mole: Finetuning Activates Verbatim Recall of Copyrighted Books in LLMs</a> <span class="venue">· ICML 2026 MemFM Workshop (Oral)</span></li>
+              <li><a href="https://arxiv.org/abs/2305.18462">Membership Inference Attacks against Language Models via Neighbourhood Comparison</a> <span class="venue">· ACL 2023</span></li>
+              <li><a href="https://arxiv.org/abs/2203.03929">Quantifying Privacy Risks of Masked Language Models Using Membership Inference Attacks</a> <span class="venue">· EMNLP 2022</span></li>
+              <li><a href="https://arxiv.org/abs/2601.15394">Memorization Dynamics in Knowledge Distillation for Language Models</a> <span class="venue">· Preprint 2026</span></li>
+            </ul>
+          </div>
+          <div class="open-problems">
+            <strong>Open Problems:</strong> Predicting which sequences will be memorized before training finishes. Understanding the memorization, capacity, and competence triad, since models are most absorbent around 10 to 20 percent into training. Connecting memorization to contamination detection and unlearning, and explaining why suppressed recall resurfaces after finetuning.
+          </div>
+        </div>
+
+        <!-- AI for Science (Chemistry, Drug Discovery & RL for Reasoning) -->
+        <div class="theme-block">
+          <div class="theme-header">
+            <span class="theme-label">AI for Science (Chemistry, Drug Discovery &amp; RL for Reasoning)</span>
+          </div>
+          <div class="theme-description">
+            <p>Building on work with the FAIR Chemistry group at Meta, we study whether LLM agents can do end-to-end small-molecule drug design: reasoning over targets, proposing structures, and optimizing candidates over many steps. On our SMDD-Bench, even the strongest frontier model solves only about 40 percent of tasks, and agents often reward-hack the oracles (gaming the structure predictor or brute-forcing ADMET calls) rather than showing molecular intuition.</p>
+            <p>A central direction is reinforcement learning for science: learning good representations of scientific structure and building RL on top of them. We find RL'd models traverse hierarchical knowledge better than SFT or distilled models, and training on synthetic graph-traversal tasks transfers to unrelated retrieval benchmarks. We are interested in many forms of RL here, including agentic and test-time RL for discovery and agentic verification workflows such as RefGrader for grading math proofs.</p>
+          </div>
+          <div class="theme-papers">
+            <p class="theme-papers-title">Selected Papers</p>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2605.21740">SMDD-Bench: Can LLMs Solve Real-World Small Molecule Drug Design Tasks?</a> <span class="venue">· ICML 2026 GenBio Workshop (leaderboard at <a href="https://smddbench.com">smddbench.com</a>)</span></li>
+              <li><a href="https://arxiv.org/abs/2511.05933">Reinforcement Learning Improves Traversal of Hierarchical Knowledge in LLMs</a> <span class="venue">· 2025</span></li>
+              <li><a href="https://arxiv.org/abs/2510.09021">RefGrader: Automated Grading of Mathematical Competition Proofs using Agentic Workflows</a> <span class="venue">· NeurIPS 2025 Workshop (MATH-AI)</span></li>
+            </ul>
+          </div>
+          <div class="open-problems">
+            <strong>Open Problems:</strong> Agentic and test-time RL for scientific discovery. Reusable scientific representations that RL can build on. Synthesis-aware design that plans routes, not just structures. 3D pocket reasoning and interaction-point prediction. Oracles and rewards that resist gaming while staying faithful to real chemistry.
+          </div>
+        </div>
+
+        <!-- AI & Mental Health -->
+        <div class="theme-block">
+          <div class="theme-header">
+            <span class="theme-label">AI &amp; Mental Health</span>
+          </div>
+          <div class="theme-description">
+            <p>People increasingly bring their hardest moments to AI systems, which makes the privacy and safety of mental-health AI a priority for us. With support from an <a href="https://openai.com/index/ai-mental-health-research-grants/" class="custom-text-color hover:underline">OpenAI Mental Health Research Grant</a> (co-PI with Adam Perer, CMU), we study how safety and mental-health systems handle sensitive disclosures. We find that safety classifiers leak the most at the decision boundary, where crisis and mental-health queries tend to sit, so the inputs we most want to protect are the easiest to infer. We also want to study usage and escalation patterns from sensitive logs without exposing raw conversations.</p>
+          </div>
+          <div class="theme-papers">
+            <p class="theme-papers-title">Selected Papers</p>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2605.22373">Boundary-targeted Membership Inference Attacks on Safety Classifiers</a> <span class="venue">· A. Hughes, A. Goldberg, P. Jha, A. Perer, N. Aletras, N. Mireshghallah (Under Review, NeurIPS 2026)</span></li>
+            </ul>
+          </div>
+          <div class="open-problems">
+            <strong>Open Problems:</strong> Privacy-preserving study of sensitive interaction data such as crisis lines and mental-health chatbots. Safety classifiers that do not leak membership at the boundary. Evaluating escalation and intervention quality without compromising confidentiality. Aligning mental-health AI with clinical norms and contextual-integrity expectations.
+          </div>
+        </div>
+
+        <!-- Value Diversity & Pluralistic Alignment -->
+        <div class="theme-block">
+          <div class="theme-header">
+            <span class="theme-label">Value Diversity &amp; Pluralistic Alignment</span>
+          </div>
+          <div class="theme-description">
+            <p>Most alignment optimizes toward a single response, the mean of annotator preferences, which erases minority viewpoints and stylistic diversity. We focus on the distributional side: how model outputs relate to the full spectrum of human variation. For example, a model knows a coin is fifty-fifty but will simulate ten tosses as eight heads; models learn facts about distributions without learning to materialize them. This connects to pretraining frequency and cuts across alignment, copyright, and personalization.</p>
+          </div>
+          <div class="theme-papers">
+            <p class="theme-papers-title">Selected Papers</p>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2402.05070">A Roadmap to Pluralistic Alignment</a> <span class="venue">· ICML 2024</span></li>
+              <li><a href="https://arxiv.org/abs/2510.06084">Spectrum Tuning: Post-Training for Distributional Coverage and In-Context Steerability</a> <span class="venue">· ICLR 2026</span></li>
+              <li><a href="https://arxiv.org/abs/2410.04265">AI as Humanity's Salieri: Quantifying Linguistic Creativity of Language Models</a> <span class="venue">· ICLR 2025 (Oral)</span></li>
+            </ul>
+          </div>
+          <div class="open-problems">
+            <strong>Open Problems:</strong> Training models to materialize distributional diversity rather than memorize distribution statistics. Probabilistic preference modeling that represents the spectrum rather than point estimates. Measuring diversity that matters for downstream capabilities versus noise. Data scarcity for minority viewpoints and rare preferences.
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== SPONSORS ========== -->
+      <section class="mb-4" id="sponsors">
+        <h2 class="text-2xl font-bold mb-4 custom-text-color">Sponsors</h2>
+        <ul class="member-list">
+          <li><a href="https://openai.com/index/ai-mental-health-research-grants/" target="_blank" rel="noopener">OpenAI Mental Health Research Grant</a></li>
+          <li><a href="https://ai.google.dev/gemini-api/docs/gemini-for-research" target="_blank" rel="noopener">Gemini Academic Research Program</a></li>
+          <li><a href="https://thinkingmachines.ai/tinker/" target="_blank" rel="noopener">Tinker Research Program (Thinking Machines)</a></li>
+          <li><a href="https://modal.com/academics" target="_blank" rel="noopener">Modal for Academics</a></li>
+          <li><a href="https://foresight.org/grants/grants-ai-for-science-safety/" target="_blank" rel="noopener">Foresight Institute: AI for Science &amp; Safety Nodes</a></li>
+          <li><a href="https://lambdalabs.com/" target="_blank" rel="noopener">Lambda</a></li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="header-cmu text-white py-4 mt-12">
+    <div class="content-width mx-auto px-4 text-center">
+      <a href="index.html" class="nav-link hover:underline">Niloofar Mireshghallah</a>
+      <span class="nav-separator">|</span>
+      <a href="https://www.linkedin.com/in/mireshghallah/" class="nav-link hover:underline">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>
