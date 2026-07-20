@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keep paying the humans: notes from an anti-debate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f8f6f0;
+    --ink:#1c2426;
+    --ink-soft:#43514f;
+    --teal:#0f5f6e;
+    --teal-deep:#0a4551;
+    --line:#dcd7c9;
+    --wash:#eef0e9;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-optical-sizing:auto;
+    font-size:20px;
+    line-height:1.66;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px 120px;}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,95,110,.35);}
+  a:hover{border-bottom-color:var(--teal);}
+  a.ph{color:var(--teal-deep);border-bottom:1px dotted rgba(10,69,81,.55);}
+  a.ph::after{content:"\2197";font-size:.72em;vertical-align:super;opacity:.6;}
+
+  header.top{padding:74px 0 30px;}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);font-weight:600;margin:0 0 22px;
+  }
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:600;font-size:clamp(38px,7vw,60px);
+    line-height:1.02;letter-spacing:-.015em;margin:0 0 20px;
+    color:var(--ink);
+  }
+  .dek{font-size:22px;color:var(--ink-soft);font-weight:400;margin:0 0 26px;line-height:1.5;}
+  .byline{
+    font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;
+    color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;margin:0;
+  }
+
+  .resolution{
+    margin:44px 0 8px;padding:26px 30px;background:var(--wash);
+    border-left:3px solid var(--teal);border-radius:2px;
+  }
+  .resolution .tag{
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 12px;
+  }
+  .resolution p{margin:0;font-family:"Fraunces",serif;font-size:22px;line-height:1.4;font-weight:500;}
+
+  p{margin:0 0 22px;}
+  h2{
+    font-family:"Fraunces",serif;font-weight:600;font-size:29px;letter-spacing:-.01em;
+    line-height:1.14;margin:56px 0 18px;color:var(--ink);
+  }
+
+  .arg{margin-top:52px;}
+  .arg-head{display:flex;gap:20px;align-items:baseline;margin:0 0 16px;}
+  .arg-num{
+    font-family:"Fraunces",serif;font-weight:600;font-size:52px;line-height:.8;
+    color:var(--teal);flex:0 0 auto;letter-spacing:-.02em;
+  }
+  .arg-title{
+    font-family:"Fraunces",serif;font-weight:600;font-size:24px;line-height:1.18;
+    letter-spacing:-.005em;color:var(--ink);margin:0;padding-top:3px;
+  }
+
+  /* evidence / takeaway highlight */
+  .hl{
+    background:linear-gradient(transparent 56%, rgba(15,95,110,.17) 56%);
+    padding:0 .04em;font-weight:500;
+    -webkit-box-decoration-break:clone;box-decoration-break:clone;
+  }
+  em{font-style:italic;}
+  strong{font-weight:600;}
+
+  .takeaways{margin-top:20px;border-top:1px solid var(--line);padding-top:6px;}
+  .takeaways ul{padding:0;margin:22px 0 0;}
+  .takeaways li{margin:0 0 20px;list-style:none;padding-left:30px;position:relative;}
+  .takeaways li::before{
+    content:"";position:absolute;left:0;top:.62em;width:14px;height:2px;background:var(--teal);
+  }
+  .takeaways li b{font-family:"Fraunces",serif;font-weight:600;}
+
+  .ack{
+    margin-top:56px;padding-top:26px;border-top:1px solid var(--line);
+    color:var(--ink-soft);font-size:17px;line-height:1.6;
+  }
+  .ack h2{font-size:18px;margin:0 0 12px;color:var(--ink-soft);font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+
+  @media (max-width:560px){
+    body{font-size:18px;}
+    .wrap{padding:0 20px 90px;}
+    .arg-num{font-size:40px;}
+    .resolution{padding:22px 20px;}
+  }
+
+  .fade{opacity:0;transform:translateY(8px);animation:rise .7s ease forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top fade">
+  <p class="eyebrow">Anti-debate // ICML 2026, Seoul</p>
+  <h1>Keep paying the humans</h1>
+  <p class="dek">Notes from an anti-debate on whether we should keep funding a human research workforce once AI is better at research than we are.</p>
+  <p class="byline">Niloofar Mireshghallah &middot; July 2026, written up a week after &middot; COEX, Seoul</p>
+</header>
+
+<p>Last week I did an anti-debate with Ludwig Schmidt at an <a href="https://ai4research-icml-workshop.github.io" target="_blank" rel="noopener">AI-for-research session</a> at ICML in Seoul. It was not recorded, at the participants' request, so what follows is a reconstruction of my side: the argument I made, the evidence behind it, and where I landed by the end.</p>
+
+<div class="resolution">
+  <p class="tag">The motion</p>
+  <p>"Even after AI surpasses humans in research ability, humans should continue to fund a significant proportion of today's human research workforce to conduct research."</p>
+</div>
+
+<p>I argued the proposition. The format was not designed to produce a winner. The <a href="https://www.anti-debate.org" target="_blank" rel="noopener">anti-debate structure</a> rewards honesty and updating: each side opens with a personal story, gives openings and rebuttals, and then, halfway through, argues the opposing case, states what would change its mind, and works toward synthesis. The effect is to turn the exercise into a search for where the disagreement actually sits.</p>
+
+<p>We fixed the terms first. "Surpasses humans in research ability" was defined operationally: a double-blind board of expert reviewers, after real effort, prefers the model's research questions and results, or at least matches the best a human can produce. "Significant proportion" was set at roughly 80 percent for me and capped at about 20 percent for the opposition. The scope was ML research, roughly what ICML covers, with no wet lab. On those terms the disagreement was never about zero versus some. Both sides granted that the number is not zero and that the composition of research work changes substantially. What remained was a small set of parameters: how substitutable human research is for machine research, whether verification can be decoupled from doing, how large the un-automated fraction of the pipeline is, how correlated the failure modes are, how long a cut takes to reverse, and who ends up owning the returns.</p>
+
+<h2>How I got here</h2>
+
+<p>My opening was meant to be personal. I came into AI as a skeptic, and I have spent much of my career red-teaming these systems and finding where they break. However, more recently, I have been shocked by how fast these systems are getting better at research, and I feel confused about what that means for the future of my job. That is part of why I said yes to arguing this side.</p>
+
+<p>Three questions keep surfacing for me. How do you reconcile the two extremes: the Bay Area conviction that everything is about to change and the calmer view I hear elsewhere? What do you tell students who are in the messy middle and have to make career decisions this year? And how do we keep our own judgment sharp while the tools we lean on get sharper?</p>
+
+<p>The first question is a large part of why I have opinions here. I spend enough time inside the San Francisco discourse to be tired of the doom that has settled over it, and of the frontier-lab framing that there is one correct path and that anyone on a different one is simply behind. It surfaces most often <a href="https://x.com/niloofar_mire/status/2058897876667732181" target="_blank" rel="noopener">in response to claims</a> that scientific progress is about to be mostly a function of which lab points its compute at your field, and that talent will drain out of academia accordingly. A great deal of exciting work is happening, and I would not argue otherwise. But we would not be where we are without academia, and there is something worth defending in the pursuit of curiosity for its own sake. That discourse is out of scope for the motion. It is the context in which I built the case.</p>
+
+<h2>The five arguments</h2>
+
+<p>The case rests on five parameters, in roughly the order they matter, from the economics of substitution through to insurance and the supply chain.</p>
+
+<div class="arg">
+  <div class="arg-head"><span class="arg-num">1</span><p class="arg-title">Substitutability: is machine research a substitute for human research, or a complement?</p></div>
+  <p>The debate turns on a single parameter, the elasticity of substitution between human-made and machine-made research. If the two are close substitutes, then once the machine is cheaper and better, spending moves to it and the human share collapses. If they are complements, cheap machine research raises the value of the human input. Research is the second case, for three reasons.</p>
+  <p>Consider first the distinction between a task and a job. The motion evaluates a bounded artifact, the questions and results a panel can score. Funding buys a bundle: choosing which problem to attack, running and interpreting an experiment, coordinating a group, communicating the result, and standing behind it. Automating one component of that bundle does not dissolve the rest. The assumption that it does is the <a href="https://en.wikipedia.org/wiki/Lump_of_labour_fallacy" target="_blank" rel="noopener">lump-of-labour fallacy</a>, the premise that there is a fixed quantity of research so that any part the machine takes is subtracted from humans. The historical record runs the other way. <span class="hl">For most of the last century the share of national income paid to labour held within a narrow band, roughly 60 to 65 percent, one of <a href="https://www.stlouisfed.org/publications/review/2020/10/22/why-is-the-labor-share-declining" target="_blank" rel="noopener">Kaldor's stylised facts</a>, which Keynes called one of the best-established regularities in economics, across a century of automation panics.</span> The share has drifted down a few points since the 1980s, which is real and worth watching, but no wave of mechanisation produced the collapse the substitution story predicts. When a task inside a job is automated, demand for the complementary human tasks around it has usually risen.</p>
+  <p>Second, returns to the time horizon. Here, one piece of direct evidence comes from this community. In <a href="https://metr.org/blog/2024-11-22-evaluating-r-d-capabilities-of-llms/" target="_blank" rel="noopener">RE-Bench</a>, METR compares sixty-one expert ML researchers with frontier agents on seven open-ended research-engineering problems. <span class="hl">Given a two-hour budget, the best agent scores about four times the human experts; given thirty-two hours, the humans move ahead and score roughly double the best agent.</span> The agents are fast, and on short, well-scoped problems they win. <span class="hl">What they do not yet supply is the human return to long-horizon, open-ended effort, which is the regime research funding exists to support.</span></p>
+  <p>Third, the serial structure of the pipeline, which is Amdahl's law in economic form. <a href="https://web.stanford.edu/~chadj/AIandEconomicFuture.pdf" target="_blank" rel="noopener">Chad Jones</a> formalises it as a weak-links, or Baumol, argument: when tasks are complements, total output is governed by the tasks that remain un-automated, and their relative price rises as everything around them gets cheap. Automating an entire category of work, even perfectly, raises aggregate output by a bounded amount, because the un-automated remainder becomes the binding constraint. <span class="hl">The remainder is the cluster of research tasks with no verifiable target: setting the agenda, judging whether a result is real, communicating it, taking responsibility for it, and aligning it to human values, the trust and oversight layer of the whole enterprise.</span> Those are the weak links, and their price rises as execution gets cheap.</p>
+  <p>Underneath all three sits the finding by <a href="https://www.aeaweb.org/articles?id=10.1257%2Faer.20180338" target="_blank" rel="noopener">Bloom, Jones, Van Reenen and Webb</a> that ideas are getting harder to find. <span class="hl">Sustaining Moore's law now takes roughly eighteen times the researchers it required in the early 1970s, with research productivity per person falling around seven percent a year.</span> A world in which discovery is getting harder wants more capable searchers at the frontier, human or machine. Substitution requires research to be a fixed pie handed to a cheaper producer. It behaves like an expanding frontier that rewards adding capacity.</p>
+  <p>The mechanism that ties this together runs opposite to the substitution intuition. Jevons' paradox: when something becomes cheaper to use, total demand for it tends to rise rather than fall. Cheaper research does not shrink the appetite for research; it expands the number of questions worth asking and experiments worth running, each of which still needs a person to choose it, judge it, and stand behind it. <a href="https://www.cs.princeton.edu/~arvindn/talks/icml-2026-annotated-slides/" target="_blank" rel="noopener">Arvind Narayanan's ICML keynote</a> makes this case directly, tracing it through the same automation episodes, ATMs and radiologists, where employment grew rather than collapsed once the task was automated. <span class="hl">The human-held share of a project falls while the number of projects rises, and there is no reason to expect the product to shrink toward a skeleton crew.</span></p>
+</div>
+
+<div class="arg">
+  <div class="arg-head"><span class="arg-num">2</span><p class="arg-title">The verification&ndash;doing coupling: you cannot audit research you have stopped practicing.</p></div>
+  <p>Grant the machine superhuman output. Someone still has to decide whether to believe a result, sign for it, and answer for it when it is wrong, and that capacity does not stand on its own. <span class="hl">The supply of people who can verify research is downstream of the supply of people who do it: a verifier who can catch a subtle error in a superhuman system is someone who has done the underlying work long enough to know what a real result looks like.</span> The oversight layer cannot be a small cadre of watchers detached from practice. It has to be drawn from, and kept inside, a working research pipeline.</p>
+  <p>Judgment is a practiced skill, and it decays without use. <span class="hl">In a 2025 <a href="https://www.eurekalert.org/news-releases/1094223" target="_blank" rel="noopener">Lancet study</a>, nineteen experienced endoscopists lost detection skill after three months of AI assistance: when the tool was removed, their unaided adenoma detection rate fell from 28.4 percent to 22.4 percent.</span> Three months eroded expert perception in specialists with thousands of procedures behind them. A research workforce that stops running its own experiments for a decade does not only shrink the pool of referees; it degrades the capacity of the ones who remain to referee at all.</p>
+  <p>Demand for oversight rises from both ends at once. Automated researchers generate far more experiments, code, and decisions per unit time than any fixed set of humans can review, which raises the volume to be checked, while cutting the workforce shrinks the pool qualified to check it. The review layer of our own field already shows the strain. <span class="hl">A 2024 study by <a href="https://arxiv.org/abs/2403.07183" target="_blank" rel="noopener">Liang and colleagues</a> estimates that between 6.5 and 17 percent of the text in peer reviews at recent AI conferences was substantially produced by language models.</span> That is a demand curve for practiced human referees.</p>
+  <p>Alignment sits inside this layer, and it is the part I find hardest to imagine automating. Deciding whether to trust a high-stakes claim that has no clean ground truth is a judgment about values and consequences, and it cannot be delegated to the system under evaluation without circularity, because the optimiser cannot certify itself. My own research is on privacy and contextual integrity, where the ground truth is a contested, outcome-based judgment about which norms apply and whose interests count, and where no benchmark settles the question. Those judgments are made well only when the people affected are represented among the people making them. Aligning a system to human values is not a step you run once and store; it is a standing negotiation that requires humans to do the negotiating, and it does not have a fixed answer to hand to a model.</p>
+  <p>The pipeline is itself the oversight infrastructure, and we already treat training this way in other domains. In 1914 a Sperry autopilot flew hands-off, and by 1947 a US Air Force aircraft crossed the Atlantic, takeoff to landing, entirely under automatic control; large aircraft still carry two trained pilots today, because regulation and hard experience treat the human as the accountable agent when the automation reaches its edge (<a href="https://www.aerotime.aero/articles/autopilot-flight-automation-history" target="_blank" rel="noopener">history of flight automation</a>). We still teach children arithmetic in a world full of calculators for the same reason: the training exists to build the judgment that lets a person catch a wrong answer, not to compete with the tool on speed. <span class="hl">Teaching research, and funding the people who do it, is how a field keeps producing verifiers who can still recognise when the machine is wrong; remove the doers and within a generation there is no one left qualified to referee.</span> The deskilling result above is the near-term edge of exactly this problem.</p>
+</div>
+
+<div class="arg">
+  <div class="arg-head"><span class="arg-num">3</span><p class="arg-title">Correlation of failure, and the value of a plural workforce.</p></div>
+  <p>Aggregating many judgments improves on a single one only when the errors are independent, a condition that goes back to Condorcet's jury theorem. Copies of one model do not meet it. <span class="hl">Across more than 350 models, <a href="https://arxiv.org/abs/2506.07962" target="_blank" rel="noopener">Kim and colleagues</a> find that when two of them answer a question wrong, they choose the same wrong answer about 60 percent of the time, and the correlation is highest among the largest and most accurate systems, even across different providers and architectures.</span> Adding a tenth model to a panel of nine does not add a tenth independent judgment; it restates a shared prior. Ensembling buys little when the members converge underneath.</p>
+  <p>Human researchers fail in less correlated ways, because their formation is not shared: different advisors, languages, subfields, and failures produce different blind spots. There is evidence that this heterogeneity is not just present but productive. <span class="hl">Analysing 1.2 million US doctoral theses, <a href="https://www.pnas.org/doi/abs/10.1073/pnas.1915378117" target="_blank" rel="noopener">Hofstra and colleagues</a> find that researchers from underrepresented backgrounds introduce novel conceptual combinations at higher rates; across nine million papers, <a href="https://www.nature.com/articles/s41467-018-07634-8" target="_blank" rel="noopener">AlShebli and colleagues</a> find that ethnically diverse teams produce higher-impact work.</span> The diversity of a large research community works as error-correction: it covers regions of the hypothesis space that a correlated system leaves dark. The matching result on the machine side is that an algorithmic monoculture can lower the quality of collective decisions even when the shared model is individually more accurate (Kleinberg and Raghavan, 2021). Concentrating the world's research judgment into a few correlated systems is that monoculture at the largest possible scale.</p>
+  <p>There is a further concern about concentration, and it is about power rather than accounting. <span class="hl">If research is fully automated, the capacity to set the agenda, to decide which questions get asked and which results are trusted, moves from a distributed public system of universities and agencies to the small number of firms that own the frontier models and the compute they run on.</span> That capacity is currently spread across many institutions and countries, which is part of why science can correct itself and serve interests beyond any single owner. A publicly funded research base keeps the questions plural and the answers accountable to more than whoever controls the datacenter. This is the sense in which the motion is a normative claim and not only an empirical one, and it is why the concentration point is central rather than decorative.</p>
+</div>
+
+<div class="arg">
+  <div class="arg-head"><span class="arg-num">4</span><p class="arg-title">Taste and serendipity: the parts of research that resist optimisation.</p></div>
+  <p>Grant that execution is solved. Two things stay scarce on the supply side.</p>
+  <p>The first is taste: choosing what is worth working on before the field agrees that it was. This resists the current training paradigm, because the reward signals available, citations, acceptance, downstream use, are all lagging measures of consensus. Optimising against them produces work aimed at what the field already values, which is the opposite of the contrarian bet that defines an important direction. The recent reasoning gains are consistent with this reading: reinforcement learning on verifiable rewards mainly sharpens a model's ability to reach answers its base model could already sometimes reach, and whether it expands the frontier of new directions is contested. For now, the taste for the unproven direction is supplied from outside the reward loop.</p>
+  <p>The second is exploration. A large, uncoordinated population of researchers with idiosyncratic paths is a wide portfolio of low-probability bets, most of which return nothing and a few of which are penicillin. Optimisation prunes the low-probability branches, because in expectation they look like waste. Some of that population works on questions with no near-term payoff, in astrophysics or pure mathematics, because they want to understand something, and that motive keeps the search broad in a way a returns-maximising allocation would not. The point of funding people to follow curiosity is that you cannot know in advance which unpromising line becomes the important one.</p>
+  <p>There is also a demand-side scarcity, and it is measurable. <span class="hl">In controlled experiments (Horton and colleagues, 2023), people assign a lower value, including a lower willingness to pay, to an identical artifact once it is labelled machine-made, even when they cannot tell the difference.</span> Around research this is beginning to appear as a premium on human-authored work. It is evidence that human-made research is a distinct good with its own demand, which is the substitutability claim from the first argument arriving from the consumer side. The uncertainty-of-outcome hypothesis from sports economics, that people pay to watch a contest precisely because a human might fail, has survived seven decades of testing. <span class="hl">A helicopter reached the summit of Everest two decades ago, and the number of people paying to climb it, and the price of the permit, have only risen since.</span> The result was never the whole of the value.</p>
+</div>
+
+<div class="arg">
+  <div class="arg-head"><span class="arg-num">5</span><p class="arg-title">Reversibility, insurance, and the supply chain.</p></div>
+  <p>The final argument holds even if the first four fail. Part of the case for a large human research base is insurance, and insurance is priced by two quantities: how correlated the primary system's failures are, and how long the backup takes to rebuild once it has been cut. Both point the same way, and both are worth spelling out.</p>
+  <p>Start with correlation, because the AI research stack is correlated at every layer. The models are trained on substantially the same corpus, so a systematic gap or bias in that corpus is a systematic gap everywhere at once, with no independently-trained population to catch it. <span class="hl">Training models recursively on model-generated output degrades them across generations, a failure mode documented as model collapse, and it is arrested only by a continuing supply of fresh human data.</span> The physical layer is a single point of failure of a different kind. <span class="hl">The large majority of leading-edge chips are fabricated on one island, and much of the world's oil still moves through one strait, so a disruption in the Taiwan Strait or the Strait of Hormuz would not be a local shock to be routed around; it would propagate through a network that everyone now depends on simultaneously.</span> The pattern is local robustness with global fragility, the same structure that makes a genetic monoculture efficient right up until one pathogen finds the shared weakness.</p>
+  <p>Now reversibility, where the asymmetry bites. A human research base cannot be switched off and on. <span class="hl">The path from a first-year PhD student to an independent investigator runs the better part of a decade, and the tacit knowledge that makes a working scientist, the parts learned by apprenticeship and never written down, disperses far faster than it can be regrown.</span> A version of this is happening now: when a large share of a national research budget is frozen or cut in a single year, thousands of grants lapse and a substantial fraction of the affected scientists begin planning to leave, and capacity that took a generation to build is damaged in a single budget cycle. You cannot repurchase it at short notice at any price, which is exactly why an uncorrelated, slow-to-rebuild backup has to be held before it is needed rather than reconstituted afterward.</p>
+  <p>The premium is unusually cheap, and it returns a profit even if the insured event never occurs, because public research has a large measured social return on ordinary grounds. <span class="hl"><a href="https://www.dallasfed.org/research/papers/2023/wp2305" target="_blank" rel="noopener">Fieldhouse and Mertens</a> estimate the social return to non-defense public R&amp;D at roughly 140 to 210 percent, and attribute about a fifth of postwar US business-sector productivity growth to it, concluding that it is substantially underfunded.</span> The amounts are also small relative to what they are weighed against. <span class="hl">The entire annual NSF budget is on the order of nine billion dollars, which pales beside the roughly half a trillion dollars of AI capital expenditure now spent in a single year.</span> The choice is not human salaries against compute; compute already outspends the whole public-science enterprise by an order of magnitude. Maintaining the human base is, in budget terms, a small hedge with a positive expected return.</p>
+</div>
+
+<p>Taken together, that is what supports a figure near 80 percent, rather than any single argument. I was explicit in the room about what the number means. <span class="hl">It refers to the proportion of people, reshaped into new roles, not to the share of the budget, which I expect to tilt heavily toward compute.</span> A workforce can be most of the headcount and a small, shrinking fraction of the spending at the same time. Eighty is shorthand for most of them, doing different work, and it is defensible down to wherever the arguments above stop holding.</p>
+
+<h2>The opposition</h2>
+
+<p>I will keep this compact so as not to strawman it, but there was a real case on the other side, and its economic core is the argument that moved me most. Every verifiable cognitive task we have learned to cheapen has eventually been automated, and once it was, we stopped paying people to do that specific task. ML research is close to the most verifiable slice of all of science, code that runs, bounds that can be checked, benchmarks that produce a number, which is an argument that it automates early rather than late. Public money carries an opportunity cost measured in the discoveries it could have funded elsewhere, so parking most of it in human headcount once the machine is better is not obviously stewardship; it can be inertia. Keep a lean core of accountable people, retrain the rest with real support, and let the funding follow the returns.</p>
+
+<p>Where the opposition landed, and where we converged, was that research should be reshaped rather than preserved as it is: much more AI-for-science, far more leverage per person, and fewer people executing the parts machines now do well. The remaining disagreement was how much of today's ML field survives on its own terms, versus being absorbed into a smaller, science-facing enterprise.</p>
+
+<h2>What we agreed on</h2>
+
+<p>The agreement was larger than the disagreement. We converged first on reshaping. Neither of us wants today's field frozen in place; both of us expect roles to change and move around, with fewer people doing what machines now do well and much of the field shifting toward AI-for-science and adjacent disciplines, where the human contribution is choosing the direction, judging the result, and designing what to ask. <span class="hl">The work migrates more than it disappears, and a great deal of it migrates toward the sciences that AI is now accelerating.</span> We agreed too that <span class="hl">more people should be doing science rather than fewer</span>, and that the case is not only instrumental: some of the most valuable research is done because someone wants to understand something, in fields with no near-term product, and a society rich enough to automate its labour is rich enough to fund that curiosity as an end in itself.</p>
+
+<p>We also agreed, and I think this is underweighted, that governance is a shared priority rather than an afterthought. As research automates, who oversees it, who is accountable for its outputs, and how its benefits are distributed become research problems in their own right, and both of us think that work is under-supplied today. Two threads of it came up directly. One is dissemination: a result is not useful until it is understood and trusted, and that trust is built by scientists explaining their own work rather than handed to intermediaries who translate it at second hand. The other is liability: institutions still run on a named human who signs and is accountable, the engineer who seals the drawing, the investigator of record on a trial, the author who answers for the paper, and <span class="hl">a model cannot occupy that role, because accountability is imposed on a person</span>. <span class="hl">Oversight, dissemination, and accountability are the parts of research that grow in importance as execution gets cheap, and they are where a reshaped workforce concentrates.</span></p>
+
+<p>One thing did change for me over the hour. I walked in assuming that the work I most wanted to protect had to stay inside ICML and the other ML venues. I am no longer sure it does. <span class="hl">Much of what I have been defending here, the science itself and the work of explaining it and building trust in it, may not belong in a machine-learning conference at all.</span> It might be better served by its own home, a separate field, a separate conference, or a funded venue built for the purpose, rather than carried by the ML community as a side function. The case for funding the human work does not rest on that work wearing the ICML badge, and by the end I thought <span class="hl">the two questions, whether to fund it and where it should live, are worth holding apart</span>.</p>
+
+<div class="ack">
+  <h2>Acknowledgments</h2>
+  <p>Thanks to Fanny for organising and moderating, and to Ludwig Schmidt for a really insightful discussion. Thanks to the friends and colleagues who argued these ideas with me beforehand and humoured me while I worked them out: Jan Leike, Charlie George, Alex Imas, Brian Jabarian, Ashish Vaswani, Arthur Kosmala, Eric Zelikman, and Yuchen He. And thanks to Sergei Gukov and Tim Gehrunger for the discussion afterward.</p>
+</div>
+
+</div>
+</body>
+</html>
