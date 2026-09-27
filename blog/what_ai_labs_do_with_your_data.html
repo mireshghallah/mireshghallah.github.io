@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What frontier AI labs do with your data</title>
-<meta name="description" content="A primer on the privacy and data-retention policies of frontier AI labs: training defaults by tier, the feedback and safety-flag carve-outs, and what deleting a chat actually does.">
+<title>How solving Navier–Stokes turned into a privacy debate</title>
+<meta name="description" content="What the Navier–Stokes debate tells us about AI privacy, why even one bit of information can matter, and what OpenAI, Anthropic, Google, and xAI actually do with our data.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -118,8 +118,8 @@
 
 <header class="top fade">
   <p class="eyebrow">Privacy primer // September 2026</p>
-  <h1>What frontier AI labs do with your data</h1>
-  <p class="dek">A primer on the privacy and data-retention policies of OpenAI, Anthropic, Google, and xAI: what the defaults are, where the carve-outs hide, and what deleting a chat actually does.</p>
+  <h1>How solving Navier–Stokes turned into a privacy debate</h1>
+  <p class="dek">Apparently it took a math controversy to get capability researchers talking about privacy. Let&rsquo;s go through what the labs actually do with our data.</p>
   <p class="byline">Niloofar Mireshghallah, with Astra &middot; September 2026 &middot; Policies checked September 9, 2026</p>
 </header>
 
@@ -131,14 +131,20 @@
 
 <p>So it&rsquo;s interesting to me how we ended up here, with capability researchers getting involved and posting opinions about privacy. It all started with OpenAI announcing what it described as a solution to the Navier-Stokes Millennium Prize problem. Levent Alp&ouml;ge and Tristan Buckmaster had been working for much of the past year on related problems. Buckmaster questioned why OpenAI had pursued a similar approach after hearing about their progress. OpenAI said its effort began after hearing those rumors, and that it used roughly 10,000 agents. <span class="refs"><a href="https://cims.nyu.edu/~tristanb/statement.pdf" target="_blank" rel="noopener">Buckmaster&rsquo;s account</a>, <a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI&rsquo;s account</a></span></p>
 
-<p>Then things got to privacy and data retention when OpenAI wrote, verbatim:</p>
+<p>Then things got to privacy and data retention when OpenAI initially wrote:</p>
 
 <blockquote>
   <p>&ldquo;While unlikely, we cannot rule out that de-identified data derived from their usage of our products helped improve our models.&rdquo;</p>
   <span class="refs"><a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI&rsquo;s statement</a></span>
 </blockquote>
 
-<p>That raised alarms about whether OpenAI had gone through their logs. OpenAI denied that its researchers or agents had accessed their work before it was public. But the acknowledgment about de-identified data brings us back to something privacy researchers have been asking for years: what are these companies doing with the information we give them, and what have we actually agreed to?</p>
+<p>That raised alarms about whether OpenAI had gone through their logs. OpenAI denied that its researchers or agents had accessed their work before it was public. In a September 10 update, it went further: after an investigation, it said Buckmaster&rsquo;s Codex prompts from the two months before the announcement could not have influenced the system, including through training. That is an important update to the original statement. <span class="refs"><a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI&rsquo;s updated account</a></span></p>
+
+<p>But I think focusing only on whether someone read the chat logs misses something. Sometimes the valuable secret is just one bit: <em>someone has already made this approach work with an AI.</em> You don&rsquo;t need their proof, their name, or their conversations for that information to change where you put your time and compute. OpenAI&rsquo;s own account says hearing rumors of progress prompted its effort. That illustrates the value of the signal; it does not establish that the signal came from private chats.</p>
+
+<p>This is why I care about <strong>worst-case privacy, not just average-case performance</strong>. A system can scrub identifying details from almost every conversation and still expose the one fact that matters most to a particular person. &ldquo;We removed the names&rdquo; doesn&rsquo;t answer that concern. Neither does a low average leakage rate.</p>
+
+<p>And this is why I don&rsquo;t think Clio-style aggregation and LLM privacy filters are enough. <a href="https://arxiv.org/html/2412.13678v1" target="_blank" rel="noopener">Clio</a> is designed to suppress rare patterns, but its published safeguards do not provide an end-to-end differential privacy guarantee. <a href="https://arxiv.org/html/2603.09781v2" target="_blank" rel="noopener">CLIOPATRA</a> shows a concrete failure: researchers inserted malicious chats into a local reproduction of Clio and recovered sensitive medical information from the resulting aggregate summaries. Those tests used synthetic target conversations, not Anthropic&rsquo;s live service. I&rsquo;m not saying Clio was involved in the Navier–Stokes episode. I&rsquo;m saying that hiding raw chats and checking summaries with another model does not settle what someone can learn. <a href="#aggregate-privacy">More on these systems below.</a></p>
 
 <p>So what is the truth? What do we know about the privacy and data-retention policies of frontier AI labs? Let&rsquo;s go through them!</p>
 
@@ -198,7 +204,7 @@
 
 <p>The part that should concern users is that they didn&rsquo;t have to be parties to the lawsuit for their conversations to be affected. Their deletion preferences could still be overridden. The order also had exclusions, including qualifying ZDR API use. Whether the provider has a record to preserve makes a real difference. <span class="refs"><a href="https://openai.com/index/response-to-nyt-data-demands/" target="_blank" rel="noopener">Scope of the order</a></span></p>
 
-<h3>2.4 Aggregate statistics and reviews of how people use the models</h3>
+<h3 id="aggregate-privacy">2.4 Aggregate statistics and reviews of how people use the models</h3>
 
 <p>Another use to watch for is analyzing conversations to understand how people use the product. A company can do this without training the model you talk to. Google, for example, says its Gemini settings do not control processing chats to create anonymized data for service improvement. So a training opt-out does not answer every question about analysis. <span class="refs"><a href="https://support.google.com/gemini/answer/13594961?hl=en" target="_blank" rel="noopener">Gemini&rsquo;s policy</a></span></p>
 
