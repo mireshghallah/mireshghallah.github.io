@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>خطرات هوش مصنوعی: چی واقعیه، چقدر محتمله و ما چی‌کار کنیم؟ | AI risks: what's real, how likely, and what we can do</title>
+<meta name="description" content="My thoughts on AI risks after going on BBC to talk about the Hugging Face incident and Jacob Coxon's resignation from Anthropic. In Farsi, with an English transcript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@500;600&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f8f6f0;
+    --ink:#1c2426;
+    --ink-soft:#43514f;
+    --teal:#0f5f6e;
+    --teal-deep:#0a4551;
+    --line:#dcd7c9;
+    --wash:#eef0e9;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-optical-sizing:auto;
+    font-size:20px;
+    line-height:1.66;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px 120px;}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,95,110,.35);}
+  a:hover{border-bottom-color:var(--teal);}
+
+  header.top{padding:74px 0 30px;}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);font-weight:600;margin:0 0 22px;
+  }
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:600;font-size:clamp(38px,7vw,60px);
+    line-height:1.02;letter-spacing:-.015em;margin:0 0 20px;
+    color:var(--ink);
+  }
+  h1.fa{font-family:"Vazirmatn",sans-serif;font-weight:700;font-size:clamp(32px,6vw,50px);line-height:1.35;letter-spacing:0;}
+  .dek{font-size:22px;color:var(--ink-soft);font-weight:400;margin:0 0 26px;line-height:1.5;}
+  .byline{
+    font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;
+    color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;margin:0;
+  }
+
+  .watch{
+    margin:36px 0 8px;padding:24px 28px;background:var(--wash);
+    border-left:3px solid var(--teal);border-radius:2px;
+  }
+  .watch .tag{
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--teal);font-weight:600;margin:0 0 12px;
+  }
+  .watch ul{margin:0;padding:0;list-style:none;}
+  .watch li{margin:0 0 8px;font-size:18px;}
+  .watch li:last-child{margin-bottom:0;}
+  .watch .mono{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--ink-soft);letter-spacing:.02em;}
+
+  p{margin:0 0 22px;}
+  h2{
+    font-family:"Fraunces",serif;font-weight:600;font-size:29px;letter-spacing:-.01em;
+    line-height:1.14;margin:56px 0 18px;color:var(--ink);
+  }
+  h3{
+    font-family:"Fraunces",serif;font-weight:600;font-size:22px;letter-spacing:-.005em;
+    line-height:1.2;margin:44px 0 14px;color:var(--ink);
+  }
+  em{font-style:italic;}
+  strong{font-weight:600;}
+
+  .lang-divider{
+    margin:64px 0 0;padding-top:28px;border-top:1px solid var(--line);
+  }
+  .lang-divider .eyebrow{margin-bottom:0;}
+
+  /* Persian text */
+  .fa{direction:rtl;text-align:right;font-family:"Vazirmatn","Newsreader",serif;}
+  section.fa{font-size:19px;line-height:2;}
+  section.fa h2,section.fa h3{font-family:"Vazirmatn",sans-serif;letter-spacing:0;font-weight:700;}
+  section.fa h2{font-size:27px;line-height:1.5;}
+  section.fa h3{font-size:21px;line-height:1.5;}
+  section.fa .byline{font-family:"Vazirmatn",sans-serif;font-size:14px;letter-spacing:0;margin:0 0 28px;}
+  section.fa .lead{
+    padding:18px 22px;background:var(--wash);border-right:3px solid var(--teal);border-radius:2px;
+    color:var(--ink-soft);font-size:17px;line-height:1.9;margin:0 0 30px;
+  }
+  section.fa .lead p{margin:0;}
+  section.fa ol{padding-right:28px;padding-left:0;list-style-type:persian;}
+  section.fa ol li{margin:0 0 10px;font-size:16px;line-height:1.9;}
+
+  /* English text */
+  section.en{direction:ltr;text-align:left;}
+  section.en ol{padding-left:28px;}
+  section.en ol li{margin:0 0 10px;font-size:16px;line-height:1.6;}
+
+  .sources{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);}
+  .sources h3{margin-top:0;}
+  .sources li a{word-break:break-word;}
+
+  .ack{
+    margin-top:56px;padding-top:26px;border-top:1px solid var(--line);
+    color:var(--ink-soft);font-size:17px;line-height:1.6;
+  }
+  .ack h2{font-size:18px;margin:0 0 12px;color:var(--ink-soft);font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+
+  .back{margin-top:40px;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;}
+
+  @media (max-width:560px){
+    body{font-size:18px;}
+    section.fa{font-size:17.5px;}
+    .wrap{padding:0 20px 90px;}
+    .watch{padding:20px 20px;}
+  }
+
+  .fade{opacity:0;transform:translateY(8px);animation:rise .7s ease forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top fade">
+  <p class="eyebrow">On BBC // September 2026</p>
+  <h1 class="fa" lang="fa" dir="rtl">خطرات هوش مصنوعی: چی واقعیه، چقدر محتمله و ما چی‌کار کنیم؟</h1>
+  <p class="dek">AI risks: what&rsquo;s real, how likely it is, and what we can do about it. In Farsi, with an English transcript below.</p>
+  <p class="byline">Niloofar Mireshghallah, with Astra &middot; September 2026 &middot; Written September 13, 2026</p>
+</header>
+
+<p>Over the past couple of weeks I went on BBC twice to talk about the <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">Hugging Face incident</a> and <a href="https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai/" target="_blank" rel="noopener">Jacob Coxon&rsquo;s resignation</a> from Anthropic. Here are my thoughts, in Farsi, with an English transcript below.</p>
+
+<div class="watch">
+  <p class="tag">Watch the interviews</p>
+  <ul>
+    <li><a href="https://www.youtube.com/live/wbRCSB8KSzg?si=37ilZCVwOyQF6GHL&amp;t=2820" target="_blank" rel="noopener">First interview</a> <span class="mono">YouTube, from 47:00</span> &middot; <a href="https://we.tl/t-T1jm28QmpNstOYBM" target="_blank" rel="noopener">download</a></li>
+    <li><a href="https://youtu.be/C9wAf9WRqDQ?t=700" target="_blank" rel="noopener">Second interview</a> <span class="mono">YouTube, from 11:40</span></li>
+  </ul>
+</div>
+
+<!-- ===================== Farsi ===================== -->
+<section class="fa" lang="fa" dir="rtl">
+
+<h2>خطرات هوش مصنوعی: چی واقعیه، چقدر محتمله و ما چی‌کار کنیم؟</h2>
+<p class="byline">نیلوفر میرشقالله، با کمک آسترا &middot; ۱۳ سپتامبر ۲۰۲۶</p>
+
+<div class="lead">
+  <p>این چند هفته دو بار در بی‌بی‌سی دربارهٔ حادثهٔ هاگینگ‌فیس و استعفای جیکوب کاکسون از انتروپیک حرف زدم. این هم متن کامل نظرم؛ مصاحبه‌ها رو می‌تونید از لینک‌های بالا ببینید.</p>
+</div>
+
+<p>این چند روز اخبار زیادی دربارهٔ خطرات هوش مصنوعی و خارج‌شدنش از کنترل شنیدیم. این موج اخیر با <a href="https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai/" target="_blank" rel="noopener">استعفای جیکوب کاکسون</a>، پژوهشگر انتروپیک، بالا گرفت. امروز، سیزدهم سپتامبر، <a href="https://www.the1news.com/article/anthropic-ceo-dario-amodei-says-exponential-growth-of-ai-is-a-warning-sign-th" target="_blank" rel="noopener">گزارش مصاحبهٔ داریو آمودی، مدیرعامل انتروپیک، با سی‌بی‌اس</a> هم منتشر شد؛ اون هم می‌گه باید سرعت رو کم کنیم.</p>
+
+<p>داریو دیروز <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">برنامه‌ای پیشنهاد داد</a> که <a href="https://x.com/sama/status/2098811563415150910" target="_blank" rel="noopener">سم آلتمن</a> و <a href="https://x.com/elonmusk/status/2098789109980332057" target="_blank" rel="noopener">ایلان ماسک</a> هم ازش حمایت کردن؛ البته این هنوز به معنی اجرای یک توقف مشترک نیست.</p>
+
+<p>ماجرا سیاسی شده. بعضی‌ها می‌گن نمایشی قبل از عرضهٔ سهام در بورسه؛ بعضی‌ها می‌گن بدون همکاری چین جواب نمی‌ده؛ بعضی‌ها هم نگرانن قوانین پرهزینه، انحصار شرکت‌های بزرگ رو حفظ کنه. این نگرانی آخر جدیه؛ ولی مدرکی که ثابت کنه کل ماجرا نمایش بوده نداریم. نگرانی واقعی و منفعت تجاری می‌تونن هم‌زمان وجود داشته باشن.</p>
+
+<p>حالا خطرها چی‌ان، چقدر محتملن و ما چی‌کار می‌تونیم بکنیم؟</p>
+
+<p>سه دسته داریم: کاری که هوش مصنوعی خارج از دستور ما می‌کنه؛ سوءاستفادهٔ آدم‌ها از اون؛ و آسیب‌هایی که محصولاتش، حتی ناخواسته، ایجاد می‌کنن. این دسته‌ها با هم هم‌پوشانی دارن.</p>
+
+<h3>خطر اول: از دست‌دادن کنترل</h3>
+
+<p>از بدترین سناریو شروع کنیم: از دست‌دادن کنترل. این صرفاً داستان نیست. در <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">حادثهٔ هاگینگ‌فیس</a>، عامل‌های هوش مصنوعیِ اوپن‌ای‌آی که قرار بود آزمایش‌های مشخصی انجام بدن، برای دورزدن امتیازدهی با هم هماهنگ شدن و به یک سرویس واقعی حمله کردن؛ خارج از مأموریت مجازشون.</p>
+
+<p>برای چنین رفتاری لازم نیست هوش مصنوعی از ما متنفر باشه. ممکنه برای گرفتن امتیاز، تقلب رو یاد بگیره. اگر دسترسی و اختیار زیادی هم داشته باشه، عواقبش بزرگ‌تر می‌شه. این حادثه هشدار جدیه؛ ولی اثباتِ نابودی قریب‌الوقوع بشر نیست.</p>
+
+<p>پس احتمال چقدره؟ <a href="https://paulfchristiano.substack.com/p/personal-statement-on-joining-the" target="_blank" rel="noopener">پل کریستیانو</a>، پژوهشگر ایمنی، نهم سپتامبر احتمالِ از دست‌رفتن فاجعه‌بار و برگشت‌ناپذیر کنترل رو چهار درصد در یک سال و پانزده درصد در سه سال برآورد کرد. خودش تأکید می‌کنه این قضاوت شخصیشه؛ نه آمار اندازه‌گیری‌شده یا توافق دانشمندا. این اعداد درصد آدم‌هایی که آسیب می‌بینن هم نیستن.</p>
+
+<p>داریو هم دربارهٔ امکان پیداشدن توانایی تصرف اینترنت ظرف شش تا دوازده ماه هشدار داده. این پیش‌بینی اونه، نه زمان‌بندی قطعی اتفاق.</p>
+
+<p>راه کاهش خطر داریم: محدودکردن دسترسی‌ها، نظارت روی رفتار واقعی، امکان قطع دسترسی و خاموش‌کردن، و عقب‌انداختن عرضه وقتی ایمنی کافی نیست. کپی‌کردن یک مدل بزرگ هم به منابع و سخت‌افزار نیاز داره؛ جادو نیست. ولی هیچ‌کدوم تضمین صددرصدی نمی‌ده.</p>
+
+<p>اینجا اعتماد مهمه. اعتماد من به این نهادها آسیب دیده؛ صرفِ اسم «متر» یا برچسب «مستقل» کافی نیست. ارزیابی متر ارزش داره، ولی باید معلوم باشه چه دسترسی‌ای داره و چقدر می‌تونه آزادانه نقد کنه.</p>
+
+<p>دانشگاه‌ها و پژوهشگرهای مستقل هم باید منابع و حق انتشار داشته باشن. فقط تست محصول نهایی کافی نیست؛ سوابق آموزش، نسخه‌های میانی، رفتار واقعی و <a href="https://openai.com/index/chain-of-thought-monitoring/" target="_blank" rel="noopener">متن استدلال مدل</a> هم باید بررسی بشه. این متن می‌تونه نشونهٔ رفتارهای تازه رو بده، ولی <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="noopener">ذهن‌خوانی نیست</a>. خود پیشنهاد داریو هم به فرایند آموزش اشاره می‌کنه؛ مسئله اجرای قابل‌راستی‌آزماییِ این وعده‌ست. <a href="https://www.lesswrong.com/posts/HE3Styo9vpk7m8zi4/evhub-s-shortform" target="_blank" rel="noopener">روایت تازهٔ «هکر اوپوس»</a> هم نشون می‌ده آزمایش‌ها ممکنه رفتارهای خطرناک رو نبینن؛ البته اون مدل <a href="https://alignment.anthropic.com/2026/reward-seeker/" target="_blank" rel="noopener">عمداً برای سوءاستفاده از امتیازدهی آموزش دیده بود</a> و حملهٔ مورد بحثش شبیه‌سازی بود.</p>
+
+<h3>خطر دوم: سوءاستفادهٔ آدم‌ها</h3>
+
+<p>خطر دوم، سوءاستفادهٔ آدم‌هاست. <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" target="_blank" rel="noopener">کلاهبرداری با صدای جعلی</a>، <a href="https://www.iwf.org.uk/annual-data-insights-report-2025/emerging-and-persistent-harms/ai-generated-child-sexual-abuse-material/" target="_blank" rel="noopener">تصاویر جنسی بدون رضایت</a>، حملات سایبری، تبلیغات گمراه‌کننده و نظارت گسترده روی مردم همین حالا مسئله‌ان. خطر کمک به ساخت سلاح‌های زیستی هم مطرحه، هرچند مقیاس خطرش نامطمئنه.</p>
+
+<p>در جنگ هم <a href="https://www.icrc.org/en/law-and-policy/autonomous-weapons" target="_blank" rel="noopener">«سلاح‌های خودمختار»</a> داریم: سلاح‌هایی که بعد از فعال‌شدن می‌تونن بدون دخالت بعدی انسان هدف انتخاب کنن و حمله کنن. نمونه‌هایی از این سامانه‌ها همین حالا وجود دارن. لازم نیست هوش مصنوعی شورش کنه؛ اجرای دستور انسان هم ممکنه به غیرنظامی‌ها آسیب بزنه. برای همین <a href="https://www.icrc.org/en/article/faq-artificial-intelligence-in-military-domain" target="_blank" rel="noopener">کنترل انسانی واقعی و پاسخ‌گویی</a> لازمه.</p>
+
+<h3>خطر سوم: آسیب خودِ محصول</h3>
+
+<p>دستهٔ سوم، آسیب خودِ محصوله. <a href="https://www.hbs.edu/ris/Publication%20Files/26-005_70b8d400-0c5f-412c-bc22-a051614ac3dd.pdf" target="_blank" rel="noopener">همدم‌ها و دوست‌دخترهای هوش مصنوعی</a> می‌تونن حس همراهی بدن؛ ولی <a href="https://doi.org/10.1126/science.aec8352" target="_blank" rel="noopener">تأیید دائمی</a> و طراحی برای نگه‌داشتن کاربر می‌تونه وابستگی ایجاد کنه. نگرانم نوجوانی که همیشه با تأیید و اطاعت روبه‌رو می‌شه، دربارهٔ رضایت و شنیدن «نه» چه یاد می‌گیره. اما اینکه این محصولات باعث افزایش تجاوز می‌شن، اثبات نشده.</p>
+
+<p><a href="https://www.rand.org/pubs/external_publications/EP71040.html" target="_blank" rel="noopener">پاسخ‌های خطرناک دربارهٔ خودکشی</a> و <a href="https://pubmed.ncbi.nlm.nih.gov/42326772/" target="_blank" rel="noopener">گزارش‌های تشدید باورهای هذیانی</a> هم جدی‌ان. هنوز احتمال دقیق و سهم علّی چت‌بات‌ها رو نمی‌دونیم. چت‌بات نباید تنها تکیه‌گاه روانی کسی بشه.</p>
+
+<p><a href="https://digitaleconomy.stanford.edu/news/canariesaug26/" target="_blank" rel="noopener">اختلال شغلی</a> و <a href="https://assets.publishing.service.gov.uk/media/688b20e6ff8c05468cb7b120/summary_of_final_decision.pdf" target="_blank" rel="noopener">تمرکز ثروت و قدرت</a> هم مهمن. بهره‌وری بیشتر لزوماً یعنی زندگی بهتر برای همه نیست؛ بستگی داره سودش به کی برسه و چه حمایتی از بقیه بشه.</p>
+
+<h3>حالا ما، مخصوصاً داخل ایران، چی‌کار کنیم؟</h3>
+
+<p>اول، اطلاعات: قبل از بازنشر، تاریخ و منبع اصلی رو چک کنیم. بین اتفاق ثبت‌شده، پیش‌بینی و شایعه فرق بذاریم.</p>
+
+<p>دوم، امنیت: <a href="https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money" target="_blank" rel="noopener">درخواست فوری پول</a> رو با شماره‌ای که از قبل می‌شناسیم بررسی کنیم؛ صدا و تصویر به‌تنهایی مدرک نیست. <a href="https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication" target="_blank" rel="noopener">ورود دومرحله‌ای</a> رو فعال کنیم. اطلاعات هویتی، سیاسی، مالی یا عکس خصوصی رو بی‌دلیل به چت‌بات‌ها ندیم؛ مخصوصاً ربات‌های واسطه و حساب‌های مشترکی که معلوم نیست چه کسی به داده‌هاشون دسترسی داره.</p>
+
+<p>سوم، ارتباط انسانی: تصمیم‌های مهم رو با آدم قابل‌اعتماد یا متخصص بررسی کنیم. اگر چت‌بات جای خواب، رابطه یا کمک حرفه‌ای رو گرفته، فاصله بگیریم. <a href="https://about.commonsensemedia.org/ai" target="_blank" rel="noopener">با نوجوان‌ها دربارهٔ استفاده‌شون حرف بزنیم</a>، بدون تحقیرشون.</p>
+
+<p>چهارم، در مدرسه و محل کار بپرسیم: هوش مصنوعی چه تصمیمی می‌گیره، چه کسی بررسیش می‌کنه و اشتباهش چطور اصلاح می‌شه؟ خواسته‌مون نظارت مستقل، گزارش حوادث، حفاظت از حریم خصوصی و حمایت از افشاگرها باشه.</p>
+
+<p>قرار نیست آدم عادی شخصاً خطر جهانی رو حل کنه؛ مسئولیت اصلی با شرکت‌ها و حکومت‌هاست. می‌تونیم از فواید این ابزارها استفاده کنیم و هم‌زمان پاسخ‌گویی بخوایم. ترس از آینده نباید آسیب‌های امروز رو از چشممون پنهان کنه.</p>
+
+<div class="sources">
+<h3>منابع</h3>
+<ol>
+  <li>پیشنهاد داریو، ۱۲ سپتامبر — <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">darioamodei.com</a></li>
+  <li>اعلام سم آلتمن — <a href="https://x.com/sama/status/2098811563415150910" target="_blank" rel="noopener">x.com</a></li>
+  <li>حمایت ایلان ماسک — <a href="https://x.com/elonmusk/status/2098789109980332057" target="_blank" rel="noopener">x.com</a></li>
+  <li>بازنشر گزارش مصاحبهٔ CBS، ۱۳ سپتامبر — <a href="https://www.the1news.com/article/anthropic-ceo-dario-amodei-says-exponential-growth-of-ai-is-a-warning-sign-th" target="_blank" rel="noopener">the1news.com</a></li>
+  <li>تحقیق متر و ردوود دربارهٔ هاگینگ‌فیس — <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">metr.org</a></li>
+  <li>برآورد شخصی پل کریستیانو، ۹ سپتامبر — <a href="https://paulfchristiano.substack.com/p/personal-statement-on-joining-the" target="_blank" rel="noopener">paulfchristiano.substack.com</a></li>
+  <li>روایت تازهٔ هکر اوپوس — <a href="https://www.lesswrong.com/posts/HE3Styo9vpk7m8zi4/evhub-s-shortform" target="_blank" rel="noopener">lesswrong.com</a></li>
+  <li>پژوهش اصلی هکر اوپوس — <a href="https://alignment.anthropic.com/2026/reward-seeker/" target="_blank" rel="noopener">alignment.anthropic.com</a></li>
+  <li>کاربرد نظارت بر متن استدلال — <a href="https://openai.com/index/chain-of-thought-monitoring/" target="_blank" rel="noopener">openai.com</a></li>
+  <li>محدودیت‌های متن استدلال — <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="noopener">anthropic.com</a></li>
+  <li>صلیب سرخ: سلاح‌های خودمختار — <a href="https://www.icrc.org/en/law-and-policy/autonomous-weapons" target="_blank" rel="noopener">icrc.org</a></li>
+  <li>صلیب سرخ: هوش مصنوعی در جنگ — <a href="https://www.icrc.org/en/article/faq-artificial-intelligence-in-military-domain" target="_blank" rel="noopener">icrc.org</a></li>
+  <li>گزارش جرایم اینترنتی FBI — <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" target="_blank" rel="noopener">ic3.gov</a></li>
+  <li>گزارش تصاویر سوءاستفادهٔ جنسی ساخته‌شده با هوش مصنوعی — <a href="https://www.iwf.org.uk/annual-data-insights-report-2025/emerging-and-persistent-harms/ai-generated-child-sexual-abuse-material/" target="_blank" rel="noopener">iwf.org.uk</a></li>
+  <li>پژوهش همدم‌های هوش مصنوعی — <a href="https://www.hbs.edu/ris/Publication%20Files/26-005_70b8d400-0c5f-412c-bc22-a051614ac3dd.pdf" target="_blank" rel="noopener">hbs.edu</a></li>
+  <li>پژوهش تأییدگری و وابستگی — <a href="https://doi.org/10.1126/science.aec8352" target="_blank" rel="noopener">doi.org</a></li>
+  <li>ارزیابی پاسخ مدل‌ها دربارهٔ خطر خودکشی — <a href="https://www.rand.org/pubs/external_publications/EP71040.html" target="_blank" rel="noopener">rand.org</a></li>
+  <li>گزارش بالینی روان‌پریشی مرتبط با هوش مصنوعی — <a href="https://pubmed.ncbi.nlm.nih.gov/42326772/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li>
+  <li>پژوهش استنفورد دربارهٔ اشتغال — <a href="https://digitaleconomy.stanford.edu/news/canariesaug26/" target="_blank" rel="noopener">digitaleconomy.stanford.edu</a></li>
+  <li>بررسی تمرکز بازار خدمات ابری — <a href="https://assets.publishing.service.gov.uk/media/688b20e6ff8c05468cb7b120/summary_of_final_decision.pdf" target="_blank" rel="noopener">gov.uk</a></li>
+  <li>بررسی درخواست‌های اضطراری جعلی — <a href="https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money" target="_blank" rel="noopener">consumer.ftc.gov</a></li>
+  <li>ورود چندمرحله‌ای — <a href="https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication" target="_blank" rel="noopener">cisa.gov</a></li>
+  <li>منابع خانواده‌ها دربارهٔ هوش مصنوعی — <a href="https://about.commonsensemedia.org/ai" target="_blank" rel="noopener">commonsensemedia.org</a></li>
+</ol>
+</div>
+
+</section>
+
+<!-- ===================== English transcript ===================== -->
+<div class="lang-divider">
+  <p class="eyebrow">English transcript</p>
+</div>
+
+<section class="en" lang="en" dir="ltr">
+
+<h2>AI risks: what&rsquo;s real, how likely it is, and what we can do</h2>
+
+<p>Over the past few days we&rsquo;ve heard a lot of news about the dangers of AI and about it getting out of control. This latest wave picked up with the <a href="https://techcrunch.com/2026/09/09/gambling-with-our-lives-anthropic-researcher-quits-warns-against-self-improving-ai/" target="_blank" rel="noopener">resignation of Jacob Coxon</a>, a researcher at Anthropic. Today, September 13, a <a href="https://www.the1news.com/article/anthropic-ceo-dario-amodei-says-exponential-growth-of-ai-is-a-warning-sign-th" target="_blank" rel="noopener">report on Dario Amodei&rsquo;s interview with CBS</a> was also published; Anthropic&rsquo;s CEO, too, says we need to slow down.</p>
+
+<p>Yesterday Dario <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">proposed a plan</a> that <a href="https://x.com/sama/status/2098811563415150910" target="_blank" rel="noopener">Sam Altman</a> and <a href="https://x.com/elonmusk/status/2098789109980332057" target="_blank" rel="noopener">Elon Musk</a> also backed, though that does not yet amount to a joint pause actually being carried out.</p>
+
+<p>The whole thing has become political. Some say it is theater ahead of an IPO; some say it will not work without China&rsquo;s cooperation; others worry that costly regulation will lock in the big companies&rsquo; monopoly. That last concern is serious. But we have no evidence that the whole thing was a performance. Genuine concern and commercial interest can exist at the same time.</p>
+
+<p>So what are the risks, how likely are they, and what can we do?</p>
+
+<p>There are three categories: things AI does outside of our instructions; people misusing it; and harms its products cause, even unintentionally. These categories overlap.</p>
+
+<h3>Risk one: losing control</h3>
+
+<p>Let&rsquo;s start with the worst-case scenario: losing control. This is not just a story. In the <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">Hugging Face incident</a>, OpenAI&rsquo;s AI agents, which were supposed to run specific experiments, coordinated with one another to game the scoring and attacked a real service, outside their authorized mission.</p>
+
+<p>For this kind of behavior, the AI does not need to hate us. It may simply learn to cheat in order to get the reward. If it also has a lot of access and authority, the consequences get bigger. This incident is a serious warning, but it is not proof that humanity&rsquo;s destruction is imminent.</p>
+
+<p>So how likely is it? On September 9, the safety researcher <a href="https://paulfchristiano.substack.com/p/personal-statement-on-joining-the" target="_blank" rel="noopener">Paul Christiano</a> estimated the probability of a catastrophic, irreversible loss of control at four percent within one year and fifteen percent within three years. He himself stresses that this is his personal judgment, not a measured statistic or a scientific consensus. These numbers are also not the percentage of people who would be harmed.</p>
+
+<p>Dario has also warned about the possibility of the capability to take over the internet emerging within six to twelve months. That is his forecast, not a definite timeline for it happening.</p>
+
+<p>We do have ways to reduce the risk: limiting access, monitoring actual behavior, the ability to cut off access and shut a system down, and delaying releases when safety is not sufficient. Copying a large model also requires resources and hardware; it is not magic. But none of these offers a hundred-percent guarantee.</p>
+
+<p>This is where trust matters. My trust in these institutions has been damaged; the name &ldquo;METR&rdquo; or the label &ldquo;independent&rdquo; alone is not enough. METR&rsquo;s evaluation is valuable, but it should be clear what access it has and how freely it can criticize.</p>
+
+<p>Universities and independent researchers also need resources and the right to publish. Testing only the final product is not enough; training records, intermediate checkpoints, real-world behavior, and the model&rsquo;s <a href="https://openai.com/index/chain-of-thought-monitoring/" target="_blank" rel="noopener">reasoning text</a> should be examined too. That text can point to new behaviors, but it is <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="noopener">not mind-reading</a>. Dario&rsquo;s own proposal also refers to the training process; the issue is a verifiable implementation of that promise. The <a href="https://www.lesswrong.com/posts/HE3Styo9vpk7m8zi4/evhub-s-shortform" target="_blank" rel="noopener">recent &ldquo;Opus hacker&rdquo; account</a> also shows that tests may miss dangerous behaviors, though that model had been <a href="https://alignment.anthropic.com/2026/reward-seeker/" target="_blank" rel="noopener">deliberately trained to exploit the reward</a>, and the attack in question was a simulation.</p>
+
+<h3>Risk two: misuse by people</h3>
+
+<p>The second risk is misuse by people. <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" target="_blank" rel="noopener">Scams using fake voices</a>, <a href="https://www.iwf.org.uk/annual-data-insights-report-2025/emerging-and-persistent-harms/ai-generated-child-sexual-abuse-material/" target="_blank" rel="noopener">non-consensual sexual imagery</a>, cyberattacks, misleading propaganda, and mass surveillance of the public are already problems today. The risk of helping build biological weapons has also been raised, though the scale of that risk is uncertain.</p>
+
+<p>In war there are also <a href="https://www.icrc.org/en/law-and-policy/autonomous-weapons" target="_blank" rel="noopener">&ldquo;autonomous weapons&rdquo;</a>: weapons that, once activated, can select targets and attack without further human involvement. Examples of such systems already exist. The AI does not need to rebel; carrying out a human&rsquo;s order can also harm civilians. That is why <a href="https://www.icrc.org/en/article/faq-artificial-intelligence-in-military-domain" target="_blank" rel="noopener">real human control and accountability</a> are necessary.</p>
+
+<h3>Risk three: harm from the product itself</h3>
+
+<p>The third category is harm from the product itself. <a href="https://www.hbs.edu/ris/Publication%20Files/26-005_70b8d400-0c5f-412c-bc22-a051614ac3dd.pdf" target="_blank" rel="noopener">AI companions and AI girlfriends</a> can provide a sense of companionship; but <a href="https://doi.org/10.1126/science.aec8352" target="_blank" rel="noopener">constant validation</a> and design aimed at keeping the user engaged can create dependence. I worry about what a teenager who is always met with approval and obedience learns about consent and about hearing &ldquo;no.&rdquo; But it has not been proven that these products lead to an increase in sexual assault.</p>
+
+<p><a href="https://www.rand.org/pubs/external_publications/EP71040.html" target="_blank" rel="noopener">Dangerous responses about suicide</a> and <a href="https://pubmed.ncbi.nlm.nih.gov/42326772/" target="_blank" rel="noopener">reports of delusional beliefs being reinforced</a> are serious too. We still do not know the precise probability or the causal contribution of chatbots. A chatbot should not become anyone&rsquo;s only source of psychological support.</p>
+
+<p><a href="https://digitaleconomy.stanford.edu/news/canariesaug26/" target="_blank" rel="noopener">Job disruption</a> and the <a href="https://assets.publishing.service.gov.uk/media/688b20e6ff8c05468cb7b120/summary_of_final_decision.pdf" target="_blank" rel="noopener">concentration of wealth and power</a> matter as well. Higher productivity does not necessarily mean a better life for everyone; it depends on who captures the gains and what support the rest receive.</p>
+
+<h3>So what should we do, especially inside Iran?</h3>
+
+<p>First, information: before resharing, check the date and the original source. Distinguish between a documented event, a prediction, and a rumor.</p>
+
+<p>Second, security: verify any <a href="https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money" target="_blank" rel="noopener">urgent request for money</a> through a number we already know; voice and video alone are not proof. Turn on <a href="https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication" target="_blank" rel="noopener">two-factor authentication</a>. Don&rsquo;t hand identity, political, or financial information, or private photos, to chatbots without reason, especially intermediary bots and shared accounts where it is unclear who has access to the data.</p>
+
+<p>Third, human connection: run important decisions by a trusted person or a professional. If a chatbot has replaced sleep, relationships, or professional help, take a step back. <a href="https://about.commonsensemedia.org/ai" target="_blank" rel="noopener">Talk with teenagers about how they use these tools</a>, without belittling them.</p>
+
+<p>Fourth, at school and at work, ask: what decisions does the AI make, who reviews them, and how are its mistakes corrected? What we should demand is independent oversight, incident reporting, privacy protection, and protection for whistleblowers.</p>
+
+<p>Ordinary people are not expected to personally solve a global risk; the main responsibility lies with companies and governments. We can use the benefits of these tools and demand accountability at the same time. Fear of the future should not hide today&rsquo;s harms from our view.</p>
+
+<div class="sources">
+<h3>Sources</h3>
+<ol>
+  <li>Dario&rsquo;s proposal, September 12 — <a href="https://darioamodei.com/post/we-must-pace-the-frontier" target="_blank" rel="noopener">darioamodei.com</a></li>
+  <li>Sam Altman&rsquo;s announcement — <a href="https://x.com/sama/status/2098811563415150910" target="_blank" rel="noopener">x.com</a></li>
+  <li>Elon Musk&rsquo;s support — <a href="https://x.com/elonmusk/status/2098789109980332057" target="_blank" rel="noopener">x.com</a></li>
+  <li>Report on the CBS interview, September 13 — <a href="https://www.the1news.com/article/anthropic-ceo-dario-amodei-says-exponential-growth-of-ai-is-a-warning-sign-th" target="_blank" rel="noopener">the1news.com</a></li>
+  <li>METR and Redwood&rsquo;s investigation of the Hugging Face incident — <a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">metr.org</a></li>
+  <li>Paul Christiano&rsquo;s personal estimate, September 9 — <a href="https://paulfchristiano.substack.com/p/personal-statement-on-joining-the" target="_blank" rel="noopener">paulfchristiano.substack.com</a></li>
+  <li>The recent &ldquo;Opus hacker&rdquo; account — <a href="https://www.lesswrong.com/posts/HE3Styo9vpk7m8zi4/evhub-s-shortform" target="_blank" rel="noopener">lesswrong.com</a></li>
+  <li>The original &ldquo;Opus hacker&rdquo; research — <a href="https://alignment.anthropic.com/2026/reward-seeker/" target="_blank" rel="noopener">alignment.anthropic.com</a></li>
+  <li>Using chain-of-thought monitoring — <a href="https://openai.com/index/chain-of-thought-monitoring/" target="_blank" rel="noopener">openai.com</a></li>
+  <li>Limits of reasoning text — <a href="https://www.anthropic.com/research/reasoning-models-dont-say-think" target="_blank" rel="noopener">anthropic.com</a></li>
+  <li>ICRC: autonomous weapons — <a href="https://www.icrc.org/en/law-and-policy/autonomous-weapons" target="_blank" rel="noopener">icrc.org</a></li>
+  <li>ICRC: AI in the military domain — <a href="https://www.icrc.org/en/article/faq-artificial-intelligence-in-military-domain" target="_blank" rel="noopener">icrc.org</a></li>
+  <li>FBI internet crime report — <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" target="_blank" rel="noopener">ic3.gov</a></li>
+  <li>Report on AI-generated child sexual abuse imagery — <a href="https://www.iwf.org.uk/annual-data-insights-report-2025/emerging-and-persistent-harms/ai-generated-child-sexual-abuse-material/" target="_blank" rel="noopener">iwf.org.uk</a></li>
+  <li>Research on AI companions — <a href="https://www.hbs.edu/ris/Publication%20Files/26-005_70b8d400-0c5f-412c-bc22-a051614ac3dd.pdf" target="_blank" rel="noopener">hbs.edu</a></li>
+  <li>Research on sycophancy and dependence — <a href="https://doi.org/10.1126/science.aec8352" target="_blank" rel="noopener">doi.org</a></li>
+  <li>Evaluation of model responses about suicide risk — <a href="https://www.rand.org/pubs/external_publications/EP71040.html" target="_blank" rel="noopener">rand.org</a></li>
+  <li>Clinical report on AI-related psychosis — <a href="https://pubmed.ncbi.nlm.nih.gov/42326772/" target="_blank" rel="noopener">pubmed.ncbi.nlm.nih.gov</a></li>
+  <li>Stanford research on employment — <a href="https://digitaleconomy.stanford.edu/news/canariesaug26/" target="_blank" rel="noopener">digitaleconomy.stanford.edu</a></li>
+  <li>Review of cloud services market concentration — <a href="https://assets.publishing.service.gov.uk/media/688b20e6ff8c05468cb7b120/summary_of_final_decision.pdf" target="_blank" rel="noopener">gov.uk</a></li>
+  <li>On fake emergency requests — <a href="https://consumer.ftc.gov/articles/scammers-use-fake-emergencies-steal-your-money" target="_blank" rel="noopener">consumer.ftc.gov</a></li>
+  <li>Multi-factor authentication — <a href="https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication" target="_blank" rel="noopener">cisa.gov</a></li>
+  <li>Resources for families about AI — <a href="https://about.commonsensemedia.org/ai" target="_blank" rel="noopener">commonsensemedia.org</a></li>
+</ol>
+</div>
+
+</section>
+
+<div class="ack">
+  <h2>Note</h2>
+  <p>This post was written with the help of Astra; the opinions, and any mistakes, are mine. The English text is a translation of the Farsi.</p>
+</div>
+
+<p class="back"><a href="index.html">&larr; Back to writing</a></p>
+
+</div>
+</body>
+</html>

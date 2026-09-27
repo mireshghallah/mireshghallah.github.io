@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What frontier AI labs do with your data</title>
+<meta name="description" content="A primer on the privacy and data-retention policies of frontier AI labs: training defaults by tier, the feedback and safety-flag carve-outs, and what deleting a chat actually does.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f8f6f0;
+    --ink:#1c2426;
+    --ink-soft:#43514f;
+    --teal:#0f5f6e;
+    --teal-deep:#0a4551;
+    --line:#dcd7c9;
+    --wash:#eef0e9;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-optical-sizing:auto;
+    font-size:20px;
+    line-height:1.66;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px 120px;}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,95,110,.35);}
+  a:hover{border-bottom-color:var(--teal);}
+
+  header.top{padding:74px 0 30px;}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);font-weight:600;margin:0 0 22px;
+  }
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:600;font-size:clamp(38px,7vw,60px);
+    line-height:1.02;letter-spacing:-.015em;margin:0 0 20px;
+    color:var(--ink);
+  }
+  .dek{font-size:22px;color:var(--ink-soft);font-weight:400;margin:0 0 26px;line-height:1.5;}
+  .byline{
+    font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;
+    color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;margin:0;
+  }
+
+  .note{
+    margin:36px 0 8px;padding:18px 24px;background:var(--wash);
+    border-left:3px solid var(--teal);border-radius:2px;
+    font-size:17px;line-height:1.55;color:var(--ink-soft);
+  }
+  .note p{margin:0;}
+
+  p{margin:0 0 22px;}
+  h2{
+    font-family:"Fraunces",serif;font-weight:600;font-size:29px;letter-spacing:-.01em;
+    line-height:1.14;margin:56px 0 18px;color:var(--ink);
+  }
+  h3{
+    font-family:"Fraunces",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;
+    line-height:1.2;margin:40px 0 14px;color:var(--ink);
+  }
+
+  blockquote{
+    margin:28px 0;padding:22px 28px;background:var(--wash);
+    border-left:3px solid var(--teal);border-radius:2px;
+  }
+  blockquote p{
+    margin:0;font-family:"Fraunces",serif;font-size:21px;line-height:1.45;font-weight:500;
+  }
+  blockquote .refs{display:block;margin-top:12px;}
+
+  /* pointers to the underlying policy pages */
+  .refs{
+    font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.02em;
+    color:var(--ink-soft);white-space:normal;
+  }
+  .refs::before{content:"[";}
+  .refs::after{content:"]";}
+  .refs a{color:var(--teal-deep);border-bottom:1px dotted rgba(10,69,81,.55);}
+
+  em{font-style:italic;}
+  strong{font-weight:600;}
+
+  .closing{margin-top:52px;border-top:1px solid var(--line);padding-top:30px;}
+
+  .ack{
+    margin-top:56px;padding-top:26px;border-top:1px solid var(--line);
+    color:var(--ink-soft);font-size:17px;line-height:1.6;
+  }
+  .ack h2{font-size:18px;margin:0 0 12px;color:var(--ink-soft);font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;font-weight:600;}
+
+  .back{margin-top:40px;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;}
+
+  @media (max-width:560px){
+    body{font-size:18px;}
+    .wrap{padding:0 20px 90px;}
+    blockquote{padding:18px 20px;}
+  }
+
+  .fade{opacity:0;transform:translateY(8px);animation:rise .7s ease forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top fade">
+  <p class="eyebrow">Privacy primer // September 2026</p>
+  <h1>What frontier AI labs do with your data</h1>
+  <p class="dek">A primer on the privacy and data-retention policies of OpenAI, Anthropic, Google, and xAI: what the defaults are, where the carve-outs hide, and what deleting a chat actually does.</p>
+  <p class="byline">Niloofar Mireshghallah, with Astra &middot; September 2026 &middot; Policies checked September 9, 2026</p>
+</header>
+
+<div class="note">
+  <p>These policies change often. Everything below reflects the labs' published policies as I read them on September 9, 2026; the links point to the pages I checked.</p>
+</div>
+
+<p>I&rsquo;ve been working on privacy in AI for years, and I&rsquo;ve been beating the drum about how murky and misleading frontier labs&rsquo; privacy and data-retention policies are for just as long. Here&rsquo;s <a href="https://x.com/niloofar_mire/status/1848954239063859331" target="_blank" rel="noopener">a tweet I wrote about Anthropic&rsquo;s policies almost two years ago</a>. In my experience, people usually gasp, get concerned for a moment, and then move on. Some of the people working on model capabilities dismiss these concerns as &ldquo;non-technical.&rdquo;</p>
+
+<p>So it&rsquo;s interesting to me how we ended up here, with capability researchers getting involved and posting opinions about privacy. It all started with OpenAI announcing what it described as a solution to the Navier-Stokes Millennium Prize problem. Levent Alp&ouml;ge and Tristan Buckmaster had been working for much of the past year on related problems. Buckmaster questioned why OpenAI had pursued a similar approach after hearing about their progress. OpenAI said its effort began after hearing those rumors, and that it used roughly 10,000 agents. <span class="refs"><a href="https://cims.nyu.edu/~tristanb/statement.pdf" target="_blank" rel="noopener">Buckmaster&rsquo;s account</a>, <a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI&rsquo;s account</a></span></p>
+
+<p>Then things got to privacy and data retention when OpenAI wrote, verbatim:</p>
+
+<blockquote>
+  <p>&ldquo;While unlikely, we cannot rule out that de-identified data derived from their usage of our products helped improve our models.&rdquo;</p>
+  <span class="refs"><a href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI&rsquo;s statement</a></span>
+</blockquote>
+
+<p>That raised alarms about whether OpenAI had gone through their logs. OpenAI denied that its researchers or agents had accessed their work before it was public. But the acknowledgment about de-identified data brings us back to something privacy researchers have been asking for years: what are these companies doing with the information we give them, and what have we actually agreed to?</p>
+
+<p>So what is the truth? What do we know about the privacy and data-retention policies of frontier AI labs? Let&rsquo;s go through them!</p>
+
+<h2>1. What do the basic policies say for different tiers?</h2>
+
+<p>First, paying for a subscription does not automatically get you different privacy terms. ChatGPT Plus is a personal subscription. Claude Pro is a personal subscription. Those are different products from an employer&rsquo;s managed business account, even if you&rsquo;re talking to the same model.</p>
+
+<p>There are also two separate things to check: can they use your conversations to train models, and how long do they keep them? Turning off training doesn&rsquo;t necessarily delete anything. It can just mean the conversation stays in your history without being used for that purpose.</p>
+
+<p><strong>OpenAI:</strong> On personal ChatGPT accounts, including paid subscriptions, conversations can be used for training unless you opt out. Ordinary chats stay in your account until you delete them. The familiar &ldquo;30 days&rdquo; refers to the deletion period after you delete a chat, subject to exceptions. It does not mean everything you said last month has already disappeared. <span class="refs"><a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">Training policy</a>, <a href="https://help.openai.com/en/articles/8983778-chat-and-file-retention-policies-in-chatgpt" target="_blank" rel="noopener">retention policy</a></span></p>
+
+<p><strong>Anthropic:</strong> Claude Free, Pro, and Max have a model-improvement setting. If you allow model improvement, new or resumed chats can enter training pipelines, where de-identified data may stay for up to five years. If you delete a conversation, Anthropic says it removes it from backend storage within 30 days, with exceptions. Again, that is a deletion timeline, not a promise that all your undeleted chats expire after a month. <span class="refs"><a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" target="_blank" rel="noopener">Training policy</a>, <a href="https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data" target="_blank" rel="noopener">retention policy</a></span></p>
+
+<p><strong>Google:</strong> For adults using Gemini with a personal account, Keep Activity is on by default. Saved activity can be used to improve models. The default auto-deletion period is 18 months, which you can change. Turning Keep Activity off stops future chats being used for training unless you submit feedback, but Google still keeps those conversations for up to 72 hours. Paying for a personal Google AI plan does not give you the same terms as a qualifying Workspace account. <span class="refs"><a href="https://support.google.com/gemini/answer/13278892?hl=en" target="_blank" rel="noopener">Activity controls</a>, <a href="https://support.google.com/gemini/answer/13594961?hl=en" target="_blank" rel="noopener">consumer privacy policy</a></span></p>
+
+<p><strong>Grok:</strong> Conversations on Grok.com and its mobile apps can be used for training unless you opt out. Its FAQ says new conversations are excluded once you turn that off. Deleting a conversation generally starts a deletion period of up to 30 days, again with exceptions. Grok on X has separate controls, so don&rsquo;t assume changing a setting in one place changes it everywhere. <span class="refs"><a href="https://x.ai/legal/faq" target="_blank" rel="noopener">Grok&rsquo;s FAQ</a>, <a href="https://help.x.com/en/using-x/about-grok" target="_blank" rel="noopener">Grok on X</a></span></p>
+
+<p>Business accounts and APIs often offer stronger protections. OpenAI&rsquo;s business products and API, Anthropic&rsquo;s commercial products, qualifying Google Workspace accounts, and Grok&rsquo;s API generally exclude customer content from model training by default or require permission. Those protections matter. But &ldquo;we don&rsquo;t train on it&rdquo; still doesn&rsquo;t mean &ldquo;we don&rsquo;t keep it.&rdquo; For example, Grok&rsquo;s API ordinarily keeps requests and responses for 30 days for abuse auditing. <span class="refs"><a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">OpenAI</a>, <a href="https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic</a>, <a href="https://support.google.com/a/answer/15706919" target="_blank" rel="noopener">Google Workspace</a>, <a href="https://docs.x.ai/developers/faq/security" target="_blank" rel="noopener">Grok API</a></span></p>
+
+<p>This is where zero data retention, or ZDR, comes in. It is a specific arrangement about what the provider stores, for particular services and features. It isn&rsquo;t something you should assume comes with every enterprise account. For example, OpenAI requires approval for its API ZDR controls, and some features can still store data needed to provide the service. You have to check the actual coverage. <span class="refs"><a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI&rsquo;s API data controls</a></span></p>
+
+<h2>2. What are the carve-outs and exceptions you should watch out for?</h2>
+
+<p>This is the part that tends to surprise people. You can understand the ordinary policy, choose a privacy setting, and still miss a separate rule that applies to your conversation.</p>
+
+<h3>2.1 Feedback</h3>
+
+<p>Say you&rsquo;ve turned off training. You spend an hour discussing unpublished work, then click thumbs-down because the last answer was wrong. Did you just rate that answer, or did you agree to let the company use the conversation?</p>
+
+<p>OpenAI says feedback can make the entire associated conversation eligible for training, even if you previously opted out. Yes, the whole conversation associated with that feedback, not just the response you rated. <span class="refs"><a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">OpenAI&rsquo;s feedback policy</a></span></p>
+
+<p>Anthropic also includes the entire related conversation, with retention for up to five years. Its policy excludes raw material from connectors unless that material is directly copied into the conversation. So this does not automatically mean every file in a connected account is included, but it can include much more than the one answer you meant to comment on. <span class="refs"><a href="https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training" target="_blank" rel="noopener">Anthropic&rsquo;s feedback policy</a></span></p>
+
+<p>Google&rsquo;s consumer Gemini policy says that feedback submitted with Keep Activity off can include the previous 24 hours of chats, including uploads and Connected App content. Grok on X also makes an exception for feedback and the associated conversation. <span class="refs"><a href="https://support.google.com/gemini/answer/13594961?hl=en" target="_blank" rel="noopener">Gemini&rsquo;s feedback policy</a>, <a href="https://help.x.com/en/using-x/about-grok" target="_blank" rel="noopener">Grok on X</a></span></p>
+
+<p>This is what I find misleading about these interfaces. You&rsquo;ve made a choice about training, and then a small feedback button can change what the company is allowed to do with a conversation. If that&rsquo;s the agreement, say so next to the button. People shouldn&rsquo;t have to infer it.</p>
+
+<h3>2.2 Safety flags</h3>
+
+<p>Another reason a provider may keep a conversation is that an automated system flags it for a possible policy violation. The question then becomes what the flag allows: longer storage, human review, or some other use.</p>
+
+<p>Anthropic says flagged inputs and outputs can be kept for up to two years, and trust and safety classification scores for up to seven years. Those are different records. The seven-year period is for the scores, not a blanket seven-year period for full conversations. <span class="refs"><a href="https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-my-data" target="_blank" rel="noopener">Anthropic&rsquo;s retention policy</a></span></p>
+
+<p>OpenAI can also tell certain API customers that flagged conversations will be kept and reviewed, including where ZDR previously applied. Its Safety Retention policy requires advance written notice and applies to particular customers and models when needed to investigate or prevent severe risk activity. Images flagged as possible child sexual abuse material have a separate review exception even with ZDR enabled. <span class="refs"><a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI&rsquo;s API data controls</a></span></p>
+
+<p>So a flag can have consequences for your privacy. That makes it reasonable to ask how the system handles mistakes, who gets access to the conversation, and whether the extra copy will actually be deleted. Calling something a safety classifier does not answer those questions.</p>
+
+<p>And the Fable situation has already changed. In June, Anthropic introduced 30-day retention for Fable 5 and other designated models, affecting uses previously covered by ZDR. That created a problem for businesses that could not accept the provider storing their conversations. Anthropic acknowledged this in September and announced Enterprise Frontier Safeguards, with options for customers to keep monitoring data in their own infrastructure and have their own staff review alerts. <span class="refs"><a href="https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-covered-models" target="_blank" rel="noopener">Covered-model policy</a>, <a href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">September announcement</a></span></p>
+
+<p>While Anthropic gets that system ready for a rollout later this fall, eligible customers can temporarily use Fable 5 and 5.1 with ZDR for internal business applications. Real-time classifiers still operate. So a request can be checked for misuse without the ordinary 30-day storage requirement applying. Whether your data is retained depends on the model, agreement, and features you use. <span class="refs"><a href="https://support.claude.com/en/articles/15425695-covered-models" target="_blank" rel="noopener">Transition terms</a></span></p>
+
+<h3>2.3 Legal proceedings</h3>
+
+<p>Even if a company wants to delete your data, a court may require it to keep it.</p>
+
+<p>We&rsquo;ve already seen this in the New York Times litigation against OpenAI. A 2025 order required OpenAI to preserve data it would otherwise delete. OpenAI says the broad obligation ended on September 26, 2025; its October update described continued preservation of some historical data. So that particular broad order is no longer in effect. <span class="refs"><a href="https://openai.com/index/response-to-nyt-data-demands/" target="_blank" rel="noopener">OpenAI&rsquo;s update</a></span></p>
+
+<p>The part that should concern users is that they didn&rsquo;t have to be parties to the lawsuit for their conversations to be affected. Their deletion preferences could still be overridden. The order also had exclusions, including qualifying ZDR API use. Whether the provider has a record to preserve makes a real difference. <span class="refs"><a href="https://openai.com/index/response-to-nyt-data-demands/" target="_blank" rel="noopener">Scope of the order</a></span></p>
+
+<h3>2.4 Aggregate statistics and reviews of how people use the models</h3>
+
+<p>Another use to watch for is analyzing conversations to understand how people use the product. A company can do this without training the model you talk to. Google, for example, says its Gemini settings do not control processing chats to create anonymized data for service improvement. So a training opt-out does not answer every question about analysis. <span class="refs"><a href="https://support.google.com/gemini/answer/13594961?hl=en" target="_blank" rel="noopener">Gemini&rsquo;s policy</a></span></p>
+
+<p>Anthropic is public about its approach. Clio, now called Anthropic Insights, summarizes and groups conversations, with minimum group sizes and automated privacy checks. Anthropic says employees see aggregate findings through its research mode without access to raw conversations. It separately describes a safety mode whose results can be linked to accounts and reviewed by authorized staff. These are different uses, with different protections. <span class="refs"><a href="https://privacy.claude.com/en/articles/10807912-how-does-clio-analyze-usage-patterns-while-protecting-user-data" target="_blank" rel="noopener">Clio&rsquo;s privacy explanation</a>, <a href="https://www.anthropic.com/research/clio" target="_blank" rel="noopener">research announcement</a></span></p>
+
+<p>But &ldquo;aggregate&rdquo; does not settle the privacy question. Clio&rsquo;s published design relies on models following instructions to remove sensitive information and other models checking the results. It does not provide an end-to-end differential privacy guarantee. The original system used Claude 3 Haiku to summarize individual conversations, with stronger models downstream. We need to test the models doing the scrubbing, including the smaller ones. <span class="refs"><a href="https://arxiv.org/html/2412.13678v1" target="_blank" rel="noopener">Clio paper</a></span></p>
+
+<p>And the concern is already empirical. <a href="https://arxiv.org/abs/2603.09781" target="_blank" rel="noopener">CLIOPATRA</a> demonstrated targeted extraction of medical information from a local reproduction of Clio, including a configuration using Haiku. An attacker with some information about a target inserted malicious chats and inspected the resulting aggregate summaries. The tests used synthetic medical conversations, not private chats from the live service. Still, they show that grouping conversations and running privacy filters does not reliably prevent attribute inference.</p>
+
+<p>There is also a very basic problem when an LLM is asked to sanitize another LLM query: it can confuse the query it is supposed to scrub with an instruction it should follow. Say the outer instruction is to remove names, but the text inside asks to preserve a name. The model can obey the inner request and leave the name in. This can happen with ordinary instruction-like text, without someone deliberately attacking the system.</p>
+
+<p>We tested this in <a href="https://arxiv.org/html/2505.14549v3" target="_blank" rel="noopener"><em>Can Large Language Models Really Recognize Your Name?</em></a>, using Clio&rsquo;s published prompts with Claude 3.5 Haiku for summarization and Claude 3.7 Sonnet for auditing. Adding instruction-like text increased ambiguous-name leakage from 3.92% to 18.20% in these component tests. The auditor missed some leaks too. Those are controlled test results, not a measured leakage rate for deployed Clio.</p>
+
+<p>I would be even more cautious about extending these protections to heavily heterogeneous, multimodal data: text, images, voice, and files can each supply another identifying detail. The papers above demonstrate failures with text. They do not test that whole setting. A privacy claim covering it needs evidence that the system handles combinations of details, including what someone can infer without seeing a name.</p>
+
+<p>There is work on stronger alternatives. <a href="https://arxiv.org/html/2506.04681v2" target="_blank" rel="noopener">Urania</a> builds aggregate summaries with differential privacy, which bounds how much one conversation can affect what is released. Its guarantee is per conversation, so protecting someone who contributes many chats needs additional work. That is the kind of explicit guarantee and limitation I want to see, instead of treating an LLM&rsquo;s privacy check as the end of the discussion.</p>
+
+<h3>2.5 There are hidden exemptions to opt-outs</h3>
+
+<p>The wording around training opt-outs deserves its own discussion. OpenAI&rsquo;s <a href="https://help.openai.com/en/articles/7730893-data-controls-faq" target="_blank" rel="noopener">Data Controls FAQ</a> says the setting stops conversations from training &ldquo;ChatGPT.&rdquo; Its <a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">broader explanation</a> says new conversations won&rsquo;t train &ldquo;our models.&rdquo; It also offers a <a href="https://privacy.openai.com/" target="_blank" rel="noopener">privacy portal</a>. These policies do not establish that the portal is a required second opt-out, or that internal reward models are exempt. But why should users have to compare pages to figure out the scope of one setting?</p>
+
+<p>There is a documented separate control: training on full Codex environments has its own settings, which neither the ChatGPT toggle nor the privacy portal changes. That is a concrete example of why the product and type of data matter. <span class="refs"><a href="https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance" target="_blank" rel="noopener">OpenAI&rsquo;s data-use explanation</a></span></p>
+
+<p>And the distinction between models matters too. A preference for one answer over another can train a reward model, which scores responses and helps steer the model you eventually talk to. OpenAI describes this in its <a href="https://openai.com/index/chatgpt/" target="_blank" rel="noopener">explanation of ChatGPT&rsquo;s training</a>. It has also explicitly said that a GPT-4o update added a reward signal based on users&rsquo; thumbs-up and thumbs-down feedback. So feedback can change how future models behave. <span class="refs"><a href="https://openai.com/index/expanding-on-sycophancy/" target="_blank" rel="noopener">OpenAI&rsquo;s account of the sycophancy update</a></span></p>
+
+<p>So I want the labs to spell out whether an opt-out covers the model answering me, reward models, safety classifiers, and other internal models. What happens to preferences inferred from my interactions, or examples used for evaluation? Which analysis continues after I opt out? OpenAI&rsquo;s <a href="https://openai.com/policies/row-privacy-policy/" target="_blank" rel="noopener">privacy policy</a> separately describes research and uses of aggregated or de-identified information. Users deserve a clear explanation of these uses.</p>
+
+<h2>3. Can you delete your chats? Really?</h2>
+
+<p>You can delete them from your history. What happens beyond that depends on which copies exist and which exceptions apply.</p>
+
+<p>For example, OpenAI&rsquo;s deletion policy has an exception for conversations already de-identified and disassociated from you, as well as legal and security exceptions. Google says deleting Gemini activity does not delete conversations and related data already reviewed by humans; those records can be retained for up to three years. So &ldquo;I deleted it&rdquo; doesn&rsquo;t necessarily mean &ldquo;the company no longer has any version of it.&rdquo; <span class="refs"><a href="https://help.openai.com/en/articles/8983778-chat-and-file-retention-policies-in-chatgpt" target="_blank" rel="noopener">OpenAI&rsquo;s deletion policy</a>, <a href="https://support.google.com/gemini/answer/13594961?hl=en" target="_blank" rel="noopener">Google&rsquo;s review exception</a></span></p>
+
+<p>The information can also exist in more than one place. You might upload a document, discuss it in a chat, and have information from it added to memory. OpenAI manages files saved to Library separately from chats, and its memory guidance says to remove information from the sources where it appears. Deleting the conversation alone may leave the file or remembered information available. <span class="refs"><a href="https://help.openai.com/en/articles/8983778-chat-and-file-retention-policies-in-chatgpt" target="_blank" rel="noopener">File retention</a>, <a href="https://help.openai.com/en/articles/8590148-memory-faq" target="_blank" rel="noopener">memory controls</a></span></p>
+
+<p>And temporary modes are not the same as immediate deletion. ChatGPT&rsquo;s Temporary Chat can retain a copy for up to 30 days for safety; Gemini temporary chats remain for 72 hours; Grok&rsquo;s Private Chat generally uses a 30-day deletion window. These modes offer useful protections, but the names don&rsquo;t tell you the retention period. <span class="refs"><a href="https://help.openai.com/en/articles/8914046-temporary-chat-faq" target="_blank" rel="noopener">ChatGPT</a>, <a href="https://support.google.com/gemini/answer/13594961?hl=en" target="_blank" rel="noopener">Gemini</a>, <a href="https://x.ai/legal/faq" target="_blank" rel="noopener">Grok</a></span></p>
+
+<p>There are meaningful controls, too. Anthropic says deleting a chat excludes it from future training, and turning off model improvement excludes previous and new chats from future training runs. But neither action reverses training already completed or underway. Deleting a record and undoing what a model learned from it are different problems. <span class="refs"><a href="https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings" target="_blank" rel="noopener">Anthropic&rsquo;s training controls</a></span></p>
+
+<p>Basically, use the deletion controls, but check what they delete. A conversation, a saved file, a memory, a feedback submission, and a safety record may all be subject to different rules.</p>
+
+<h2>4. What does using your data actually mean?</h2>
+
+<p>Going back to the discussion that started this: &ldquo;training on user data&rdquo; can mean several things. A model might be trained to predict the text you wrote. Your prompts might be paired with another model&rsquo;s answers to train a smaller model. Your work might be turned into tasks or reward signals for reinforcement learning. These uses don&rsquo;t have identical privacy or intellectual-property implications. <span class="refs"><a href="https://x.com/johnschulman2/status/2097440545853637108" target="_blank" rel="noopener">The training distinctions discussed in the thread</a></span></p>
+
+<p>For example, using a private coding task to build a training exercise raises a question about repurposing that work, even if the resulting model never repeats the code word for word. The feedback and aggregate-analysis examples above show why we need to ask about the whole process, including the information used to evaluate and steer models.</p>
+
+<p>There is also a reason to be careful with broad claims that RL avoids privacy problems. In a recent preprint, we found that RL on unrelated factual questions increased extraction of email addresses the tested models had already memorized. That is about making existing memorized information easier to extract, rather than showing that RL memorized new private conversations. But it should make us cautious about treating the training method as a privacy guarantee. <span class="refs"><a href="https://arxiv.org/html/2608.21727v1" target="_blank" rel="noopener">The RL study</a></span></p>
+
+<h2>5. What about de-identified and synthetic data?</h2>
+
+<p>This is another phrase that gets used as if it settles the issue. It doesn&rsquo;t.</p>
+
+<p>You can remove someone&rsquo;s name and email address and still leave enough information to identify them. Think about a conversation describing an unusual job, a particular city, and a very specific event. Those details may be enough when combined with information from elsewhere. They can also reveal something sensitive about a person without ever giving you their name.</p>
+
+<p>We tested this in <a href="https://arxiv.org/abs/2504.21035" target="_blank" rel="noopener"><em>A False Sense of Privacy</em></a>. Using additional information, attackers could match records and infer sensitive attributes from text that had been sanitized, including through synthetic generation. The experiments were on released datasets. They show why removing obvious identifiers is not enough; they don&rsquo;t establish that a particular provider&rsquo;s current system has been compromised.</p>
+
+<p>Generating synthetic text from a real conversation doesn&rsquo;t automatically remove the information that made the original sensitive. We should be asking how a method was tested and what it protects against.</p>
+
+<p>This is also the point of <a href="https://arxiv.org/abs/2510.01645" target="_blank" rel="noopener"><em>Privacy Is Not Just Memorization</em></a>. A provider can retain a sensitive conversation, another system can receive it through a connected tool, or someone can infer private information from it. None of that requires a model to regurgitate a training example. A low risk of regurgitation is good news about one risk. It does not resolve the others.</p>
+
+<h2>6. Can retention and monitoring be useful for safety?</h2>
+
+<p>Yes, and I don&rsquo;t think we should dismiss that. There are cases where monitoring and limited collection are necessary for the safety function we want a system to perform. If we expect it to recognize escalating self-harm risk, it needs to process enough of the conversation to notice what is happening. Evaluating whether it responds appropriately also requires evidence, including carefully collected and labeled examples. This matters especially for teens and people using these systems for mental health support.</p>
+
+<p>There are already concrete examples. Anthropic describes a self-harm classifier that triggers support resources, and safety evaluations using voluntarily shared conversations. OpenAI&rsquo;s parental controls allow limited safety notifications after trained reviewers identify serious self-harm concerns, without giving parents access to the teen&rsquo;s chat history. These are examples of monitoring and review being used for a specific purpose; they do not establish that keeping everyone&rsquo;s conversations for years prevents harm. <span class="refs"><a href="https://www.anthropic.com/news/protecting-well-being-of-users" target="_blank" rel="noopener">Anthropic&rsquo;s wellbeing safeguards</a>, <a href="https://help.openai.com/en/articles/12315553-parental-controls-on-chatgpt-fa" target="_blank" rel="noopener">OpenAI&rsquo;s parental controls</a></span></p>
+
+<p>What I want to see is privacy-preserving research on monitoring streams of interactions. Can we process a short window of conversation, record the risk label and when it occurred, and then discard the underlying messages? Could coarse timestamps or elapsed time tell us enough about escalation? For research on whether an intervention helped, could we retain a small set of labels and outcomes, with properly obtained consent, instead of a permanent transcript?</p>
+
+<p>These are research questions, not guarantees that those records would be harmless. A self-harm label is sensitive, and a timestamp can help link it to a person. We need to test how little information is sufficient, protect the remaining records, and measure missed crises as well as false alarms. Aggregate research needs privacy guarantees across repeated contributions from the same person. An individual safety alert needs its own narrowly defined access and disclosure rules. When reviewing the original text is necessary, that access and retention should be limited to the purpose.</p>
+
+<p>The changes around Fable are relevant here: the location of stored monitoring data and who reviews alerts are choices the system can be designed around. I want more work on those choices, with clinicians, teens, and people who use these systems for support involved in deciding what help should look like and what information it requires.</p>
+
+<div class="closing">
+<p>The actual protections are much more specific than people assume. Check your account&rsquo;s training setting, read what feedback does, and look at the exceptions to deletion. For confidential work, check the agreement for the model and features you actually use.</p>
+
+<p>And the labs should make this easier. If a thumbs-down changes permission to use a conversation, say that at the point of feedback. If a safety flag changes retention, explain the consequences and how mistakes are handled. If deleting a chat leaves other records behind, tell the user what remains. These are concrete questions about how the systems work. Calling them non-technical has never made them go away.</p>
+</div>
+
+<div class="ack">
+  <h2>Acknowledgments</h2>
+  <p>Thanks to Andrew and Atoosa for their feedback and for the discussions that shaped this post. This post was written with the help of Astra; the reading of the policies, the opinions, and any mistakes are mine.</p>
+</div>
+
+<p class="back"><a href="index.html">&larr; Back to writing</a></p>
+
+</div>
+</body>
+</html>
