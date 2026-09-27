@@ -54,6 +54,43 @@ h2.custom-text-color, h3.custom-text-color, h4.custom-text-color{ color:var(--cm
 a.custom-text-color{ color:var(--link-color); }
 .link-hover:hover{ text-decoration:underline; }
 
+/* ----------  Lab intro (lightning talk)  ---------- */
+.intro-grid{ display:grid; grid-template-columns:1fr; gap:1.4rem; align-items:start; }
+@media (min-width:768px){ .intro-grid{ grid-template-columns:3fr 2fr; } }
+.intro-text p{ margin-bottom:0.8rem; line-height:1.7; }
+.intro-text ol{ list-style:decimal; padding-left:1.4rem; margin:0.4rem 0 0.9rem; }
+.intro-text ol li{ margin:0.3rem 0; line-height:1.6; }
+.intro-text strong{ color:var(--cmu-green); }
+.intro-links{ font-size:0.95rem; }
+.intro-links a{ color:var(--cmu-green); font-weight:600; text-decoration:none; }
+.intro-links a:hover{ color:var(--link-color); text-decoration:underline; }
+.intro-video{
+  position:relative; width:100%; padding-top:56.25%;
+  border-radius:6px; overflow:hidden; background:#000;
+  box-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+.intro-video iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+.talk-summary{
+  margin-top:1.4rem;
+  padding:1rem 1.2rem;
+  background:#fafafa;
+  border-left:3px solid var(--cmu-gold);
+  border-radius:0 4px 4px 0;
+  font-size:0.92rem;
+  line-height:1.6;
+  color:#555;
+}
+.talk-summary h3{
+  font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;
+  color:#666; margin:0 0 0.6rem;
+}
+.talk-summary h3 + p, .talk-summary ul + h3{ margin-top:1rem; }
+.talk-summary p{ margin-bottom:0.7rem; }
+.talk-summary ul{ list-style:disc; padding-left:1.2rem; margin:0.3rem 0 0.7rem; }
+.talk-summary li{ margin:0.3rem 0; }
+.talk-summary strong{ color:var(--cmu-green); }
+.talk-summary .collab{ color:#777; font-size:0.86rem; }
+
 /* ----------  Members  ---------- */
 .member-list{ list-style:disc; padding-left:1.25rem; margin:0.5rem 0; }
 .member-list li{ margin:0.3rem 0; font-size:0.95rem; }
@@ -121,6 +158,8 @@ a.custom-text-color{ color:var(--link-color); }
       <nav class="text-xl font-bold flex flex-wrap justify-end">
         <a href="index.html" class="nav-link hover:underline">Home</a>
         <span class="nav-separator">|</span>
+        <a href="#intro" class="nav-link hover:underline">Intro</a>
+        <span class="nav-separator">|</span>
         <a href="#members" class="nav-link hover:underline">Members</a>
         <span class="nav-separator">|</span>
         <a href="#collaborators" class="nav-link hover:underline">Collaborators</a>
@@ -136,6 +175,43 @@ a.custom-text-color{ color:var(--link-color); }
 
   <main class="content-width mx-auto px-4 py-10">
     <div class="content-box">
+
+      <!-- ========== LAB INTRO (LIGHTNING TALK) ========== -->
+      <section class="mb-8" id="intro">
+        <h2 class="text-2xl font-bold mb-4 custom-text-color">Lab Intro: Learning the Tails!</h2>
+
+        <div class="intro-grid">
+          <div class="intro-text">
+            <p><strong>LOONI</strong> stands for <strong>L</strong>ong-horizon, <strong>O</strong>ut-<strong>O</strong>f-distribution, <strong>N</strong>on-verifiable <strong>I</strong>ntelligence: the three properties of the problems we care most about.</p>
+            <ol>
+              <li><strong>Long horizon.</strong> Tasks where state accumulates, longitudinally.</li>
+              <li><strong>Out of distribution.</strong> Domains where the data is thin and generalization matters.</li>
+              <li><strong>Non-verifiable.</strong> Open-ended tasks with multiple valid answers, where coverage matters.</li>
+            </ol>
+            <p>We work on these across three areas: privacy and social intelligence; AI for science and chemistry; and security, verification, and monitoring.</p>
+            <p class="intro-links">Niloofar introduced the lab in her CMU School of Computer Science New Faculty Lightning Talk, "Learning the Tails!" (recorded August 28, 2026): <a href="https://www.youtube.com/watch?v=AtH7znJPW9U" target="_blank" rel="noopener">Watch the recording</a> &middot; <a href="talks/cmu_new_faculty_lightning_talk_2026.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+          </div>
+          <div class="intro-video">
+            <iframe src="https://www.youtube.com/embed/AtH7znJPW9U" title="New Faculty Lightning Talks: Niloofar Mireshghallah, Learning the Tails!" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="talk-summary">
+          <h3>The talk in brief</h3>
+          <p><strong>How we got here.</strong> The lab's questions grew out of studying parametric and non-parametric memory in language models, in three steps that map onto the three letters of LOONI:</p>
+          <ul>
+            <li><strong>What did the model memorize?</strong> Membership inference attacks, training-data extraction, and copyright violations (EMNLP 2022, ACL 2023, COLM 2024, NAACL 2025, COLM 2026, EMNLP 2026). The out-of-distribution question.</li>
+            <li><strong>Can the model step outside of what it memorized?</strong> Creativity, pluralism, and Spectrum Tuning (ICML 2024, ICLR 2025, ICLR 2026). The non-verifiable, open-ended question.</li>
+            <li><strong>Can models use parametric and non-parametric memory properly?</strong> Contextual integrity and long-context planning (ICLR 2024, ICLR 2026, ICML 2026, NeurIPS 2026). The long-horizon question.</li>
+          </ul>
+          <h3>Open problems we work on</h3>
+          <ul>
+            <li><strong>Social intelligence, contextual integrity, and privacy.</strong> Outcome- and simulation-based privacy; formalization, abstraction, and granularity; mental health, AI, and privacy; physical-world privacy. <span class="collab">With Maarten Sap, Sauvik Das, and Adam Perer at CMU, and Hyunwoo Kim (KAIST), Sahar Abdelnabi (ELLIS), Tianshi Li (Northeastern), Robin Jia (USC), and Nick Haber (Stanford).</span></li>
+            <li><strong>AI for science, chemistry, and molecule design.</strong> Model or harness, long-horizon and experience learning; memorization and exploration; dual use and safety; vision for 3D and structural reasoning. <span class="collab">With Danith Ly, Jose Lugo-Martinez, Aviral Kumar, and Max Simchowitz at CMU, and Yihui Ren (Brookhaven National Laboratory) and Manasa Kaniselvan (MIT).</span></li>
+            <li><strong>AI security, verifiability, and monitoring.</strong> Verifying workloads from hardware side channels; internal commitment points in the model; distillation and lineage provenance; poisoned reasoning traces in the wild and their transfer. <span class="collab">With Sarah Scheffler and Lujo Bauer at CMU, and Kazem Taram (Purdue), Fazl Barez (Oxford), and Irene Solaiman (Hugging Face).</span></li>
+          </ul>
+        </div>
+      </section>
 
       <!-- ========== MEMBERS ========== -->
       <section class="mb-8" id="members">
