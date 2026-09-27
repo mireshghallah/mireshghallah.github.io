@@ -58,8 +58,8 @@ a.custom-text-color{ color:var(--link-color); }
 .intro-grid{ display:grid; grid-template-columns:1fr; gap:1.4rem; align-items:start; }
 @media (min-width:768px){ .intro-grid{ grid-template-columns:3fr 2fr; } }
 .intro-text p{ margin-bottom:0.8rem; line-height:1.7; }
-.intro-text ol{ list-style:decimal; padding-left:1.4rem; margin:0.4rem 0 0.9rem; }
-.intro-text ol li{ margin:0.3rem 0; line-height:1.6; }
+.intro-text ul{ list-style:disc; padding-left:1.4rem; margin:0.4rem 0 0.9rem; }
+.intro-text ul li{ margin:0.3rem 0; line-height:1.6; }
 .intro-text strong{ color:var(--cmu-green); }
 .intro-links{ font-size:0.95rem; }
 .intro-links a{ color:var(--cmu-green); font-weight:600; text-decoration:none; }
@@ -84,10 +84,9 @@ a.custom-text-color{ color:var(--link-color); }
   font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;
   color:#666; margin:0 0 0.6rem;
 }
-.talk-summary h3 + p, .talk-summary ul + h3{ margin-top:1rem; }
-.talk-summary p{ margin-bottom:0.7rem; }
-.talk-summary ul{ list-style:disc; padding-left:1.2rem; margin:0.3rem 0 0.7rem; }
-.talk-summary li{ margin:0.3rem 0; }
+.talk-summary ul{ list-style:disc; padding-left:1.2rem; margin:0.3rem 0 0; }
+.talk-summary ul ul{ list-style:circle; margin:0.25rem 0 0.35rem; }
+.talk-summary li{ margin:0.35rem 0; }
 .talk-summary strong{ color:var(--cmu-green); }
 .talk-summary .collab{ color:#777; font-size:0.86rem; }
 
@@ -182,14 +181,14 @@ a.custom-text-color{ color:var(--link-color); }
 
         <div class="intro-grid">
           <div class="intro-text">
-            <p><strong>LOONI</strong> stands for <strong>L</strong>ong-horizon, <strong>O</strong>ut-<strong>O</strong>f-distribution, <strong>N</strong>on-verifiable <strong>I</strong>ntelligence: the three properties of the problems we care most about.</p>
-            <ol>
-              <li><strong>Long horizon.</strong> Tasks where state accumulates, longitudinally.</li>
-              <li><strong>Out of distribution.</strong> Domains where the data is thin and generalization matters.</li>
-              <li><strong>Non-verifiable.</strong> Open-ended tasks with multiple valid answers, where coverage matters.</li>
-            </ol>
-            <p>We work on these across three areas: privacy and social intelligence; AI for science and chemistry; and security, verification, and monitoring.</p>
-            <p class="intro-links">Niloofar introduced the lab in her CMU School of Computer Science New Faculty Lightning Talk, "Learning the Tails!" (recorded August 28, 2026): <a href="https://www.youtube.com/watch?v=AtH7znJPW9U" target="_blank" rel="noopener">Watch the recording</a> &middot; <a href="talks/cmu_new_faculty_lightning_talk_2026.pdf" target="_blank" rel="noopener">Slides (PDF)</a></p>
+            <p class="intro-links">Here is a 10-minute video on what the lab is about, from the CMU School of Computer Science New Faculty Lightning Talks (Aug 2026): <a href="https://www.youtube.com/watch?v=AtH7znJPW9U" target="_blank" rel="noopener">recording</a> &middot; <a href="talks/cmu_new_faculty_lightning_talk_2026.pdf" target="_blank" rel="noopener">slides (PDF)</a></p>
+            <ul>
+              <li><strong>LOONI</strong> = <strong>L</strong>ong-horizon, <strong>O</strong>ut-<strong>O</strong>f-distribution, <strong>N</strong>on-verifiable <strong>I</strong>ntelligence.</li>
+              <li><strong>Long horizon:</strong> tasks where state accumulates, longitudinally.</li>
+              <li><strong>Out of distribution:</strong> domains where the data is thin and generalization matters.</li>
+              <li><strong>Non-verifiable:</strong> open-ended tasks with multiple valid answers, where coverage matters.</li>
+              <li><strong>Three areas:</strong> privacy and social intelligence; AI for science and chemistry; security, verification, and monitoring.</li>
+            </ul>
           </div>
           <div class="intro-video">
             <iframe src="https://www.youtube.com/embed/AtH7znJPW9U" title="New Faculty Lightning Talks: Niloofar Mireshghallah, Learning the Tails!" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -197,18 +196,18 @@ a.custom-text-color{ color:var(--link-color); }
         </div>
 
         <div class="talk-summary">
-          <h3>The talk in brief</h3>
-          <p><strong>How we got here.</strong> The lab's questions grew out of studying parametric and non-parametric memory in language models, in three steps that map onto the three letters of LOONI:</p>
+          <h3>Slides in brief</h3>
           <ul>
-            <li><strong>What did the model memorize?</strong> Membership inference attacks, training-data extraction, and copyright violations (EMNLP 2022, ACL 2023, COLM 2024, NAACL 2025, COLM 2026, EMNLP 2026). The out-of-distribution question.</li>
-            <li><strong>Can the model step outside of what it memorized?</strong> Creativity, pluralism, and Spectrum Tuning (ICML 2024, ICLR 2025, ICLR 2026). The non-verifiable, open-ended question.</li>
-            <li><strong>Can models use parametric and non-parametric memory properly?</strong> Contextual integrity and long-context planning (ICLR 2024, ICLR 2026, ICML 2026, NeurIPS 2026). The long-horizon question.</li>
-          </ul>
-          <h3>Open problems we work on</h3>
-          <ul>
-            <li><strong>Social intelligence, contextual integrity, and privacy.</strong> Outcome- and simulation-based privacy; formalization, abstraction, and granularity; mental health, AI, and privacy; physical-world privacy. <span class="collab">With Maarten Sap, Sauvik Das, and Adam Perer at CMU, and Hyunwoo Kim (KAIST), Sahar Abdelnabi (ELLIS), Tianshi Li (Northeastern), Robin Jia (USC), and Nick Haber (Stanford).</span></li>
-            <li><strong>AI for science, chemistry, and molecule design.</strong> Model or harness, long-horizon and experience learning; memorization and exploration; dual use and safety; vision for 3D and structural reasoning. <span class="collab">With Danith Ly, Jose Lugo-Martinez, Aviral Kumar, and Max Simchowitz at CMU, and Yihui Ren (Brookhaven National Laboratory) and Manasa Kaniselvan (MIT).</span></li>
-            <li><strong>AI security, verifiability, and monitoring.</strong> Verifying workloads from hardware side channels; internal commitment points in the model; distillation and lineage provenance; poisoned reasoning traces in the wild and their transfer. <span class="collab">With Sarah Scheffler and Lujo Bauer at CMU, and Kazem Taram (Purdue), Fazl Barez (Oxford), and Irene Solaiman (Hugging Face).</span></li>
+            <li><strong>How we got here:</strong> three questions about parametric and non-parametric memory, one per letter of LOONI.
+              <ul>
+                <li>What did the model memorize? Membership inference, training-data extraction, copyright violations. <span class="collab">Out of distribution.</span></li>
+                <li>Can the model step outside of what it memorized? Creativity, pluralism, Spectrum Tuning. <span class="collab">Non-verifiable, open-ended.</span></li>
+                <li>Can models use parametric and non-parametric memory properly? Contextual integrity, long-context planning. <span class="collab">Long-horizon.</span></li>
+              </ul>
+            </li>
+            <li><strong>Open problems, privacy and social intelligence:</strong> outcome- and simulation-based privacy; formalization, abstraction, and granularity; mental health, AI, and privacy; physical-world privacy. <span class="collab">With Maarten Sap, Sauvik Das, Adam Perer (CMU); Hyunwoo Kim (KAIST), Sahar Abdelnabi (ELLIS), Tianshi Li (Northeastern), Robin Jia (USC), Nick Haber (Stanford).</span></li>
+            <li><strong>Open problems, AI for science and chemistry:</strong> model or harness, long-horizon and experience learning; memorization and exploration; dual use and safety; vision for 3D and structural reasoning. <span class="collab">With Danith Ly, Jose Lugo-Martinez, Aviral Kumar, Max Simchowitz (CMU); Yihui Ren (Brookhaven National Laboratory), Manasa Kaniselvan (MIT).</span></li>
+            <li><strong>Open problems, AI security, verifiability, and monitoring:</strong> verifying workloads from hardware side channels; internal commitment points in the model; distillation and lineage provenance; poisoned reasoning traces in the wild and transfer. <span class="collab">With Sarah Scheffler, Lujo Bauer (CMU); Kazem Taram (Purdue), Fazl Barez (Oxford), Irene Solaiman (Hugging Face).</span></li>
           </ul>
         </div>
       </section>
