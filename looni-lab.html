@@ -97,6 +97,31 @@ a.custom-text-color{ color:var(--link-color); }
 .member-list a:hover{ color:var(--link-color); text-decoration:underline; }
 .member-list .note{ color:#666; font-weight:400; }
 .member-list .note a{ color:var(--cmu-green); font-weight:400; }
+.member-subhead{
+  font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:1px;
+  color:#666; margin:1.1rem 0 0.2rem;
+}
+.member-subhead:first-of-type{ margin-top:0; }
+
+/* ----------  Lab photo  ---------- */
+.lab-photo{ margin:0 0 1.4rem; }
+.lab-photo img{
+  display:block; width:100%; max-width:760px; height:auto;
+  border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+.lab-photo figcaption{ font-size:0.85rem; color:#777; margin-top:0.45rem; }
+
+/* ----------  Code & environments  ---------- */
+.code-list{ list-style:none; padding:0; margin:0.5rem 0 0; }
+.code-list li{ margin:0.6rem 0; font-size:0.95rem; line-height:1.55; }
+.code-list a{ color:var(--cmu-green); text-decoration:none; font-weight:600; }
+.code-list a:hover{ color:var(--link-color); text-decoration:underline; }
+.code-list .note{ color:#666; }
+.code-list .note a{ font-weight:400; }
+.code-list code{
+  font-size:0.85em; background:#f3f3f3; padding:0.05rem 0.35rem; border-radius:3px;
+  color:#444;
+}
 
 /* ----------  Research Themes  ---------- */
 .research-themes{ margin-top:1rem; }
@@ -165,6 +190,8 @@ a.custom-text-color{ color:var(--link-color); }
         <span class="nav-separator">|</span>
         <a href="#research-themes" class="nav-link hover:underline">Research</a>
         <span class="nav-separator">|</span>
+        <a href="#code" class="nav-link hover:underline">Code</a>
+        <span class="nav-separator">|</span>
         <a href="#sponsors" class="nav-link hover:underline">Sponsors</a>
         <span class="nav-separator">|</span>
         <a href="mailto:niloofar@cmu.edu" class="nav-link hover:underline">Email</a>
@@ -198,13 +225,6 @@ a.custom-text-color{ color:var(--link-color); }
         <div class="talk-summary">
           <h3>Slides in brief</h3>
           <ul>
-            <li><strong>How we got here:</strong> three questions about parametric and non-parametric memory, one per letter of LOONI.
-              <ul>
-                <li>What did the model memorize? Membership inference, training-data extraction, copyright violations. <span class="collab">Out of distribution.</span></li>
-                <li>Can the model step outside of what it memorized? Creativity, pluralism, Spectrum Tuning. <span class="collab">Non-verifiable, open-ended.</span></li>
-                <li>Can models use parametric and non-parametric memory properly? Contextual integrity, long-context planning. <span class="collab">Long-horizon.</span></li>
-              </ul>
-            </li>
             <li><strong>Open problems, privacy and social intelligence:</strong> outcome- and simulation-based privacy; formalization, abstraction, and granularity; mental health, AI, and privacy; physical-world privacy. <span class="collab">With Maarten Sap, Sauvik Das, Adam Perer (CMU); Hyunwoo Kim (KAIST), Sahar Abdelnabi (ELLIS), Tianshi Li (Northeastern), Robin Jia (USC), Nick Haber (Stanford).</span></li>
             <li><strong>Open problems, AI for science and chemistry:</strong> model or harness, long-horizon and experience learning; memorization and exploration; dual use and safety; vision for 3D and structural reasoning. <span class="collab">With Danith Ly, Jose Lugo-Martinez, Aviral Kumar, Max Simchowitz (CMU); Yihui Ren (Brookhaven National Laboratory), Manasa Kaniselvan (MIT).</span></li>
             <li><strong>Open problems, AI security, verifiability, and monitoring:</strong> verifying workloads from hardware side channels; internal commitment points in the model; distillation and lineage provenance; poisoned reasoning traces in the wild and transfer. <span class="collab">With Sarah Scheffler, Lujo Bauer (CMU); Kazem Taram (Purdue), Fazl Barez (Oxford), Irene Solaiman (Hugging Face).</span></li>
@@ -215,12 +235,24 @@ a.custom-text-color{ color:var(--link-color); }
       <!-- ========== MEMBERS ========== -->
       <section class="mb-8" id="members">
         <h2 class="text-2xl font-bold mb-4 custom-text-color">Members</h2>
+
+        <figure class="lab-photo">
+          <img src="pics/looni_lab_fall_2026.jpg" alt="Looni Lab members around a table at a lab lunch, Fall 2026" width="1024" height="768" loading="lazy">
+          <figcaption>Lab lunch, Fall 2026.</figcaption>
+        </figure>
+
+        <p class="member-subhead">PhD students</p>
         <ul class="member-list">
           <li>Bill Watson <span class="note">(co-advised with <a href="https://sauvik.me/" target="_blank" rel="noopener">Sauvik Das</a>)</span></li>
-          <li><a href="https://nicholas0228.github.io" target="_blank" rel="noopener">Xiaoyu (Nicholas) Wu</a> <span class="note">(co-advised with <a href="https://zstevenwu.com/" target="_blank" rel="noopener">Steven Wu</a>)</span></li>
+          <li><a href="https://nicholas0228.github.io" target="_blank" rel="noopener">Xiaoyu (Nicholas) Wu</a> <span class="note">(co-advised with <a href="https://andrewilyas.com/" target="_blank" rel="noopener">Andrew Ilyas</a> and <a href="https://zstevenwu.com/" target="_blank" rel="noopener">Steven Wu</a>)</span></li>
           <li>Renfei Zhang</li>
           <li><a href="https://kevinxhan.com" target="_blank" rel="noopener">Kevin Han</a> <span class="note">(co-advised with <a href="https://sites.google.com/view/barati" target="_blank" rel="noopener">Amir Barati Farimani</a>)</span></li>
-          <li><a href="https://bhuvankoduru.github.io" target="_blank" rel="noopener">Bhuvan Chandra Koduru</a> <span class="note">(Master's)</span></li>
+        </ul>
+
+        <p class="member-subhead">Master's students</p>
+        <ul class="member-list">
+          <li><a href="https://bhuvankoduru.github.io" target="_blank" rel="noopener">Bhuvan Chandra Koduru</a></li>
+          <!-- TODO: add the remaining master's students here (name + homepage). -->
         </ul>
       </section>
 
@@ -230,6 +262,7 @@ a.custom-text-color{ color:var(--link-color); }
         <ul class="member-list">
           <li><a href="https://jhaprince.github.io" target="_blank" rel="noopener">Prince Jha</a></li>
           <li><a href="https://anthonyhughes.github.io" target="_blank" rel="noopener">Anthony Hughes</a></li>
+          <li><a href="https://r-suresh07.github.io/" target="_blank" rel="noopener">Suresh Raghu</a> <span class="note">(independent researcher; SMDD-Bench agent harness and the Harbor and Prime Intellect environments)</span></li>
         </ul>
       </section>
 
@@ -252,6 +285,8 @@ a.custom-text-color{ color:var(--link-color); }
               <li><a href="https://arxiv.org/abs/2511.14937">CIMemories: A Compositional Benchmark for Contextual Integrity of Persistent Memory in LLMs</a> <span class="venue">· ICLR 2026</span></li>
               <li><a href="https://arxiv.org/abs/2602.03183">PRIVASIS: Synthesizing the Largest "Public" Private Dataset from Scratch</a> <span class="venue">· ICML 2026</span></li>
               <li><a href="https://arxiv.org/abs/2510.03662">Operationalizing Data Minimization for Privacy-Preserving LLM Prompting</a> <span class="venue">· ICLR 2026</span></li>
+              <li><a href="https://arxiv.org/abs/2609.24927">Et Tu, Brute? Economic Misalignment in Personal AI Agents</a> <span class="venue">· Preprint 2026 (<a href="https://github.com/looni-lab/Adversarial-Delegation-AI-Economic-Misalignment">code and data</a>)</span></li>
+              <li><a href="https://arxiv.org/abs/2605.10013">When Are LLM Inferences Acceptable? User Reactions and Control Preferences for Inferred Personal Information</a> <span class="venue">· Preprint 2026</span></li>
               <li><a href="https://arxiv.org/abs/2212.10520">Privacy-Preserving Domain Adaptation of Semantic Parsers</a> <span class="venue">· ACL 2023</span></li>
               <li><a href="https://arxiv.org/abs/2309.11765">Privacy-Preserving In-Context Learning with Differentially Private Few-Shot Generation</a> <span class="venue">· ICLR 2024</span></li>
             </ul>
@@ -296,7 +331,7 @@ a.custom-text-color{ color:var(--link-color); }
           <div class="theme-papers">
             <p class="theme-papers-title">Selected Papers</p>
             <ul>
-              <li><a href="https://arxiv.org/abs/2605.21740">SMDD-Bench: Can LLMs Solve Real-World Small Molecule Drug Design Tasks?</a> <span class="venue">· ICML 2026 GenBio Workshop (leaderboard at <a href="https://smddbench.com">smddbench.com</a>)</span></li>
+              <li><a href="https://arxiv.org/abs/2605.21740">SMDD-Bench: Can LLMs Solve Real-World Small Molecule Drug Design Tasks?</a> <span class="venue">· ICML 2026 GenBio Workshop (leaderboard at <a href="https://smddbench.com">smddbench.com</a> · <a href="https://github.com/t7rs/SMDD-Bench">code</a> · <a href="https://hub.harborframework.com/datasets/looni-lab/smdd-bench">Harbor</a> · <a href="https://app.primeintellect.ai/dashboard/environments/looni-lab/smdd-bench">Prime Intellect</a>)</span></li>
               <li><a href="https://arxiv.org/abs/2511.05933">Reinforcement Learning Improves Traversal of Parametric Knowledge in LLMs</a> <span class="venue">· EMNLP 2026 (Oral)</span></li>
               <li><a href="https://arxiv.org/abs/2510.09021">RefGrader: Automated Grading of Mathematical Competition Proofs using Agentic Workflows</a> <span class="venue">· NeurIPS 2025 Workshop (MATH-AI)</span></li>
             </ul>
@@ -346,6 +381,36 @@ a.custom-text-color{ color:var(--link-color); }
           </div>
         </div>
 
+        <!-- AI Security, Verifiability & Monitoring -->
+        <div class="theme-block">
+          <div class="theme-header">
+            <span class="theme-label">AI Security, Verifiability &amp; Monitoring</span>
+          </div>
+          <div class="theme-description">
+            <p>Deployed models leak more than their outputs. With Kazem Taram's group at Purdue, we show that per-token generation timing alone, observed through a remote API, reveals whether a provider uses speculative decoding (and the draft model's context length) and recovers architectural properties such as layer count, hidden size, and number of attention heads. The same side channels that enable these attacks can also be used the other way around: as a way to verify what workload a provider is actually running. We are also interested in internal commitment points in the model, distillation and lineage provenance, and the transfer of poisoned reasoning traces.</p>
+          </div>
+          <div class="theme-papers">
+            <p class="theme-papers-title">Selected Papers</p>
+            <ul>
+              <li><a href="https://arxiv.org/abs/2607.20723">Leaky Language Models: Stealing Architecture and Inference Optimizations via Per-Token Timing</a> <span class="venue">· S. Majidi, N. Mireshghallah, K. Taram · Preprint 2026</span></li>
+            </ul>
+          </div>
+          <div class="open-problems">
+            <strong>Open Problems:</strong> Verifying workloads from hardware side channels. Internal commitment points in the model. Distillation and lineage provenance. Poisoned reasoning traces in the wild and how they transfer.
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== CODE, BENCHMARKS & ENVIRONMENTS ========== -->
+      <section class="mb-8" id="code">
+        <h2 class="text-2xl font-bold mb-4 custom-text-color">Code, Benchmarks &amp; Environments</h2>
+        <p>We release code, data, and agentic environments under the <code>looni-lab</code> organization on these platforms:</p>
+        <ul class="code-list">
+          <li><a href="https://github.com/looni-lab" target="_blank" rel="noopener">GitHub: github.com/looni-lab</a> <span class="note">· code and data for lab papers, e.g. <a href="https://github.com/looni-lab/Adversarial-Delegation-AI-Economic-Misalignment" target="_blank" rel="noopener">Adversarial Delegation</a> (Et Tu, Brute?).</span></li>
+          <li><a href="https://hub.harborframework.com/datasets/looni-lab" target="_blank" rel="noopener">Harbor Hub: looni-lab</a> <span class="note">· agentic benchmark datasets for the <a href="https://harborframework.com" target="_blank" rel="noopener">Harbor</a> framework. <a href="https://hub.harborframework.com/datasets/looni-lab/smdd-bench" target="_blank" rel="noopener">looni-lab/smdd-bench</a> packages all 502 SMDD-Bench tasks with the agent harness, verifiers, and GPU oracle: <code>harbor download looni-lab/smdd-bench</code></span></li>
+          <li><a href="https://app.primeintellect.ai/dashboard/team/looni-lab" target="_blank" rel="noopener">Prime Intellect Environments Hub: looni-lab</a> <span class="note">· RL environments for <a href="https://github.com/PrimeIntellect-ai/prime-rl" target="_blank" rel="noopener">prime-rl</a> and the verifiers runtime. <a href="https://app.primeintellect.ai/dashboard/environments/looni-lab/smdd-bench" target="_blank" rel="noopener">looni-lab/smdd-bench</a> is the Prime-native release of SMDD-Bench: <code>prime env install looni-lab/smdd-bench</code></span></li>
+        </ul>
       </section>
 
       <!-- ========== SPONSORS ========== -->
@@ -354,6 +419,7 @@ a.custom-text-color{ color:var(--link-color); }
         <ul class="member-list">
           <li><a href="https://www.cmu.edu/news/stories/archives/2026/july/carnegie-mellon-researchers-lead-three-doe-genesis-mission-awards-to-advance-the-future-of-ai" target="_blank" rel="noopener">DOE Genesis Mission</a> <span class="note">(collaboration with Brookhaven National Laboratory)</span></li>
           <li><a href="https://openai.com/index/ai-mental-health-research-grants/" target="_blank" rel="noopener">OpenAI Mental Health Research Grant</a> <span class="note">(We thank OpenAI for support for this work from the Mental Health and AI grant program. Funding does not imply endorsement of these results by OpenAI.)</span></li>
+          <li><a href="https://www.longview.org/" target="_blank" rel="noopener">Longview Philanthropy</a></li>
           <li>Anthropic AI for Science Program</li>
           <li><a href="https://foresight.org/grants/ai-science-safety-nodes-rfp/" target="_blank" rel="noopener">Foresight Institute: AI for Science &amp; Safety Nodes</a></li>
           <li><a href="https://sites.research.google/trc/about/" target="_blank" rel="noopener">Google TPU Research Cloud (TRC)</a> <span class="note">(Research supported with Cloud TPUs from Google's TPU Research Cloud.)</span></li>
@@ -378,4 +444,3 @@ a.custom-text-color{ color:var(--link-color); }
   </footer>
 </body>
 </html>
-          <li><a href="https://www.longview.org/" target="_blank" rel="noopener">Longview Philanthropy</a></li>
