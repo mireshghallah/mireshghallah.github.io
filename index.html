@@ -264,6 +264,34 @@ a.custom-text-color{color:var(--link-color);}
 .pub-theme-tag.safety { background: #fdecec; color: #8a1c1c; }
 .pub-theme-tag.sec { background: #ececf4; color: #2a2a7a; }
 
+/* ----------  Scrollable long lists (publications, past talks)  ---------- */
+.scroll-box { position: relative; }
+.scroll-list {
+  max-height: min(600px, 70vh);
+  overflow-y: auto;
+  padding: 0.6rem 1rem 0.6rem 0.6rem;
+  border: 1px solid var(--cmu-gray-light);
+  border-radius: 8px;
+  background: #fafafa;
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdbd transparent;
+}
+.scroll-list::-webkit-scrollbar { width: 8px; }
+.scroll-list::-webkit-scrollbar-track { background: transparent; }
+.scroll-list::-webkit-scrollbar-thumb { background: #c8c8c8; border-radius: 4px; }
+.scroll-list::-webkit-scrollbar-thumb:hover { background: var(--cmu-gold); }
+/* fade at the bottom edge, hidden once the list is scrolled to the end */
+.scroll-box::after {
+  content: "";
+  position: absolute; left: 1px; right: 12px; bottom: 1px; height: 2.75rem;
+  background: linear-gradient(to bottom, rgba(250,250,250,0), #fafafa 85%);
+  border-radius: 0 0 8px 8px;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.scroll-box.at-end::after { opacity: 0; }
+.scroll-hint { font-size: 0.75rem; color: #888; margin-top: 0.4rem; text-align: right; }
+
 /* ----------  Open-call banner (top of the page)  ---------- */
 .open-call {
   display: flex;
@@ -352,7 +380,7 @@ a.custom-text-color{color:var(--link-color);}
                   <a href="looni-lab.html" class="custom-text-color link-hover"><strong>Looni Lab</strong></a>.
                 </p>
                 <p class="mb-4 text-lg">
-                  I'm also a Founding Member of Technical Staff at <a href="https://humansand.ai" class="custom-text-color link-hover">humans&</a>.
+                  I'm also a Founding Member of Technical Staff at <a href="https://humansand.ai" class="custom-text-color link-hover">humans&</a>, where I work on building our RL environments and on privacy and safety post-training.
                 </p>
                 <!-- research interests -->
                 <p class="mb-4 text-lg">
@@ -425,6 +453,12 @@ a.custom-text-color{color:var(--link-color);}
                 <h2 class="text-2xl font-bold mb-4 custom-text-color">News Highlights</h2>
                 
                 <div class="space-y-2">
+
+                  <!-- Oct 2026 - Copenhagen keynote + COLM workshops -->
+                  <div class="flex items-baseline">
+                    <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">🗺️</span>
+                    <p class="text-base m-0 leading-snug">Gave a keynote at the <a href="https://cphnlp.github.io/" class="custom-text-color hover:underline">Copenhagen NLP Symposium</a> (Oct 2026), "What Goes Where? Information Flow in Long-Horizon AI Agents" (<a href="talks/copenhagen_nlp_symposium_2026.pdf" class="custom-text-color hover:underline">slides</a>), and an invited talk at the <a href="https://re-data-colm2026.github.io/" class="custom-text-color hover:underline">RE-Data workshop</a> at COLM 2026, "How Does Post-Training Change the Imprint of Pretraining Data?" (<a href="talks/re_data_colm_2026.pdf" class="custom-text-color hover:underline">slides</a>). At COLM I also co-organized <a href="https://haips.com/" class="custom-text-color hover:underline">HAIPS</a> and moderated its panel.</p>
+                  </div>
 
                   <!-- Sep 2026 - Data retention primer blog -->
                   <div class="flex items-baseline">
@@ -636,7 +670,8 @@ a.custom-text-color{color:var(--link-color);}
                 <section class="mb-4" id="publications">
                     <h2 class="text-2xl font-bold mb-4 custom-text-color">Selected Publications</h2>
                     <h4>For the full list, please refer to my <a href="https://scholar.google.com/citations?user=WUCu45YAAAAJ&hl=en&authuser=2" class="custom-text-color hover:underline">Google Scholar</a> page.</h4>
-                    <ul class="space-y-2">
+                    <div class="scroll-box">
+                    <ul class="space-y-2 scroll-list">
                       <li class="border-l-4 border-[#1D3A8A] pl-3 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]">Position: LLM Privacy Requires a Lifecycle-Wide Approach</p>
                         <p class="text-xs text-gray-600">NeurIPS 2026 Position Paper Track</p>
@@ -975,6 +1010,8 @@ a.custom-text-color{color:var(--link-color);}
                             <p class="text-sm italic"><strong>N. Mireshghallah</strong>, M. Taram, A. Jalali, D. Tullsen, H. Esmaeilzadeh</p>
                         </li>
                     </ul>
+                    </div>
+                    <p class="scroll-hint" data-noun="publications">Scroll inside the box to see all entries.</p>
                 </section>
 
                <section class="mb-4">
@@ -985,24 +1022,50 @@ a.custom-text-color{color:var(--link-color);}
                     <p class="text-xs text-gray-600 mb-2 uppercase tracking-wide font-semibold">Upcoming</p>
                     <ul class="space-y-2 mb-6">
                       <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
-                        <p class="text-base font-semibold text-[#1D3A8A]">INFORMS 2026 Annual Meeting, San Francisco</p>
-                        <p class="text-xs text-gray-600">Invited Speaker, Nov. 2026</p>
-                        <p class="text-sm italic">Session: Large Language Models and Their Interaction with Social Systems</p>
+                        <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://flmsec.github.io/" class="custom-text-color hover:underline">Foundations of Language Model Security (FLMSec) Workshop at NeurIPS 2026, Paris</a></p>
+                        <p class="text-xs text-gray-600">Keynote, Dec. 2026</p>
                         </li>
 
                       <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
-                        <p class="text-base font-semibold text-[#1D3A8A]">Copenhagen NLP Symposium</p>
+                        <p class="text-base font-semibold text-[#1D3A8A]">Los Angeles Copyright Society</p>
+                        <p class="text-xs text-gray-600">Panel (with Robin Jia), Nov. 2026</p>
+                        </li>
+
+                      <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">Oxford Women in Computer Science Seminar Series</p>
+                        <p class="text-xs text-gray-600">Invited Talk (virtual), Nov. 2026</p>
+                        </li>
+
+                      <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]">ANSI Intellectual Property Rights Policy Advisory Group (IPRPAG), Fall Meeting</p>
+                        <p class="text-xs text-gray-600">Invited Talk (remote), Nov. 2026</p>
+                        <p class="text-sm italic">AI Memorization and Fair Use</p>
+                        </li>
+                    </ul>
+
+                    <p class="text-xs text-gray-600 mb-2 uppercase tracking-wide font-semibold">Past</p>
+                    <div class="scroll-box">
+                    <ul class="space-y-2 scroll-list">
+                      <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://cphnlp.github.io/" class="custom-text-color hover:underline">Copenhagen NLP Symposium</a></p>
                         <p class="text-xs text-gray-600">Keynote, Oct. 2026</p>
+                        <p class="text-sm italic">What Goes Where? Information Flow in Long-Horizon AI Agents</p>
+                        <p class="text-xs text-gray-600"><a href="talks/copenhagen_nlp_symposium_2026.pdf" class="custom-text-color hover:underline">Slides</a></p>
                         </li>
 
                       <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://re-data-colm2026.github.io/" class="custom-text-color hover:underline">RE-Data: Workshop on Responsibly Enabling Data for Foundation Models at COLM 2026</a></p>
                         <p class="text-xs text-gray-600">Invited Talk, Oct. 2026</p>
-                        <p class="text-sm italic">Emergent Misalignment Through the Lens of Memorization</p>
+                        <p class="text-sm italic">How Does Post-Training Change the Imprint of Pretraining Data?</p>
+                        <p class="text-xs text-gray-600"><a href="talks/re_data_colm_2026.pdf" class="custom-text-color hover:underline">Slides</a></p>
                         </li>
-                    </ul>
-                
-                    <ul class="space-y-2">
+
+                      <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
+                        <p class="text-base font-semibold text-[#1D3A8A]"><a href="https://haips.com/" class="custom-text-color hover:underline">2nd Workshop on Human-Centered Privacy and Security for Language Models (HAIPS) at COLM 2026</a></p>
+                        <p class="text-xs text-gray-600">Panel Moderator, Oct. 2026</p>
+                        <p class="text-sm italic">Panel with Helen Nissenbaum, Ruoxi Jia, Maarten Sap, and Nina Taft</p>
+                        </li>
+
                       <li class="border-l-4 border-[#1D3A8A] pl-2 py-1">
                         <p class="text-base font-semibold text-[#1D3A8A]">CMU School of Computer Science, New Faculty Lightning Talks</p>
                         <p class="text-xs text-gray-600">Lightning Talk, Aug. 2026</p>
@@ -1505,9 +1568,9 @@ a.custom-text-color{color:var(--link-color);}
                               <p class="text-xs text-gray-600">Breakthroughs Workshop, Sep. 2020</p>
                               <p class="text-sm italic">Private Text Generation through Regularization</p>
                             </li>
-                           
-                            
                     </ul>
+                    </div>
+                    <p class="scroll-hint" data-noun="past talks">Scroll inside the box to see all entries.</p>
                 </section>
 
                 <section class="mb-8" id="awards">
@@ -1706,6 +1769,10 @@ a.custom-text-color{color:var(--link-color);}
                           <div class="flex items-baseline">
                             <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">◆</span>
                             <p class="text-base m-0 leading-snug">Senior Program Committee, AAAI 2027 (Alignment Track)</p>
+                          </div>
+                          <div class="flex items-baseline">
+                            <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">◆</span>
+                            <p class="text-base m-0 leading-snug">2nd Workshop on Human-Centered Privacy and Security for Language Models (<a href="https://haips.com/" class="custom-text-color hover:underline">HAIPS</a>) @COLM 2026 (Co-organizer)</p>
                           </div>
                           <div class="flex items-baseline">
                             <span class="text-xs mr-2 w-5 inline-flex items-center justify-center">◆</span>
@@ -1996,6 +2063,26 @@ a.custom-text-color{color:var(--link-color);}
                 <a href="https://www.linkedin.com/in/mireshghallah/" class="nav-link hover:underline">LinkedIn</a>
             </div>
         </footer>
+
+    <script>
+      // Scrollable lists: hide the bottom fade once scrolled to the end, and show entry counts in the hints.
+      document.querySelectorAll('.scroll-box').forEach(function (box) {
+        var list = box.querySelector('.scroll-list');
+        if (!list) return;
+        var hint = box.nextElementSibling;
+        if (hint && hint.classList.contains('scroll-hint')) {
+          var n = list.querySelectorAll(':scope > li').length;
+          hint.textContent = n + ' ' + (hint.dataset.noun || 'entries') + ' \u00b7 scroll inside the box to see all.';
+        }
+        var update = function () {
+          var atEnd = list.scrollTop + list.clientHeight >= list.scrollHeight - 4;
+          box.classList.toggle('at-end', atEnd);
+        };
+        list.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      });
+    </script>
     </body>
     </html>
     
