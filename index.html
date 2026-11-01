@@ -128,6 +128,39 @@ a.custom-text-color{color:var(--link-color);}
 /* optional: turn all left “pipes” on lists from blue → green */
 .border-l-4{border-color:var(--cmu-green);}
 
+/* ----------  About section profile column  ---------- */
+.profile-sidebar{
+  width:100%;
+  max-width:280px;
+  flex-shrink:0;
+}
+
+.profile-photo{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:350px;
+  object-fit:cover;
+  object-position:center top;
+}
+
+.profile-callout{
+  margin-top:1rem;
+}
+
+@media (min-width:768px){
+  .profile-sidebar{
+    margin-top:1.25rem;
+    margin-right:1.5rem;
+  }
+}
+
+@media (max-width:767px){
+  .profile-sidebar{
+    margin:0 auto 2rem;
+  }
+}
+
 /* --- overwrite header text colour to Gold Thread --- */
 .header-cmu{
   color:var(--cmu-gold);              /* ◆ all text in header */
@@ -372,7 +405,17 @@ a.custom-text-color{color:var(--link-color);}
         <div class="content-box">
             <div class="mb-6">
                 <div class="flex flex-col md:flex-row mb-2">
-               <img src="pics/pic4.jpg" alt="Niloofar Mireshghallah" class="w-90 h-auto object-cover rounded-lg mb-8 md:mb-0 md:mr-6" style="max-height: 350px; object-fit: cover; object-position: center top;">
+               <div class="profile-sidebar">
+                 <img src="pics/pic4.jpg?v=20261101" alt="Niloofar Mireshghallah" class="profile-photo rounded-lg">
+                 <div class="profile-callout border-l-4 border-custom-color px-3 py-2 bg-gray-100">
+                   <p class="text-sm m-0">
+                     <b>Recruiting & collaborations:</b> If you are interested in working with me, please
+                     <a href="https://forms.gle/iigvbp7nk8Tygsh88" class="custom-text-color link-hover">
+                       fill out this brief form
+                     </a>.
+                   </p>
+                 </div>
+               </div>
                <div class="about-me flex-grow">
                 <!-- current + future roles -->
                 <p class="mb-2 text-lg">
@@ -397,15 +440,6 @@ a.custom-text-color{color:var(--link-color);}
                   <a href="https://sites.google.com/view/advml/advml-rising-star-award?authuser=0"
                     class="custom-text-color link-hover">Rising Star in Adversarial ML Award</a>.
                 </p>
-
-                <div class="border-l-4 border-custom-color px-3 py-2 bg-gray-100">
-                  <p class="text-sm m-0">
-                    <b>Recruiting & collaborations:</b> If you are interested in working with me, please
-                    <a href="https://forms.gle/iigvbp7nk8Tygsh88" class="custom-text-color link-hover">
-                      fill out this brief form
-                    </a>.
-                  </p>
-                </div>
                 
                </div>
                </div>
