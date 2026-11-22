@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI industry jobs in the Bay Area: the types, the vibes, the trade-offs, and the pay</title>
+<meta name="description" content="Whether academia still makes sense, the five kinds of AI industry jobs in the Bay Area (frontier labs, big tech research, neolabs, nonprofits, RL environment startups), what the vibe is like, and what they pay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f8f6f0;
+    --ink:#1c2426;
+    --ink-soft:#43514f;
+    --teal:#0f5f6e;
+    --teal-deep:#0a4551;
+    --line:#dcd7c9;
+    --wash:#eef0e9;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Newsreader",Georgia,serif;
+    font-optical-sizing:auto;
+    font-size:20px;
+    line-height:1.66;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 26px 120px;}
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(15,95,110,.35);}
+  a:hover{border-bottom-color:var(--teal);}
+
+  header.top{padding:74px 0 30px;}
+  .eyebrow{
+    font-family:"JetBrains Mono",monospace;
+    font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--teal);font-weight:600;margin:0 0 22px;
+  }
+  h1{
+    font-family:"Fraunces",serif;
+    font-weight:600;font-size:clamp(36px,6.4vw,54px);
+    line-height:1.04;letter-spacing:-.015em;margin:0 0 20px;
+    color:var(--ink);
+  }
+  .dek{font-size:22px;color:var(--ink-soft);font-weight:400;margin:0 0 26px;line-height:1.5;}
+  .byline{
+    font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;
+    color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:14px 0;margin:0;
+  }
+
+  .note{
+    margin:36px 0 8px;padding:18px 24px;background:var(--wash);
+    border-left:3px solid var(--teal);border-radius:2px;
+    font-size:17px;line-height:1.55;color:var(--ink-soft);
+  }
+  .note p{margin:0 0 10px;}
+  .note p:last-child{margin:0;}
+
+  p{margin:0 0 22px;}
+  ol,ul{margin:0 0 22px;padding-left:1.3em;}
+  li{margin:0 0 10px;}
+  h2{
+    font-family:"Fraunces",serif;font-weight:600;font-size:29px;letter-spacing:-.01em;
+    line-height:1.14;margin:56px 0 18px;color:var(--ink);
+  }
+  h3{
+    font-family:"Fraunces",serif;font-weight:600;font-size:23px;letter-spacing:-.005em;
+    line-height:1.2;margin:40px 0 14px;color:var(--ink);
+  }
+
+  blockquote{
+    margin:28px 0;padding:22px 28px;background:var(--wash);
+    border-left:3px solid var(--teal);border-radius:2px;
+  }
+  blockquote p{
+    margin:0;font-family:"Fraunces",serif;font-size:21px;line-height:1.45;font-weight:500;
+  }
+
+  .table-scroll{overflow-x:auto;margin:28px 0 30px;}
+  table{
+    width:100%;border-collapse:collapse;
+    font-size:15.5px;line-height:1.4;
+  }
+  th,td{padding:10px 12px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);}
+  thead th{
+    font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--teal);font-weight:600;border-bottom:2px solid var(--teal);
+  }
+  tbody th{font-family:"Fraunces",serif;font-weight:600;font-size:16px;white-space:nowrap;}
+
+  em{font-style:italic;}
+  strong{font-weight:600;}
+
+  .closing{margin-top:52px;border-top:1px solid var(--line);padding-top:30px;}
+
+  .back{margin-top:40px;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em;}
+
+  @media (max-width:560px){
+    body{font-size:18px;}
+    .wrap{padding:0 20px 90px;}
+    blockquote{padding:18px 20px;}
+    tbody th{white-space:normal;}
+  }
+
+  .fade{opacity:0;transform:translateY(8px);animation:rise .7s ease forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top fade">
+  <p class="eyebrow">Career advice // November 2026</p>
+  <h1>AI industry jobs in the Bay Area: the types, the vibes, the trade-offs, and the pay</h1>
+  <p class="dek">Whether academia still makes sense, what kinds of industry jobs there are in the Bay Area, what the vibe is like, and what they pay.</p>
+  <p class="byline">Niloofar Mireshghallah (edits / search and evidence by Opus 5.5) &middot; November 21, 2026</p>
+</header>
+
+<div class="note">
+  <p><strong>Disclaimer:</strong> This is my personal experience and my read of the vibes. It does not represent any of my employers.</p>
+  <p><strong>What you won't learn here:</strong> How to get an academic job (I wrote about that in <a href="job_market_advice.html">Surviving (and Thriving on) the Academic Job Market</a>), or whether to do a postdoc (see <a href="postdoc-advice.html">Should I do a postdoc?</a> and the <a href="https://www.youtube.com/watch?v=O7psT1ftwqs" target="_blank" rel="noopener">video on Sasha Rush's channel</a>).</p>
+  <p><strong>What you will learn:</strong> Whether academia still makes sense, what kinds of industry jobs there are in the Bay Area, what the vibe is like, and what they pay.</p>
+  <p><strong>Target audience:</strong> New PhD graduates, and people about to graduate, in AI, machine learning and NLP who are trying to decide what to do next and where to live.</p>
+</div>
+
+<h2>Why I'm writing this</h2>
+
+<p>Every year around this time, people start thinking about graduation and what comes next: where they want to live, what they want to do, whether academia is still worth it. I get a lot of these questions. I have been in the Bay Area for about two and a half years, and for that whole time I have also held an academic job, so I get to see both sides. This post is my perspective from there.</p>
+
+<h2>First, the postdoc question</h2>
+
+<p>If you are finishing your PhD and wondering whether to do a postdoc, I wrote <a href="postdoc-advice.html">a whole post on it</a> with the help of Sasha Rush, and we did <a href="https://www.youtube.com/watch?v=O7psT1ftwqs" target="_blank" rel="noopener">a video</a> too. Most of it still holds. Two updates:</p>
+
+<ol>
+  <li><strong>Only do an academic postdoc if you really, really want to be in academia.</strong> Given how the economics have moved, this is even more true than when I wrote that post. Going to industry instead of doing a postdoc is a much more lucrative decision now, so you need to be very passionate about academia to make the trade worth it.</li>
+  <li><strong>Skip the industry postdoc.</strong> The one thing I would change in the old post: either go straight to industry and get a full-time role with equity, which gives you more standing, or do an academic postdoc if you are academia-pilled. Industry postdocs can be nice because they pay more, maybe 100k more than an academic one, which is a lot of money. But you could have gotten a full-time job instead, and the postdoc is not better than that.</li>
+</ol>
+
+<h2>Does academia still make sense?</h2>
+
+<p>The question I get most is whether it still makes sense to go into academia, and if not, what the industry options are and how to tell them apart.</p>
+
+<p>My answer: there is still a case for academia, although a much smaller one than before.</p>
+
+<p>The case is this. If there is something you are really passionate about and you want to explore it freely, academia still gives you that freedom. It is a financial sacrifice. Being only in academia can be hard if you want to have a family, and in some fields most of the resources (compute especially) are in industry, so getting what you need will be hard.</p>
+
+<p>The middle ground, and what I think is optimal, is having an academic job and an industry one at the same time. That is the best of both worlds. It is what I do, and I wrote about how that came about in <a href="why_i_joined_humansand.html">why I joined humans&amp; and what about CMU</a>.</p>
+
+<h3>Academia is not cooked</h3>
+
+<p>I reject the premise that once AI solves everything, there will be nothing left for PhD research or machine learning research to do. I made this case at length in <a href="keep_paying_the_humans.html">Keep paying the humans</a>, my notes from the ICML anti-debate with Ludwig Schmidt, and I have gotten into two Twitter fights about it (<a href="https://x.com/niloofar_mire/status/2058894075323969644" target="_blank" rel="noopener">one</a>, <a href="https://x.com/niloofar_mire/status/2119974277038633296" target="_blank" rel="noopener">two</a>). I don't think academia is cooked, for two reasons.</p>
+
+<p><strong>Relationships.</strong> Alex Imas calls it the relational sector: the goods and services where having a human in the loop is part of the value (<a href="https://aleximas.substack.com/p/what-will-be-scarce" target="_blank" rel="noopener">What will be scarce?</a>, and his <a href="https://www.dwarkesh.com/p/alex-imas-phil-trammell" target="_blank" rel="noopener">conversation with Phil Trammell on Dwarkesh</a>). Human things will still matter, and teaching, mentoring and advising students are human things.</p>
+
+<p><strong>Curiosity.</strong> The word <em>school</em> comes from the Greek <em>scholē</em>, which meant leisure. Academia started as the place where people with free time did philosophy. There will always be room for curiosity.</p>
+
+<p>So I don't think the job of being a professor will go away. Some schools and fields might die out, though.</p>
+
+<h3>If you go academic, be ready to pivot</h3>
+
+<p>I have a lot of mathematician friends whose jobs are going away. They spent their whole lives building a niche. So if you are becoming a professor, be very prepared to be interdisciplinary, to pivot quickly, and to work with other people.</p>
+
+<p>In <a href="../looni-lab.html">my lab</a>, I work a lot with people in economics and in the chemistry department. I think most future research is going to be on alignment, on relations and on science. (My timelines for science are shrinking a bit too, but that is a whole separate post.)</p>
+
+<p>So there will still be academia. There is still room for human relationships and for curiosity. But if you become an academic, be prepared to change your research and try different things.</p>
+
+<h2>So you picked industry: five types of jobs</h2>
+
+<p>Say you've gone through all of that and picked industry. What kinds of jobs are there?</p>
+
+<p>A few caveats first. This is not a ranking. I am not saying any of these is better or worse, and people switch between them all the time. It changes fast. It does not reflect any one person's experience, it is very vibes-based, and it is no shade on anyone. Most of these are post-PhD roles, but you can get some of them without a PhD.</p>
+
+<div class="table-scroll">
+<table>
+  <thead>
+    <tr><th></th><th>Examples</th><th>Cash</th><th>Equity</th><th>Where</th></tr>
+  </thead>
+  <tbody>
+    <tr><th>Frontier labs</th><td>Anthropic, OpenAI, TBD Lab at Meta; DeepMind</td><td>base 300k to 500k, around 800k a level up</td><td>most of the pay, close to cash; total 1M to 10M+</td><td>in person, SF and the Peninsula</td></tr>
+    <tr><th>Big tech research</th><td>Google Research, FAIR, Amazon, Netflix</td><td>total 300k to 800k, maybe 1M, with liquid equity</td><td>liquid</td><td>offices everywhere</td></tr>
+    <tr><th>Neolabs</th><td>Thinking Machines, humans&amp;, Reflection, Cognition</td><td>300k to 600k</td><td>"funny money": zero to millions</td><td></td></tr>
+    <tr><th>Nonprofits</th><td>Transluce, METR, Ai2</td><td>250k to 500k</td><td>none</td><td></td></tr>
+    <tr><th>RL environment startups</th><td></td><td>an environment sells for 40k to 1M</td><td></td><td></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>1. Frontier labs</h3>
+
+<p>These are the companies that build and serve frontier models: Anthropic, OpenAI, and TBD Lab inside Meta. A note on Meta, since most people don't realize the difference: Meta Superintelligence Labs (MSL) is the big umbrella, and it includes FAIR and other research orgs. TBD Lab is a very small subset of MSL, the more "elite" frontier group. Google DeepMind is frontier-ish: if you want to call it three plus one, DeepMind is the plus one, a notch below on people's vibes-based assessments. Also keep an eye on Microsoft AI, which is building out now and may or may not become frontier.</p>
+
+<p>The roles are AI researcher or engineer, and from what I understand engineers do a lot of research too. The title these days is mostly "member of technical staff." The interview processes are harder, and the roles are considered prestigious. From a very Bay Area standpoint, this is the top of the hierarchy. (Again, I don't necessarily subscribe to this. I'm describing the vibes in the Bay.)</p>
+
+<p><strong>Pay.</strong> This is the top of the food chain. Base pay is usually 300k to 500k, and around 800k a level up. But most of the money is equity, and at these companies equity is basically cash, because the stock is public or the company does buybacks (with some exceptions). At Anthropic and TBD, and at OpenAI and DeepMind more depending on the role, you are looking at anywhere from 1 million to 10 million a year, depending on the role and on how the stock moves, and some roles get even more. People who joined earlier are getting paid more because of how the stock grew.</p>
+
+<p><strong>Location.</strong> Almost all of it is in person, and aggressively so: SF, or Menlo Park and the South Bay. Some are opening New York offices, but most of what is happening is in SF, so you kind of have to be there. I know people at Anthropic and OpenAI who are remote and visit SF, but otherwise, plan on moving.</p>
+
+<p><strong>The catch.</strong> These are stressful, demanding jobs. You are competing, it is not necessarily easy to survive, and people get fired (not everywhere, and it depends on the team). High stress, high reward.</p>
+
+<p><strong>Who it's for.</strong> If you are out of grad school and you care about money and about being at the frontier, these are the jobs to go after. And if you don't get one, it does not mean you are not good enough, or that your vision is not good enough.</p>
+
+<h3>2. Research scientist at a big tech company</h3>
+
+<p>This is the classic research scientist job: Google Research, FAIR and other teams within Meta, Amazon, any of the big tech companies, even Netflix depending on what you do. Every big company has these roles. When I was graduating, the frontier tier didn't really exist, and choosing between industry and academia basically meant choosing between this tier and academia.</p>
+
+<p><strong>Pay.</strong> Base plus equity, and the equity is liquid, so it is basically cash. You are probably getting 300k to 800k, or up to a million. That is definitely a degree lower than frontier, though there are jobs in this tier that pay more or less, and these numbers might be a bit outdated. There are bonuses and other things on top.</p>
+
+<p><strong>Location.</strong> One perk: the offices are all over. You can be in New York, in Seattle, in Europe.</p>
+
+<p><strong>The trade-off.</strong> You can have better work-life balance and sometimes more freedom. But because research is not necessarily essential to the company, layoffs are a thing, and research teams usually get laid off sooner. It is also harder to work on frontier stuff. Even at Meta, if you are not in TBD, working on frontier stuff means dealing with politics. (You deal with politics at the frontier labs too, but this is a different version of it.) So it is a middle ground: you get paid a good amount, you work on interesting things, and you are further from the frontier.</p>
+
+<h3>3. Neolabs</h3>
+
+<p>A neolab is a new, independent AI lab, usually started by researchers from the frontier labs and funded with big raises, that does frontier-ish research outside the big companies. There used to be very few, and now there are many. The most famous is Thinking Machines, arguably the first neolab, then humans&amp;, and now a bunch more: Reflection, Cognition, Periodic Labs, and others.</p>
+
+<p>I am at a neolab myself, and I'm staying because I enjoy it. It is a nice mix: you are doing frontier-ish research, but you still have some freedom. It is a small group, so I don't have to deal with big-company politics and big-company shenanigans. You have control over your stuff, more ownership and more skin in the game, and depending on the neolab, you still get the resources. Being at an early-stage place is empowering. (More on how I ended up there in <a href="why_i_joined_humansand.html">why I joined humans&amp;</a>.)</p>
+
+<p>But I would caution people against picking this option blindly just because it sounds exciting. No shade to any neolab: this is the risk of the game.</p>
+
+<p>Say you are at a frontier lab or a big-company research team for six months, and you want to switch jobs for whatever reason. You can point to something: I worked on the safety of this product, or I worked on this part of that thing. At most neolabs, at least until a few months ago, that was really hard, because everything is so uncertain. Every neolab is figuring things out as it goes, and neolab as a concept did not exist until recently. So if you leave, it is harder to explain what you were doing, and a year at a neolab without producing something can be kind of career suicide.</p>
+
+<p>So if you join one, figure out whether you are a good match with the people and whether you really believe in the mission, because it is higher risk, higher reward. That way, even if nothing comes out of it, you have spent your time learning from people you admire.</p>
+
+<p>And if you are deciding between joining a neolab, starting something, or going to grad school: if you have a clear idea of what you want to do, either go do it or raise for it. If you are just curious, start a PhD.</p>
+
+<p><strong>Pay.</strong> A very, very wide range, depending on the role. For research positions, the cash I have seen is 300k to 600k. The equity varies a lot. I call it funny money, because it is very unclear what it is worth: it could be zero, it could be millions. It is very negotiable at most of these places.</p>
+
+<p><strong>How to think about the equity</strong>, at a neolab or any small AI lab:</p>
+<ul>
+  <li><strong>Assets.</strong> If the company has revenue or data centers, its equity is less funny money than at a company that mostly has a big raise.</li>
+  <li><strong>Exits.</strong> Think about what an exit would look like and how likely it is. A bigger company with a bigger raise might seem better, but it might not be, because there may be no way to exit at that size. Smaller operations sometimes have better chances at a good exit.</li>
+  <li><strong>Valuation.</strong> If you think the company is already overvalued, factor that into how you think about the future.</li>
+</ul>
+
+<h3>4. Nonprofits</h3>
+
+<p>I really admire this group. Honestly, if I weren't somewhere I was happy right now, I would probably want to be at one of these, especially a safety one: Transluce, METR, and others like Redwood Research, FAR.AI and Epoch AI. Ai2 is also a good one. I admire their fortitude, and you can do really great work there. They are still small, so you can have ownership, and there is full transparency. I care a lot about freedom and being able to talk about my work, and at a nonprofit you can.</p>
+
+<p><strong>Pay.</strong> This is the one I know least about. I think cash starts around 250k, and some of the competitive ones go up to 500k. So it is competitive, but you don't get equity.</p>
+
+<h3>5. Reinforcement learning environment startups</h3>
+
+<p>This category is very new, and I think it might disappear. It feels seasonal, like a this-year thing. These are startups that are not neolabs and do different things, and a lot of them are wrapper or harness startups that have shifted to reinforcement learning (RL) environments. Call it "ChatGPT wrapper turned RL environment startup." I know the naming is weird, but I respect them.</p>
+
+<p>Right now the frontier labs need more tasks: everything is data, and everything is RL environments. These companies build hard environments for models in the sciences, chip design, CAD and coding. Sometimes they also sell data, or collect and broker it.</p>
+
+<p>Depending on your connections, who you know and what you do, this can be fast money. If you can produce environments quickly and sell them, an environment can go for anywhere from 40k to a million, depending on the data that comes with it. So it can be lucrative, and it can also not be.</p>
+
+<p>If you want to do your thing and you can't be or don't want to be at a frontier lab, this is a real option: build environments, tasks, evals and failure cases for models, and either sell them to data brokers or do the brokering yourself. It is a valid way to make money, and you are contributing to the models too.</p>
+
+<h2>Wrapping up: live your life</h2>
+
+<p>I don't think high or low of any of these jobs. They are all valid.</p>
+
+<p>But I do want to say something about Bay Area and SF thinking. There is a monoculture here. There is a grindset, there is a certain type of work that is really valued, and people think you either have to be at the frontier or you have to be making the most money. That is valid! It is just not everyone's path. If there is something you really want to do and you really believe in it, go for it. What matters most is doing something you find engaging and that is sustainable for you, rather than what everyone else says you should do.</p>
+
+<p>My favorite quote, from Emerson's <em>Self-Reliance</em>:</p>
+
+<blockquote>
+  <p>&hellip;envy is ignorance; that imitation is suicide; that he must take himself for better, for worse, as his portion&hellip;</p>
+</blockquote>
+
+<p>So do what best suits you and your family. At the end of the day, your family and the people around you who bring you joy are the most important thing, and you should not feel bad about not doing what everyone else is doing. And it is important to believe in what you think.</p>
+
+<p>A lot of the thoughts I have are not obviously aligned with people in SF. I used to not want to say them, because I thought I would be ostracized or that people wouldn't agree with me. But since I started speaking out about them on Twitter, I've seen that there are a lot of people who do agree with me.</p>
+
+<div class="closing">
+<p>So yeah: imitation is suicide. Live your life!</p>
+</div>
+
+<p class="back"><a href="index.html">&larr; Back to writing</a></p>
+
+</div>
+</body>
+</html>
